@@ -67,7 +67,7 @@ const PolicyTable: React.FC<PolicyTableProps> = ({
 
   const columns: ColumnDef<PolicyRow>[] = [
     {
-      header: "Name",
+      header: "名称",
       accessorKey: "policy_name",
       cell: ({ row }) => {
         const { primaryPolicy, versionCount } = row.original;
@@ -93,7 +93,7 @@ const PolicyTable: React.FC<PolicyTableProps> = ({
       },
     },
     {
-      header: "Description",
+      header: "描述",
       accessorFn: (row) => row.primaryPolicy.description ?? "",
       cell: ({ row }) => {
         const policy = row.original.primaryPolicy;
@@ -210,7 +210,7 @@ const PolicyTable: React.FC<PolicyTableProps> = ({
     },
     {
       id: "actions",
-      header: "Actions",
+      header: "操作",
       cell: ({ row }) => {
         const { primaryPolicy } = row.original;
         const policy = primaryPolicy;
@@ -226,7 +226,7 @@ const PolicyTable: React.FC<PolicyTableProps> = ({
                     className="cursor-pointer hover:text-blue-500"
                   />
                 </Tooltip>
-                <Tooltip title="Delete policy">
+                <Tooltip title="删除 policy">
                   <Icon
                     icon={TrashIcon}
                     size="sm"
@@ -299,7 +299,7 @@ const PolicyTable: React.FC<PolicyTableProps> = ({
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-8 text-center">
                   <div className="text-center text-gray-500">
-                    <p>Loading...</p>
+                    <p>加载中...</p>
                   </div>
                 </TableCell>
               </TableRow>

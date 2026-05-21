@@ -198,7 +198,7 @@ function CreateToolsetModal({ open, onClose, onSave, accessToken, initialToolset
           >
             <Input placeholder="e.g. github-linear-tools" />
           </Form.Item>
-          <Form.Item label="Description" name="description" className="flex-1 mb-0">
+          <Form.Item label="描述" name="description" className="flex-1 mb-0">
             <Input placeholder="Optional description" />
           </Form.Item>
         </div>
@@ -268,7 +268,7 @@ function CreateToolsetModal({ open, onClose, onSave, accessToken, initialToolset
       </div>
 
       <div className="flex justify-end gap-2 mt-4 pt-4 border-t border-gray-200">
-        <Button variant="secondary" onClick={onClose}>Cancel</Button>
+        <Button variant="secondary" onClick={onClose}>取消</Button>
         <Button onClick={handleSubmit} loading={saving}>
           {initialToolset ? "Save Changes" : "Create Toolset"}
         </Button>
@@ -294,7 +294,7 @@ function toolsetColumns(
       ),
     },
     {
-      header: "Name",
+      header: "名称",
       accessorKey: "toolset_name",
       cell: ({ row }) => {
         const url = `${proxyBaseUrl}/toolset/${row.original.toolset_name}/mcp`;
@@ -317,7 +317,7 @@ function toolsetColumns(
       },
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "description",
       cell: ({ row }) => (
         <span className="text-sm text-gray-500">{row.original.description || "—"}</span>
@@ -343,7 +343,7 @@ function toolsetColumns(
       },
     },
     {
-      header: "Created",
+      header: "创建时间",
       accessorKey: "created_at",
       cell: ({ row }) => (
         <span className="text-xs text-gray-500">
@@ -513,9 +513,9 @@ export function MCPToolsetsTab({ accessToken, userRole }: MCPToolsetsTabProps) {
         open={!!deleteId}
         onCancel={() => setDeleteId(null)}
         onOk={handleDelete}
-        okText="Delete"
+        okText="删除"
         okButtonProps={{ danger: true, loading: deleting }}
-        title="Delete Toolset"
+        title="删除 Toolset"
       >
         <p>Are you sure you want to delete this toolset? Keys and teams using it will lose access to the scoped tools.</p>
       </Modal>

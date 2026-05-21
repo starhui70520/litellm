@@ -47,7 +47,7 @@ const KeywordTable: React.FC<KeywordTableProps> = ({
       ),
     },
     {
-      title: "Description",
+      title: "描述",
       dataIndex: "description",
       key: "description",
       render: (desc: string) => desc || "-",

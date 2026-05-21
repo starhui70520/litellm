@@ -31,7 +31,7 @@ export const searchToolColumns = (
       },
     },
     {
-      title: "Name",
+      title: "名称",
       dataIndex: "search_tool_name",
       key: "search_tool_name",
       render: (name: string) => <span className="font-medium">{name}</span>,
@@ -77,7 +77,7 @@ export const searchToolColumns = (
       },
     },
     {
-      title: "Actions",
+      title: "操作",
       key: "actions",
       render: (_, tool) => {
         const toolId = tool.search_tool_id;
@@ -98,7 +98,7 @@ export const searchToolColumns = (
             />
             <TableIconActionButton
               variant="Delete"
-              tooltipText="Delete search tool"
+              tooltipText="删除 search tool"
               disabled={isFromConfig}
               disabledTooltipText="Config search tool cannot be deleted on the dashboard. Please delete it from the config file."
               onClick={() => {

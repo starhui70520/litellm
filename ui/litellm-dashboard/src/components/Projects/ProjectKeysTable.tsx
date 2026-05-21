@@ -30,7 +30,7 @@ const columns: ColumnsType<KeyResponse> = [
     },
   },
   {
-    title: "Created",
+    title: "创建时间",
     dataIndex: "created_at",
     key: "created_at",
     render: (date: string) => (date ? new Date(date).toLocaleDateString() : "—"),

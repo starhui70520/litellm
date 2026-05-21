@@ -127,7 +127,7 @@ const ProviderDiscountTable: React.FC<ProviderDiscountTableProps> = ({
           width: "250px",
         },
         {
-          header: "Actions",
+          header: "操作",
           cell: (row) => {
             const { displayName } = getProviderDisplayInfo(row.provider);
             return (

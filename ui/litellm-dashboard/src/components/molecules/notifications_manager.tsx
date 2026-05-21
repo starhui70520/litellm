@@ -177,7 +177,7 @@ function titleFor(status?: number, desc?: string): string {
   if (status === 403) return "Access Denied";
   if (d.includes("enterprise") || d.includes("premium")) return "Info";
   if (status && status >= 400) return "Request Error";
-  return "Error";
+  return "错误";
 }
 
 const SUCCESS_MATCH = [
@@ -221,7 +221,7 @@ const CONFIG_WARN_MATCH = [
 function classifyGeneralMessage(desc?: string): { kind: "success" | "info" | "warning"; title: string } | null {
   const d = (desc || "").toLowerCase();
 
-  if (SUCCESS_MATCH.some((s) => d.includes(s))) return { kind: "success", title: "Success" };
+  if (SUCCESS_MATCH.some((s) => d.includes(s))) return { kind: "success", title: "成功" };
   if (DEPRECATION_FEATURE_WARN_MATCH.some((s) => d.includes(s))) return { kind: "warning", title: "Feature Notice" };
   if (CONFIG_WARN_MATCH.some((s) => d.includes(s))) return { kind: "warning", title: "Configuration Warning" };
   if (INFO_MATCH.some((s) => d.includes(s))) return { kind: "warning", title: "Rate Limit" }; // show as warning for visibility
@@ -260,7 +260,7 @@ function looksErrorPayload(input: any, status?: number): boolean {
 
 const NotificationManager = {
   error(input: string | NotificationConfig) {
-    const cfg = normalize(input, "Error");
+    const cfg = normalize(input, "错误");
     getNotification().error({
       ...COMMON_NOTIFICATION_PROPS,
       ...cfg,
@@ -270,7 +270,7 @@ const NotificationManager = {
   },
 
   warning(input: string | NotificationConfig) {
-    const cfg = normalize(input, "Warning");
+    const cfg = normalize(input, "警告");
     getNotification().warning({
       ...COMMON_NOTIFICATION_PROPS,
       ...cfg,
@@ -293,14 +293,14 @@ const NotificationManager = {
     if (React.isValidElement(input)) {
       getNotification().success({
         ...COMMON_NOTIFICATION_PROPS,
-        message: "Success",
+        message: "成功",
         description: input,
         placement: defaultPlacement(),
         duration: 3.5,
       });
       return;
     }
-    const cfg = normalize(input as string | NotificationConfig, "Success");
+    const cfg = normalize(input as string | NotificationConfig, "成功");
     getNotification().success({
       ...COMMON_NOTIFICATION_PROPS,
       ...cfg,
@@ -338,7 +338,7 @@ const NotificationManager = {
         title === "Authentication Error" ||
         title === "Access Denied" ||
         title === "Not Found" ||
-        title === "Error" ||
+        title === "错误" ||
         title === "Already Exists"
       ) {
         getNotification().error({ ...COMMON_NOTIFICATION_PROPS, ...payload, duration: extra?.duration ?? 6 });

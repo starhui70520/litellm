@@ -74,7 +74,7 @@ export const CRUD_GROUP_META: Record<
     risk: "medium",
   },
   delete: {
-    label: "Delete",
+    label: "删除",
     description: "Destructive operations — remove, purge, destroy.",
     risk: "high",
   },

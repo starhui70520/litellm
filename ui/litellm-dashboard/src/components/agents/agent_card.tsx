@@ -25,7 +25,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
   const url = agent.agent_card_params?.url;
   const hasKey = keyInfo?.has_key ?? false;
   const statusBadge = hasKey ? (
-    <Badge status="success" text="Active" />
+    <Badge status="success" text="活跃" />
   ) : (
     <Badge status="warning" text="Needs Setup" />
   );
@@ -60,7 +60,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
           <div className="mt-1">{statusBadge}</div>
         </div>
         {isAdmin && onDeleteClick && (
-          <Tooltip title="Delete agent">
+          <Tooltip title="删除 agent">
             <Button
               type="text"
               size="small"

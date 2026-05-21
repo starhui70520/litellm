@@ -258,7 +258,7 @@ const BulkEditUserModal: React.FC<BulkEditUserModalProps> = ({
                 ),
               },
               {
-                title: "Email",
+                title: "邮箱",
                 dataIndex: "user_email",
                 key: "user_email",
                 width: "25%",

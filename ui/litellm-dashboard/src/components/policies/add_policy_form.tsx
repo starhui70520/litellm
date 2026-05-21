@@ -421,7 +421,7 @@ const AddPolicyForm: React.FC<AddPolicyFormProps> = ({
           />
         </Form.Item>
 
-        <Form.Item name="description" label="Description">
+        <Form.Item name="description" label="描述">
           <Textarea
             rows={2}
             placeholder="Describe what this policy does..."

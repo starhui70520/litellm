@@ -84,7 +84,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
       setPoliciesList(response.policies || []);
     } catch (error) {
       console.error("Error fetching policies:", error);
-      MessageManager.error("Failed to fetch policies");
+      MessageManager.error("获取策略失败");
     } finally {
       setIsLoading(false);
     }
@@ -99,7 +99,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
       setAttachmentsList(response.attachments || []);
     } catch (error) {
       console.error("Error fetching attachments:", error);
-      MessageManager.error("Failed to fetch attachments");
+      MessageManager.error("获取附件失败");
     } finally {
       setIsAttachmentsLoading(false);
     }
@@ -152,11 +152,11 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
     setIsDeleting(true);
     try {
       await deletePolicyCall(accessToken, policyToDelete.policy_id);
-      MessageManager.success(`Policy "${policyToDelete.policy_name}" deleted successfully`);
+      MessageManager.success(`策略"${policyToDelete.policy_name}"删除成功`);
       await fetchPolicies();
     } catch (error) {
       console.error("Error deleting policy:", error);
-      MessageManager.error("Failed to delete policy");
+      MessageManager.error("删除策略失败");
     } finally {
       setIsDeleting(false);
       setIsDeleteModalOpen(false);
@@ -201,7 +201,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
 
   const handleUseTemplate = async (template: any) => {
     if (!accessToken) {
-      MessageManager.error("Authentication required");
+      MessageManager.error("需要身份验证");
       return;
     }
 
@@ -229,7 +229,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
       setIsGuardrailSelectionModalOpen(true);
     } catch (error) {
       console.error("Error fetching guardrails:", error);
-      MessageManager.error("Failed to load guardrails. Please try again.");
+      MessageManager.error("加载守护栏失败，请重试。");
     }
   };
 
@@ -279,7 +279,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
       await proceedWithTemplate(enrichedTemplate);
     } catch (error) {
       console.error("Error enriching template:", error);
-      MessageManager.error("Failed to configure template. Please try again.");
+      MessageManager.error("配置模板失败，请重试。");
       setIsEnrichingTemplate(false);
     }
   };
@@ -371,26 +371,26 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
     <div className="w-full mx-auto flex-auto overflow-y-auto m-8 p-2">
       <TabGroup index={activeTab} onIndexChange={setActiveTab}>
         <TabList className="mb-4">
-          <Tab>Templates</Tab>
-          <Tab>Policies</Tab>
-          <Tab>Attachments</Tab>
-          <Tab>Policy Simulator</Tab>
+          <Tab>模板</Tab>
+          <Tab>策略</Tab>
+          <Tab>附件</Tab>
+          <Tab>策略模拟器</Tab>
         </TabList>
 
         <TabPanels>
           <TabPanel>
           <Alert
-              message="About Policies"
+              message="关于策略"
               description={
                 <div>
                   <p className="mb-3">
-                    Use policies to group guardrails and control which ones run for specific teams, keys, or models.
+                    使用策略可将守护栏分组，并控制它们在特定团队、密钥或模型上运行。
                   </p>
-                  <p className="mb-2 font-semibold">Why use policies?</p>
+                  <p className="mb-2 font-semibold">为什么使用策略？</p>
                   <ul className="list-disc list-inside mb-3 space-y-1 ml-2">
-                    <li>Enable/disable specific guardrails for teams, keys, or models</li>
-                    <li>Group guardrails into a single policy</li>
-                    <li>Inherit from existing policies and override what you need</li>
+                    <li>为团队、密钥或模型启用/禁用特定守护栏</li>
+                    <li>将多个守护栏分组为单个策略</li>
+                    <li>从现有策略继承并覆盖需要的内容</li>
                   </ul>
                   <a
                     href="https://docs.litellm.ai/docs/proxy/guardrails/guardrail_policies"
@@ -398,7 +398,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 underline inline-block mt-1"
                   >
-                    Learn more in the documentation →
+                    在文档中了解更多 →
                   </a>
                 </div>
               }
@@ -418,17 +418,17 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
 
           <TabPanel>
             <Alert
-              message="About Policies"
+              message="关于策略"
               description={
                 <div>
                   <p className="mb-3">
-                    Use policies to group guardrails and control which ones run for specific teams, keys, or models.
+                    使用策略可将守护栏分组，并控制它们在特定团队、密钥或模型上运行。
                   </p>
-                  <p className="mb-2 font-semibold">Why use policies?</p>
+                  <p className="mb-2 font-semibold">为什么使用策略？</p>
                   <ul className="list-disc list-inside mb-3 space-y-1 ml-2">
-                    <li>Enable/disable specific guardrails for teams, keys, or models</li>
-                    <li>Group guardrails into a single policy</li>
-                    <li>Inherit from existing policies and override what you need</li>
+                    <li>为团队、密钥或模型启用/禁用特定守护栏</li>
+                    <li>将多个守护栏分组为单个策略</li>
+                    <li>从现有策略继承并覆盖需要的内容</li>
                   </ul>
                   <a
                     href="https://docs.litellm.ai/docs/proxy/guardrails/guardrail_policies"
@@ -436,7 +436,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 underline inline-block mt-1"
                   >
-                    Learn more in the documentation →
+                    在文档中了解更多 →
                   </a>
                 </div>
               }
@@ -449,7 +449,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
 
             <div className="flex justify-between items-center mb-4">
               <Button onClick={handleAddPolicy} disabled={!accessToken}>
-                + Add New Policy
+                + 添加新策略
               </Button>
             </div>
 
@@ -498,14 +498,14 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
 
             <DeleteResourceModal
               isOpen={isDeleteModalOpen}
-              title="Delete Policy"
-              message={`Are you sure you want to delete policy: ${policyToDelete?.policy_name}? This action cannot be undone.`}
-              resourceInformationTitle="Policy Information"
+              title="删除策略"
+              message={`确定要删除策略：${policyToDelete?.policy_name} 吗？此操作无法撤销。`}
+              resourceInformationTitle="策略信息"
               resourceInformation={[
-                { label: "Name", value: policyToDelete?.policy_name },
+                { label: "名称", value: policyToDelete?.policy_name },
                 { label: "ID", value: policyToDelete?.policy_id, code: true },
-                { label: "Description", value: policyToDelete?.description || "-" },
-                { label: "Inherits From", value: policyToDelete?.inherit || "-" },
+                { label: "描述", value: policyToDelete?.description || "-" },
+                { label: "继承自", value: policyToDelete?.inherit || "-" },
               ]}
               onCancel={handleDeleteCancel}
               onOk={handleDeleteConfirm}
@@ -534,19 +534,19 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
 
           <TabPanel>
             <Alert
-              message="About Policy Attachments"
+              message="关于策略附件"
               description={
                 <div>
                   <p className="mb-3">
-                    Policy attachments control where your policies apply. Policies don&apos;t do anything until you attach them to specific teams, keys, models, tags, or globally.
+                    策略附件控制您的策略 적용位置。在将策略附加到特定团队、密钥、模型、标签或全局之前，策略不会执行任何操作。
                   </p>
-                  <p className="mb-2 font-semibold">Attachment Scopes:</p>
+                  <p className="mb-2 font-semibold">附件范围：</p>
                   <ul className="list-disc list-inside mb-3 space-y-1 ml-2">
-                    <li><strong>Global (*)</strong> - Applies to all requests</li>
-                    <li><strong>Teams</strong> - Applies only to specific teams</li>
-                    <li><strong>Keys</strong> - Applies only to specific API keys (supports wildcards like dev-*)</li>
-                    <li><strong>Models</strong> - Applies only when specific models are used</li>
-                    <li><strong>Tags</strong> - Matches tags from key/team <code>metadata.tags</code> or tags passed dynamically in the request body (<code>metadata.tags</code>). Use this to enforce policies across groups, e.g. &quot;all keys tagged <code>healthcare</code> get HIPAA guardrails.&quot; Supports wildcards (<code>prod-*</code>).</li>
+                    <li><strong>全局 (*)</strong> - 适用于所有请求</li>
+                    <li><strong>团队</strong> - 仅适用于特定团队</li>
+                    <li><strong>密钥</strong> - 仅适用于特定 API 密钥（支持通配符如 dev-*）</li>
+                    <li><strong>模型</strong> - 仅在使用特定模型时适用</li>
+                    <li><strong>标签</strong> - 匹配密钥/团队的 <code>metadata.tags</code> 或请求正文中动态传递的标签 (<code>metadata.tags</code>)。使用此功能可跨组强制执行策略，例如"所��带有 <code>healthcare</code> 标签的密钥获得 HIPAA 守护栏"。支持通配符 (<code>prod-*</code>)。</li>
                   </ul>
                   <a
                     href="https://docs.litellm.ai/docs/proxy/guardrails/guardrail_policies#attachments"
@@ -554,7 +554,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 underline inline-block mt-1"
                   >
-                    Learn more about attachments →
+                    了解更多关于附件 →
                   </a>
                 </div>
               }
@@ -566,8 +566,8 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
             />
 
             <Alert
-              message="Enterprise Feature Notice"
-              description="Parts of policy attachments will be on LiteLLM Enterprise in subsequent releases."
+              message="企业版功能通知"
+              description="策略附件的部分功能将在后续版本中作为 LiteLLM 企业版提供。"
               type="warning"
               showIcon
               closable
@@ -579,7 +579,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
                 onClick={() => setIsAddAttachmentModalVisible(true)}
                 disabled={!accessToken || policiesList.length === 0}
               >
-                + Add New Attachment
+                + 添加新附件
               </Button>
             </div>
 
@@ -609,7 +609,7 @@ const PoliciesPanel: React.FC<PoliciesPanelProps> = ({
 
       <DeleteResourceModal
         isOpen={isDeleteAttachmentModalOpen}
-        title="Delete Attachment"
+        title="删除 Attachment"
         message="Are you sure you want to delete this attachment? This action cannot be undone."
         resourceInformationTitle="Attachment Information"
         resourceInformation={[

@@ -266,7 +266,7 @@ export function AccessGroupsPage() {
                 <Space>
                   <TableIconActionButton
                     variant="Delete"
-                    tooltipText="Delete access group"
+                    tooltipText="删除 access group"
                     onClick={() => setGroupToDelete(row.original)}
                   />
                 </Space>
@@ -391,13 +391,13 @@ export function AccessGroupsPage() {
 
       <DeleteResourceModal
         isOpen={!!groupToDelete}
-        title="Delete Access Group"
+        title="删除 Access Group"
         message="Are you sure you want to delete this access group? This action cannot be undone."
         resourceInformationTitle="Access Group Information"
         resourceInformation={[
           { label: "ID", value: groupToDelete?.id, code: true },
-          { label: "Name", value: groupToDelete?.name },
-          { label: "Description", value: groupToDelete?.description || "—" },
+          { label: "名称", value: groupToDelete?.name },
+          { label: "描述", value: groupToDelete?.description || "—" },
         ]}
         onCancel={() => setGroupToDelete(null)}
         onOk={() => {

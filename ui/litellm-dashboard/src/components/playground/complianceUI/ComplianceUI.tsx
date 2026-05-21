@@ -283,7 +283,7 @@ export default function ComplianceUI({
     const id = `custom-${Date.now()}`;
     const newPrompt: CompliancePrompt = {
       id,
-      framework: "Custom",
+      framework: "自定义",
       category: "Custom Prompts",
       categoryIcon: "pencil",
       categoryDescription: "Custom prompts added this session.",
@@ -294,7 +294,7 @@ export default function ComplianceUI({
     setNewPromptText("");
     setNewPromptExpected("fail");
     setShowAddPrompt(false);
-    setExpandedFrameworks((prev) => new Set([...prev, "Custom"]));
+    setExpandedFrameworks((prev) => new Set([...prev, "自定义"]));
     setExpandedCategories((prev) => new Set([...prev, "Custom Prompts"]));
   };
 
@@ -1199,7 +1199,7 @@ export default function ComplianceUI({
                                             deleteCustomPrompt(prompt.id);
                                           }}
                                           className="opacity-0 group-hover:opacity-100 p-0.5 text-gray-400 hover:text-red-500 transition-all flex-shrink-0"
-                                          aria-label="Delete"
+                                          aria-label="删除"
                                         >
                                           <Trash2 className="w-3 h-3" />
                                         </button>

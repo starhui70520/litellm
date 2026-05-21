@@ -185,7 +185,7 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
     },
     {
       id: "status",
-      header: "Status",
+      header: "状态",
       size: 100,
       enableSorting: false,
       cell: ({ row }) => {
@@ -193,7 +193,7 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
         if (key.blocked !== true) {
           return (
             <Tag color="green" data-testid={`key-status-${key.token_id}`}>
-              Active
+              活跃
             </Tag>
           );
         }
@@ -201,12 +201,12 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
           (key.metadata as Record<string, unknown> | null | undefined)
             ?.scim_blocked === true;
         const reason = isScimBlocked
-          ? "Blocked by SCIM (external identity provider deactivated or deleted the owning user)."
-          : "Blocked. Requests using this key will be rejected with 401.";
+          ? "已通过 SCIM 屏蔽（外部身份提供商已停用或删除了所属用户）。"
+          : "已屏蔽。使用此密钥的请求将被拒绝并返回 401。";
         return (
           <Tooltip title={reason}>
             <Tag color="red" data-testid={`key-status-${key.token_id}`}>
-              Blocked
+              已屏蔽
             </Tag>
           </Tooltip>
         );
@@ -218,7 +218,7 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
       header: "Secret Key",
       size: 120,
       enableSorting: false,
-      cell: (info) => <span className="font-mono text-xs">{info.getValue() as string}</span>,
+      cell: (info) => <span className="font-mono text-xs">密钥</span>,
     },
     {
       id: "team_alias",
@@ -265,7 +265,7 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
         <span className="flex items-center gap-1">
           User
           <Popover
-            content="Displays the first available value: User Alias, User Email, or User ID."
+            content="显示第一个可用的值：用户别名、用户邮箱或用户ID。"
             trigger="hover"
           >
             <InfoCircleOutlined className="text-gray-400 text-xs cursor-help" />
@@ -286,9 +286,9 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
         const popoverContent = (
           <div className="flex flex-col gap-2 text-xs min-w-[200px] max-w-[300px]">
             {[
-              { label: "User Alias", value: userAlias },
-              { label: "User Email", value: userEmail },
-              { label: "User ID", value: userId },
+              { label: "用户别名", value: userAlias },
+              { label: "用户邮箱", value: userEmail },
+              { label: "用户ID", value: userId },
             ].map(({ label, value }) => (
               <div key={label} className="flex flex-col min-w-0">
                 <span className="text-gray-400">{label}</span>
@@ -361,9 +361,9 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
         const popoverContent = (
           <div className="flex flex-col gap-2 text-xs min-w-[200px] max-w-[300px]">
             {[
-              { label: "User Alias", value: userAlias },
-              { label: "User Email", value: userEmail },
-              { label: "User ID", value: userId },
+              { label: "用户别名", value: userAlias },
+              { label: "用户邮箱", value: userEmail },
+              { label: "用户ID", value: userId },
             ].map(({ label, value }) => (
               <div key={label} className="flex flex-col min-w-0">
                 <span className="text-gray-400">{label}</span>
@@ -413,7 +413,7 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
       enableSorting: true,
       cell: (info) => {
         const value = info.getValue();
-        return value ? new Date(value as string).toLocaleDateString() : "Never";
+        return value ? new Date(value as string).toLocaleDateString() : "从未";
       },
     },
     {
@@ -423,7 +423,7 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
         <span className="flex items-center gap-1">
           Last Active
           <Popover
-            content="This is a new field and is not backfilled. Only new key usage will update this value."
+            content="这是一个新字段，不会回填数据。只有新的密钥使用才会更新此值。"
             trigger="hover"
           >
             <InfoCircleOutlined className="text-gray-400 text-xs cursor-help" />
@@ -446,12 +446,12 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
     {
       id: "expires",
       accessorKey: "expires",
-      header: "Expires",
+      header: "过期时间",
       size: 120,
       enableSorting: false,
       cell: (info) => {
         const value = info.getValue();
-        return value ? new Date(value as string).toLocaleDateString() : "Never";
+        return value ? new Date(value as string).toLocaleDateString() : "从未";
       },
     },
     {
@@ -471,7 +471,7 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
       cell: (info) => {
         const maxBudget = info.getValue() as number | null;
         if (maxBudget === null) {
-          return "Unlimited";
+          return "无限制";
         }
         return `$${formatNumberWithCommas(maxBudget)}`;
       },
@@ -484,13 +484,13 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
       enableSorting: false,
       cell: (info) => {
         const value = info.getValue();
-        return value ? new Date(value as string).toLocaleString() : "Never";
+        return value ? new Date(value as string).toLocaleString() : "从未";
       },
     },
     {
       id: "models",
       accessorKey: "models",
-      header: "Models",
+      header: "模型",
       size: 200,
       enableSorting: false,
       cell: (info) => {
@@ -582,8 +582,8 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
         const key = row.original;
         return (
           <div>
-            <div>TPM: {key.tpm_limit !== null ? key.tpm_limit : "Unlimited"}</div>
-            <div>RPM: {key.rpm_limit !== null ? key.rpm_limit : "Unlimited"}</div>
+            <div> TPM: {key.tpm_limit !== null ? key.tpm_limit : "无限制"}</div>
+            <div> RPM: {key.rpm_limit !== null ? key.rpm_limit : "无限制"}</div>
           </div>
         );
       },
@@ -737,9 +737,9 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
                 icon={<SyncOutlined spin={isButtonLoading} />}
                 onClick={handleRefresh}
                 disabled={isButtonLoading}
-                title="Fetch data"
+                title="获取数据"
               >
-                {isButtonLoading ? "Fetching" : "Fetch"}
+                {isButtonLoading ? "加载中" : "获取"}
               </AntButton>
             </div>
 
@@ -760,7 +760,7 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
                   disabled={isLoading || !table.getCanPreviousPage()}
                   className="px-3 py-1 text-sm border rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Previous
+                  上一页
                 </button>
               )}
 
@@ -772,7 +772,7 @@ export function VirtualKeysTable({ teams, organizations, onSortChange, currentSo
                   disabled={isLoading || !table.getCanNextPage()}
                   className="px-3 py-1 text-sm border rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Next
+                  下一页
                 </button>
               )}
             </div>

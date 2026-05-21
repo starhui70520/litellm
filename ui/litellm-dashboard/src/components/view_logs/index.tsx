@@ -153,7 +153,7 @@ export default function SpendLogsTable({
   const LiveTailControls = () => {
     return (
       <div className="flex items-center gap-2">
-        <span className="text-sm font-medium text-gray-900">Live Tail</span>
+        <span className="text-sm font-medium text-gray-900">实时日志</span>
         <Switch color="green" checked={isLiveTail} defaultChecked={true} onChange={setIsLiveTail} />
       </div>
     );
@@ -282,7 +282,7 @@ export default function SpendLogsTable({
     } else {
       setSelectedTeamId("");
     }
-    setSelectedStatus(filters["Status"] || "");
+    setSelectedStatus(filters["状态"] || "");
     setSelectedModelId(filters["Model"] || "");
     setSelectedEndUser(filters["End User"] || "");
 
@@ -398,21 +398,21 @@ export default function SpendLogsTable({
   const logFilterOptions: FilterOption[] = [
     {
       name: "Team ID",
-      label: "Team ID",
+      label: "团队ID",
       customComponent: FilterTeamDropdown,
     },
     {
-      name: "Status",
-      label: "Status",
+      name: "状态",
+      label: "状态",
       isSearchable: false,
       options: [
-        { label: "Success", value: "success" },
+        { label: "成功", value: "success" },
         { label: "Failure", value: "failure" },
       ],
     },
     {
       name: "Model",
-      label: "Model",
+      label: "模型",
       customComponent: PaginatedModelSelect,
     },
     {
@@ -422,12 +422,12 @@ export default function SpendLogsTable({
     },
     {
       name: "Key Alias",
-      label: "Key Alias",
+      label: "密钥别名",
       customComponent: PaginatedKeyAliasSelect,
     },
     {
       name: "End User",
-      label: "End User",
+      label: "终端用户",
       isSearchable: true,
       searchFn: async (searchText: string) => {
         if (!accessToken) return [];
@@ -440,7 +440,7 @@ export default function SpendLogsTable({
     },
     {
       name: "Error Code",
-      label: "Error Code",
+      label: "错误代码",
       isSearchable: true,
       searchFn: async (searchText: string) => {
         if (!searchText) return ERROR_CODE_OPTIONS;
@@ -484,15 +484,15 @@ export default function SpendLogsTable({
     <div className="w-full max-w-screen p-6 overflow-x-hidden box-border">
       <TabGroup defaultIndex={0} onIndexChange={(index) => setActiveTab(index === 0 ? "request logs" : "audit logs")}>
         <TabList>
-          <Tab>Request Logs</Tab>
-          <Tab>Audit Logs</Tab>
-          <Tab>Deleted Keys</Tab>
-          <Tab>Deleted Teams</Tab>
+          <Tab>请求日志</Tab>
+          <Tab>审计日志</Tab>
+          <Tab>已删除密钥</Tab>
+          <Tab>已删除团队</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
             <div className="flex items-center justify-between mb-4">
-              <h1 className="text-xl font-semibold">Request Logs</h1>
+              <h1 className="text-xl font-semibold">请求日志</h1>
             </div>
             {selectedKeyInfo && selectedKeyIdInfoView && selectedKeyInfo.api_key === selectedKeyIdInfoView ? (
               <KeyInfoView
@@ -516,7 +516,7 @@ export default function SpendLogsTable({
                         <div className="relative w-64 min-w-0 flex-shrink-0">
                           <input
                             type="text"
-                            placeholder="Search by Request ID"
+                            placeholder="搜索 Request ID"
                             className="w-full px-3 py-2 pl-8 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
@@ -597,9 +597,9 @@ export default function SpendLogsTable({
                             icon={<SyncOutlined spin={isButtonLoading} />}
                             onClick={handleRefresh}
                             disabled={isButtonLoading}
-                            title="Fetch data"
+                            title="获取数据"
                           >
-                            {isButtonLoading ? "Fetching" : "Fetch"}
+                            {isButtonLoading ? "加载中" : "获取"}
                           </Button>
                         </div>
 
@@ -634,32 +634,32 @@ export default function SpendLogsTable({
 
                       <div className="flex items-center space-x-4">
                         <span className="text-sm text-gray-700 whitespace-nowrap">
-                          Showing {logs.isLoading ? "..." : filteredLogs ? (currentPage - 1) * pageSize + 1 : 0} -{" "}
+                          显示 {logs.isLoading ? "..." : filteredLogs ? (currentPage - 1) * pageSize + 1 : 0} -{" "}
                           {logs.isLoading
                             ? "..."
                             : filteredLogs
                               ? Math.min(currentPage * pageSize, filteredLogs.total)
                               : 0}{" "}
-                          of {logs.isLoading ? "..." : filteredLogs ? filteredLogs.total : 0} results
+                          共 {logs.isLoading ? "..." : filteredLogs ? filteredLogs.total : 0} 条结果
                         </span>
                         <div className="flex items-center space-x-2">
                           <span className="text-sm text-gray-700 min-w-[90px]">
-                            Page {logs.isLoading ? "..." : currentPage} of{" "}
-                            {logs.isLoading ? "..." : filteredLogs ? filteredLogs.total_pages : 1}
+                            第 {logs.isLoading ? "..." : currentPage} 页，共{" "}
+                            {logs.isLoading ? "..." : filteredLogs ? filteredLogs.total_pages : 1} 页
                           </span>
                           <button
                             onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                             disabled={logs.isLoading || currentPage === 1}
                             className="px-3 py-1 text-sm border rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                           >
-                            Previous
+                            上一页
                           </button>
                           <button
                             onClick={() => setCurrentPage((p) => Math.min(filteredLogs.total_pages || 1, p + 1))}
                             disabled={logs.isLoading || currentPage === (filteredLogs.total_pages || 1)}
                             className="px-3 py-1 text-sm border rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                           >
-                            Next
+                            下一页
                           </button>
                         </div>
                       </div>
@@ -903,12 +903,12 @@ export function RequestViewer({ row }: { row: Row<LogEntry> }) {
             <div className="flex">
               <span className="font-medium w-1/3">Status:</span>
               <span
-                className={`px-2 py-1 rounded-md text-xs font-medium inline-block text-center w-16 ${(row.original.metadata?.status || "Success").toLowerCase() !== "failure"
+                className={`px-2 py-1 rounded-md text-xs font-medium inline-block text-center w-16 ${(row.original.metadata?.status || "成功").toLowerCase() !== "failure"
                   ? "bg-green-100 text-green-800"
                   : "bg-red-100 text-red-800"
                   }`}
               >
-                {(row.original.metadata?.status || "Success").toLowerCase() !== "failure" ? "Success" : "Failure"}
+                {(row.original.metadata?.status || "成功").toLowerCase() !== "failure" ? "成功" : "Failure"}
               </span>
             </div>
             <div className="flex">

@@ -465,7 +465,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
       width: 80,
     },
     {
-      title: "Email",
+      title: "邮箱",
       dataIndex: "user_email",
       key: "user_email",
     },
@@ -475,7 +475,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
       key: "user_role",
     },
     {
-      title: "Teams",
+      title: "团队",
       dataIndex: "teams",
       key: "teams",
     },
@@ -485,7 +485,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
       key: "max_budget",
     },
     {
-      title: "Status",
+      title: "状态",
       key: "status",
       render: (_: any, record: UserData) => {
         if (!record.isValid) {
@@ -517,7 +517,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
                       text={record.invitation_link}
                       onCopy={() => NotificationsManager.success("Invitation link copied!")}
                     >
-                      <button className="ml-1 text-blue-500 text-xs hover:text-blue-700">Copy</button>
+                      <button className="ml-1 text-blue-500 text-xs hover:text-blue-700">复制</button>
                     </CopyToClipboard>
                   </div>
                 </div>

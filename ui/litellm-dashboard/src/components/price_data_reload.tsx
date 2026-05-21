@@ -199,7 +199,7 @@ const PriceDataReload: React.FC<PriceDataReloadProps> = ({
   const getStatusText = () => {
     if (!reloadStatus?.scheduled) return "Not scheduled";
     if (!reloadStatus.last_run) return "Ready";
-    return "Active";
+    return "活跃";
   };
 
   const getStatusColor = () => {
@@ -471,7 +471,7 @@ const PriceDataReload: React.FC<PriceDataReloadProps> = ({
         onCancel={() => setShowScheduleModal(false)}
         confirmLoading={isScheduling}
         okText="Schedule"
-        cancelText="Cancel"
+        cancelText="取消"
         okButtonProps={{
           style: {
             backgroundColor: "#6366f1",

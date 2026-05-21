@@ -14,11 +14,11 @@ interface AuditLogDrawerProps {
 }
 
 const TABLE_NAME_DISPLAY: Record<string, string> = {
-  LiteLLM_VerificationToken: "Keys",
-  LiteLLM_TeamTable: "Teams",
-  LiteLLM_UserTable: "Users",
+  LiteLLM_VerificationToken: "密钥",
+  LiteLLM_TeamTable: "团队",
+  LiteLLM_UserTable: "用户",
   LiteLLM_OrganizationTable: "Organizations",
-  LiteLLM_ProxyModelTable: "Models",
+  LiteLLM_ProxyModelTable: "模型",
 };
 
 const ACTION_COLOR: Record<string, string> = {

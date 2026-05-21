@@ -206,13 +206,13 @@ const ConversationRow: React.FC<ConversationRowProps> = ({
               />
             </Tooltip>
             <Popconfirm
-              title="Delete this conversation?"
+              title="删除 this conversation?"
               onConfirm={() => onDelete(conv.id)}
-              okText="Delete"
-              cancelText="Cancel"
+              okText="删除"
+              cancelText="取消"
               okButtonProps={{ danger: true }}
             >
-              <Tooltip title="Delete">
+              <Tooltip title="删除">
                 <Button
                   type="text"
                   size="small"

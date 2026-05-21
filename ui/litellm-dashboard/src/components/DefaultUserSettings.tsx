@@ -369,7 +369,7 @@ const DefaultUserSettings: React.FC<DefaultUserSettingsProps> = ({
     }
 
     if (typeof value === "boolean") {
-      return <span>{value ? "Enabled" : "Disabled"}</span>;
+      return <span>{value ? "启用" : "禁用"}</span>;
     }
 
     if (key === "models" && Array.isArray(value)) {

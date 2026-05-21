@@ -808,7 +808,7 @@ const Teams: React.FC<TeamProps> = ({
       },
     },
     {
-      title: "Created",
+      title: "创建时间",
       dataIndex: "created_at",
       key: "created_at",
       width: 130,
@@ -821,7 +821,7 @@ const Teams: React.FC<TeamProps> = ({
       ),
     },
     {
-      title: "Actions",
+      title: "操作",
       key: "actions",
       width: 120,
       align: "right" as const,
@@ -849,7 +849,7 @@ const Teams: React.FC<TeamProps> = ({
               />
               <TableIconActionButton
                 variant="Delete"
-                tooltipText="Delete team"
+                tooltipText="删除 team"
                 dataTestId="delete-team-button"
                 onClick={() => handleDelete(record)}
               />
@@ -975,7 +975,7 @@ const Teams: React.FC<TeamProps> = ({
 
           <DeleteResourceModal
             isOpen={isDeleteModalOpen}
-            title="Delete Team?"
+            title="删除 Team?"
             alertMessage={
               teamToDelete?.keys?.length === 0
                 ? undefined
@@ -986,7 +986,7 @@ const Teams: React.FC<TeamProps> = ({
             resourceInformation={[
               { label: "Team ID", value: teamToDelete?.team_id, code: true },
               { label: "Team Name", value: teamToDelete?.team_alias },
-              { label: "Keys", value: teamToDelete?.keys?.length },
+              { label: "密钥", value: teamToDelete?.keys?.length },
               { label: "Members", value: teamToDelete?.members_with_roles?.length },
             ]}
             requiredConfirmation={teamToDelete?.team_alias}

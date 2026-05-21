@@ -171,7 +171,7 @@ const MemberModal = <T extends BaseMember>({
       <Form form={form} onFinish={handleSubmit} labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} labelAlign="left">
         {config.showEmail && (
           <Form.Item
-            label="Email"
+            label="邮箱"
             name="user_email"
             className="mb-4"
             rules={[{ type: "email", message: "Please enter a valid email!" }]}

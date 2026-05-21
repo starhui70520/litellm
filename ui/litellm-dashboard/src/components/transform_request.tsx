@@ -72,7 +72,7 @@ ${formattedBody}
       try {
         requestBody = JSON.parse(originalRequestJSON);
       } catch (e) {
-        NotificationsManager.fromBackend("Invalid JSON in request body");
+        NotificationsManager.fromBackend("请求体中的 JSON 格式无效");
         setIsLoading(false);
         return;
       }
@@ -85,7 +85,7 @@ ${formattedBody}
 
       // Make the API call using fetch
       if (!accessToken) {
-        NotificationsManager.fromBackend("No access token found");
+        NotificationsManager.fromBackend("未找到访问令牌");
         setIsLoading(false);
         return;
       }
@@ -103,17 +103,17 @@ ${formattedBody}
 
         // Update state with the formatted curl command
         setTransformedResponse(formattedCurl);
-        NotificationsManager.success("Request transformed successfully");
+        NotificationsManager.success("请求转换成功");
       } else {
         // Handle the case where the API returns a different format
         // Try to extract the parts from a string response if needed
         const rawText = typeof data === "string" ? data : JSON.stringify(data);
         setTransformedResponse(rawText);
-        NotificationsManager.info("Transformed request received in unexpected format");
+        NotificationsManager.info("收到的转换请求格式不符合预期");
       }
     } catch (err) {
       console.error("Error transforming request:", err);
-      NotificationsManager.fromBackend("Failed to transform request");
+      NotificationsManager.fromBackend("请求转换失败");
     } finally {
       setIsLoading(false);
     }
@@ -278,7 +278,7 @@ ${formattedBody}
               size="small"
               onClick={() => {
                 navigator.clipboard.writeText(transformedResponse || "");
-                NotificationsManager.success("Copied to clipboard");
+                NotificationsManager.success("已复制到剪贴板");
               }}
             />
           </div>

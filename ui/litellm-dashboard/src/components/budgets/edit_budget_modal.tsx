@@ -97,7 +97,7 @@ const EditBudgetModal: React.FC<EditBudgetModalProps> = ({
         </>
 
         <div style={{ textAlign: "right", marginTop: "10px" }}>
-          <Button2 htmlType="submit">Save</Button2>
+          <Button2 htmlType="submit">保存</Button2>
         </div>
       </Form>
     </Modal>

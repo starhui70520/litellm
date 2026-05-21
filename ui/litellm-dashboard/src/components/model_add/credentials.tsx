@@ -221,7 +221,7 @@ const CredentialsPanel: React.FC<CredentialsPanelProps> = ({ uploadProps }) => {
         isOpen={isDeleteModalOpen}
         onCancel={closeDeleteModal}
         onOk={handleDeleteCredential}
-        title="Delete Credential?"
+        title="删除 Credential?"
         message="Are you sure you want to delete this credential? This action cannot be undone and may break existing integrations."
         resourceInformationTitle="Credential Information"
         resourceInformation={[

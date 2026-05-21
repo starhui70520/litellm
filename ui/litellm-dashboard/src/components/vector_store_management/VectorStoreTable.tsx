@@ -43,7 +43,7 @@ const VectorStoreTable: React.FC<VectorStoreTableProps> = ({ data, onView, onEdi
       },
     },
     {
-      header: "Name",
+      header: "名称",
       accessorKey: "vector_store_name",
       cell: ({ row }) => {
         const vectorStore = row.original;
@@ -55,7 +55,7 @@ const VectorStoreTable: React.FC<VectorStoreTableProps> = ({ data, onView, onEdi
       },
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "vector_store_description",
       cell: ({ row }) => {
         const vectorStore = row.original;
@@ -138,7 +138,7 @@ const VectorStoreTable: React.FC<VectorStoreTableProps> = ({ data, onView, onEdi
             />
             <TableIconActionButton
               variant="Delete"
-              tooltipText="Delete vector store"
+              tooltipText="删除 vector store"
               onClick={() => onDelete(vectorStore.vector_store_id)}
             />
           </div>

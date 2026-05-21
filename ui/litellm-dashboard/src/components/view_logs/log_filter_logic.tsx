@@ -19,7 +19,7 @@ export const FILTER_KEYS = {
   PUBLIC_MODEL_OR_SEARCH_TOOL: "Public model / search tool",
   USER_ID: "User ID",
   END_USER: "End User",
-  STATUS: "Status",
+  STATUS: "状态",
   KEY_ALIAS: "Key Alias",
   ERROR_CODE: "Error Code",
   ERROR_MESSAGE: "Error Message",

@@ -42,15 +42,15 @@ const TeamsTable = ({
     <Table>
       <TableHead>
         <TableRow>
-          <TableHeaderCell>Team Name</TableHeaderCell>
-          <TableHeaderCell>Team ID</TableHeaderCell>
-          <TableHeaderCell>Created</TableHeaderCell>
-          <TableHeaderCell>Spend (USD)</TableHeaderCell>
-          <TableHeaderCell>Budget (USD)</TableHeaderCell>
-          <TableHeaderCell>Models</TableHeaderCell>
-          <TableHeaderCell>Organization</TableHeaderCell>
-          <TableHeaderCell>Your Role</TableHeaderCell>
-          <TableHeaderCell>Info</TableHeaderCell>
+          <TableHeaderCell>团队名称</TableHeaderCell>
+          <TableHeaderCell>团队ID</TableHeaderCell>
+          <TableHeaderCell>创建时间</TableHeaderCell>
+          <TableHeaderCell>支出 (美元)</TableHeaderCell>
+          <TableHeaderCell>预算 (美元)</TableHeaderCell>
+          <TableHeaderCell>模型</TableHeaderCell>
+          <TableHeaderCell>组织</TableHeaderCell>
+          <TableHeaderCell>您的角色</TableHeaderCell>
+          <TableHeaderCell>信息</TableHeaderCell>
         </TableRow>
       </TableHead>
 

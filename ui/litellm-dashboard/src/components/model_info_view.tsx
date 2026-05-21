@@ -350,7 +350,7 @@ export default function ModelInfoView({
         <TremorButton icon={ArrowLeftIcon} variant="light" onClick={onClose} className="mb-4">
           Back to Models
         </TremorButton>
-        <Text>Loading...</Text>
+        <Text>加载中...</Text>
       </div>
     );
   }
@@ -1125,7 +1125,7 @@ export default function ModelInfoView({
                                 </div>
                               </div>
                             ) : (
-                              "Disabled"
+                              "禁用"
                             )}
                           </div>
                         </div>
@@ -1209,7 +1209,7 @@ export default function ModelInfoView({
                   </div>
                 </Form>
               ) : (
-                <Text>Loading...</Text>
+                <Text>加载中...</Text>
               )}
             </Card>
           </TabPanel>
@@ -1224,7 +1224,7 @@ export default function ModelInfoView({
 
       <DeleteResourceModal
         isOpen={isDeleteModalOpen}
-        title="Delete Model"
+        title="删除 Model"
         alertMessage="This action cannot be undone."
         message="Are you sure you want to delete this model?"
         resourceInformationTitle="Model Information"

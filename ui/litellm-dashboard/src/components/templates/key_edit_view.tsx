@@ -307,7 +307,7 @@ export function KeyEditView({
         <TextInput />
       </Form.Item>
 
-      <Form.Item label="Models" name="models">
+      <Form.Item label="模型" name="models">
         <Form.Item
           noStyle
           shouldUpdate={(prevValues, currentValues) =>

@@ -24,11 +24,11 @@ const asset_logos_folder = "../ui/assets/";
 export const auditLogsPreviewImg = `${asset_logos_folder}audit-logs-preview.png`;
 
 const TABLE_NAME_DISPLAY: Record<string, string> = {
-  LiteLLM_VerificationToken: "Keys",
-  LiteLLM_TeamTable: "Teams",
-  LiteLLM_UserTable: "Users",
+  LiteLLM_VerificationToken: "密钥",
+  LiteLLM_TeamTable: "团队",
+  LiteLLM_UserTable: "用户",
   LiteLLM_OrganizationTable: "Organizations",
-  LiteLLM_ProxyModelTable: "Models",
+  LiteLLM_ProxyModelTable: "模型",
 };
 
 const ACTION_COLOR: Record<string, string> = {
@@ -239,8 +239,8 @@ export default function AuditLogs({
               allowClear
               style={{ width: 140 }}
               options={[
-                { label: "Created", value: "created" },
-                { label: "Updated", value: "updated" },
+                { label: "创建时间", value: "created" },
+                { label: "更新时间", value: "updated" },
                 { label: "Deleted", value: "deleted" },
                 { label: "Rotated", value: "rotated" },
               ]}
@@ -251,11 +251,11 @@ export default function AuditLogs({
               allowClear
               style={{ width: 150 }}
               options={[
-                { label: "Keys", value: "LiteLLM_VerificationToken" },
-                { label: "Teams", value: "LiteLLM_TeamTable" },
-                { label: "Users", value: "LiteLLM_UserTable" },
+                { label: "密钥", value: "LiteLLM_VerificationToken" },
+                { label: "团队", value: "LiteLLM_TeamTable" },
+                { label: "用户", value: "LiteLLM_UserTable" },
                 { label: "Organizations", value: "LiteLLM_OrganizationTable" },
-                { label: "Models", value: "LiteLLM_ProxyModelTable" },
+                { label: "模型", value: "LiteLLM_ProxyModelTable" },
               ]}
               onChange={(val) => { setTableName(val); resetPage(); }}
             />

@@ -141,7 +141,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
   };
 
   if (loading) {
-    return <div className="p-4">Loading...</div>;
+    return <div className="p-4">加载中...</div>;
   }
 
   if (!endpointData) {
@@ -370,7 +370,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
                     </div>
 
                     <div className="flex justify-end gap-2 mt-6">
-                      <Button onClick={() => setIsEditing(false)}>Cancel</Button>
+                      <Button onClick={() => setIsEditing(false)}>取消</Button>
                       <TremorButton>Save Changes</TremorButton>
                     </div>
                   </Form>

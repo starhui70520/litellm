@@ -28,7 +28,7 @@ export const formatNumberWithCommas = (
   };
 
   if (!abbreviate) {
-    return value.toLocaleString("en-US", opts);
+    return value.toLocaleString("zh-CN", opts);
   }
 
   const sign = value < 0 ? "-" : "";
@@ -44,7 +44,7 @@ export const formatNumberWithCommas = (
     suffix = "K";
   }
 
-  return `${sign}${scaled.toLocaleString("en-US", opts)}${suffix}`;
+  return `${sign}${scaled.toLocaleString("zh-CN", opts)}${suffix}`;
 };
 
 export const getSpendString = (value: number | null | undefined, decimals: number = 6): string => {
@@ -65,7 +65,7 @@ export const getSpendString = (value: number | null | undefined, decimals: numbe
 
 export const copyToClipboard = async (
   text: string | null | undefined,
-  messageText: string = "Copied to clipboard",
+  messageText: string = "已复制到剪贴板",
 ): Promise<boolean> => {
   if (!text) return false;
 
@@ -112,7 +112,7 @@ const fallbackCopyToClipboard = (text: string, messageText: string): boolean => 
       throw new Error("execCommand failed");
     }
   } catch (err) {
-    NotificationsManager.fromBackend("Failed to copy to clipboard");
+    NotificationsManager.fromBackend("复制到剪贴板失败");
     console.error("Failed to copy: ", err);
     return false;
   }

@@ -220,10 +220,10 @@ export function AccessGroupDetail({
       <Row style={{ marginBottom: 24 }}>
         <Card>
           <Descriptions title="Group Details" column={1}>
-            <Descriptions.Item label="Description">
+            <Descriptions.Item label="描述">
               {accessGroup.description || "—"}
             </Descriptions.Item>
-            <Descriptions.Item label="Created">
+            <Descriptions.Item label="创建时间">
               {new Date(accessGroup.created_at).toLocaleString()}
               {accessGroup.created_by && (
                 <Text>

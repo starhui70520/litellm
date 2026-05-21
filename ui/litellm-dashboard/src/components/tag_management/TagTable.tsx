@@ -65,7 +65,7 @@ const TagTable: React.FC<TagTableProps> = ({ data, onEdit, onDelete, onSelectTag
       },
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "description",
       cell: ({ row }) => {
         const tag = row.original;
@@ -101,7 +101,7 @@ const TagTable: React.FC<TagTableProps> = ({ data, onEdit, onDelete, onSelectTag
       },
     },
     {
-      header: "Created",
+      header: "创建时间",
       accessorKey: "created_at",
       sortingFn: "datetime",
       cell: ({ row }) => {
@@ -111,7 +111,7 @@ const TagTable: React.FC<TagTableProps> = ({ data, onEdit, onDelete, onSelectTag
     },
     {
       id: "actions",
-      header: "Actions",
+      header: "操作",
       cell: ({ row }) => {
         const tag = row.original;
         const isDynamicSpendTag = tag.description === DYNAMIC_SPEND_TAG_DESCRIPTION;
@@ -142,11 +142,11 @@ const TagTable: React.FC<TagTableProps> = ({ data, onEdit, onDelete, onSelectTag
                   icon={TrashIcon}
                   size="sm"
                   className="opacity-50 cursor-not-allowed"
-                  aria-label="Delete tag (disabled)"
+                  aria-label="删除 tag (disabled)"
                 />
               </Tooltip>
             ) : (
-              <Tooltip title="Delete tag">
+              <Tooltip title="删除 tag">
                 <Icon
                   icon={TrashIcon}
                   size="sm"

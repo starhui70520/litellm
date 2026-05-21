@@ -79,7 +79,7 @@ const GuardrailTable: React.FC<GuardrailTableProps> = ({
       ),
     },
     {
-      header: "Name",
+      header: "名称",
       accessorKey: "guardrail_name",
       cell: ({ row }) => {
         const guardrail = row.original;
@@ -164,7 +164,7 @@ const GuardrailTable: React.FC<GuardrailTableProps> = ({
     },
     {
       id: "actions",
-      header: "Actions",
+      header: "操作",
       cell: ({ row }) => {
         const guardrail = row.original;
         const isConfigGuardrail = guardrail.guardrail_definition_location === GuardrailDefinitionLocation.CONFIG;
@@ -178,11 +178,11 @@ const GuardrailTable: React.FC<GuardrailTableProps> = ({
                   size="sm"
                   className="cursor-not-allowed text-gray-400"
                   title="Config guardrail cannot be deleted on the dashboard. Please delete it from the config file."
-                  aria-label="Delete guardrail (config)"
+                  aria-label="删除 guardrail (config)"
                 />
               </Tooltip>
             ) : (
-              <Tooltip title="Delete guardrail">
+              <Tooltip title="删除 guardrail">
                 <Icon
                   icon={TrashIcon}
                   size="sm"
@@ -254,7 +254,7 @@ const GuardrailTable: React.FC<GuardrailTableProps> = ({
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-8 text-center">
                   <div className="text-center text-gray-500">
-                    <p>Loading...</p>
+                    <p>加载中...</p>
                   </div>
                 </TableCell>
               </TableRow>

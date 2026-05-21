@@ -289,12 +289,12 @@ const AgentsPanel: React.FC<AgentsPanelProps> = ({ accessToken, userRole, teams 
 
       {agentToDelete && (
         <Modal
-          title="Delete Agent"
+          title="删除 Agent"
           open={agentToDelete !== null}
           onOk={handleDeleteConfirm}
           onCancel={handleDeleteCancel}
           confirmLoading={isDeleting}
-          okText="Delete"
+          okText="删除"
           okButtonProps={{ danger: true }}
         >
           <p>Are you sure you want to delete agent: {agentToDelete.name}?</p>

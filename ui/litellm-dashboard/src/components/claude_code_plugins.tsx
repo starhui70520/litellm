@@ -64,11 +64,11 @@ const ClaudeCodePluginsPanel: React.FC<ClaudeCodePluginsPanelProps> = ({
     setIsDeleting(true);
     try {
       await deleteClaudeCodePlugin(accessToken, pluginToDelete.name);
-      NotificationsManager.success(`Skill "${pluginToDelete.displayName}" deleted successfully`);
+      NotificationsManager.success(`技能"${pluginToDelete.displayName}"删除成功`);
       fetchPlugins();
     } catch (error) {
       console.error("Error deleting skill:", error);
-      NotificationsManager.error("Failed to delete skill");
+      NotificationsManager.error("删除技能失败");
     } finally {
       setIsDeleting(false);
       setPluginToDelete(null);
@@ -88,15 +88,14 @@ const ClaudeCodePluginsPanel: React.FC<ClaudeCodePluginsPanelProps> = ({
       ) : (
         <>
           <div className="flex flex-col gap-2 mb-4">
-            <h1 className="text-2xl font-bold">Skills</h1>
+            <h1 className="text-2xl font-bold">技能</h1>
             <p className="text-sm text-gray-600">
-              Register Claude Code skills. Published skills appear in the Skill Hub for all users and
-              are served via{" "}
-              <code className="bg-gray-100 px-1 rounded">/claude-code/marketplace.json</code>.
+              注册 Claude Code 技能。已发布的技能将显示在技能中心，供所有用户使用，并通过{" "}
+              <code className="bg-gray-100 px-1 rounded">/claude-code/marketplace.json</code> 提供。
             </p>
             <div className="mt-2 flex gap-2">
               <Button onClick={() => setIsAddModalVisible(true)} disabled={!accessToken || !isAdmin}>
-                + Add Skill
+                + 添加技能
               </Button>
             </div>
           </div>
@@ -124,19 +123,19 @@ const ClaudeCodePluginsPanel: React.FC<ClaudeCodePluginsPanelProps> = ({
 
       {pluginToDelete && (
         <Modal
-          title="Delete Skill"
+          title="删除技能"
           open={pluginToDelete !== null}
           onOk={handleDeleteConfirm}
           onCancel={() => setPluginToDelete(null)}
           confirmLoading={isDeleting}
-          okText="Delete"
+          okText="删除"
           okButtonProps={{ danger: true }}
         >
           <p>
-            Are you sure you want to delete skill:{" "}
-            <strong>{pluginToDelete.displayName}</strong>?
+            确定要删除技能：{" "}
+            <strong>{pluginToDelete.displayName}</strong> 吗？
           </p>
-          <p>This action cannot be undone.</p>
+          <p>此操作无法撤销。</p>
         </Modal>
       )}
     </div>

@@ -193,7 +193,7 @@ const RoutingGroupsTable: React.FC<RoutingGroupsTableProps> = ({
               }}
             />
           </Tooltip>
-          <Tooltip title="Delete">
+          <Tooltip title="删除">
             <Button
               type="text"
               danger

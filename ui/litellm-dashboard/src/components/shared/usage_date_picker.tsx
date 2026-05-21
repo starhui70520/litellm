@@ -15,7 +15,7 @@ interface UsageDatePickerProps {
 const UsageDatePicker: React.FC<UsageDatePickerProps> = ({
   value,
   onValueChange,
-  label = "Select Time Range",
+  label = "选择时间范围",
   className = "",
   showTimeRange = true,
 }) => {
@@ -73,7 +73,7 @@ const UsageDatePicker: React.FC<UsageDatePickerProps> = ({
     if (!from || !to) return "";
 
     const formatDateTime = (date: Date) => {
-      return date.toLocaleString("en-US", {
+      return date.toLocaleString("zh-CN", {
         month: "short",
         day: "numeric",
         hour: "2-digit",
@@ -86,17 +86,17 @@ const UsageDatePicker: React.FC<UsageDatePickerProps> = ({
     const isSameDay = from.toDateString() === to.toDateString();
 
     if (isSameDay) {
-      const dateStr = from.toLocaleDateString("en-US", {
+      const dateStr = from.toLocaleDateString("zh-CN", {
         month: "short",
         day: "numeric",
         year: "numeric",
       });
-      const startTime = from.toLocaleTimeString("en-US", {
+      const startTime = from.toLocaleTimeString("zh-CN", {
         hour: "2-digit",
         minute: "2-digit",
         hour12: true,
       });
-      const endTime = to.toLocaleTimeString("en-US", {
+      const endTime = to.toLocaleTimeString("zh-CN", {
         hour: "2-digit",
         minute: "2-digit",
         hour12: true,
@@ -119,7 +119,7 @@ const UsageDatePicker: React.FC<UsageDatePickerProps> = ({
             enableSelect={true}
             value={value}
             onValueChange={handleDateChange} // Only triggers on actual selection
-            placeholder="Select date range"
+            placeholder="选择日期范围"
             enableClear={false}
             style={{ zIndex: 100 }}
           />
@@ -139,7 +139,7 @@ const UsageDatePicker: React.FC<UsageDatePickerProps> = ({
               <div className="w-3 h-3 bg-green-500 text-white rounded-full flex items-center justify-center text-xs">
                 ✓
               </div>
-              <span className="text-xs">Selected</span>
+              <span className="text-xs">已选择</span>
             </div>
           </div>
         )}

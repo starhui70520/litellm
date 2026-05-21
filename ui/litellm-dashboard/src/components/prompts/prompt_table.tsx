@@ -229,7 +229,7 @@ const PromptTable: React.FC<PromptTableProps> = ({
     ...(isAdmin
       ? [
           {
-            header: "Actions",
+            header: "操作",
             id: "actions",
             enableSorting: false,
             cell: ({ row }: any) => {
@@ -238,7 +238,7 @@ const PromptTable: React.FC<PromptTableProps> = ({
 
               return (
                 <div className="flex items-center gap-1">
-                  <Tooltip title="Delete prompt">
+                  <Tooltip title="删除 prompt">
                     <Button
                       size="xs"
                       variant="light"
@@ -309,7 +309,7 @@ const PromptTable: React.FC<PromptTableProps> = ({
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-8 text-center">
                   <div className="text-center text-gray-500">
-                    <p>Loading...</p>
+                    <p>加载中...</p>
                   </div>
                 </TableCell>
               </TableRow>

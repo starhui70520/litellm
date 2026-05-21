@@ -211,7 +211,7 @@ export default function UsageIndicator({ accessToken, width = 220 }: UsageIndica
       return (
         <div className="flex items-center gap-3 px-3 py-2 text-gray-500" style={{ maxWidth: `${width}px` }}>
           <Loader2 className="h-4 w-4 animate-spin flex-shrink-0" />
-          <span className="text-sm truncate">Loading...</span>
+          <span className="text-sm truncate">加载中...</span>
         </div>
       );
     }
@@ -224,7 +224,7 @@ export default function UsageIndicator({ accessToken, width = 220 }: UsageIndica
         >
           <div className="flex items-center gap-3 min-w-0 flex-1">
             <Users className="h-4 w-4 flex-shrink-0" />
-            <span className="text-sm truncate">{error || "No data"}</span>
+            <span className="text-sm truncate">{error || "暂无数据"}</span>
           </div>
           <button
             onClick={() => setIsMinimized(true)}
@@ -453,7 +453,7 @@ export default function UsageIndicator({ accessToken, width = 220 }: UsageIndica
         <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4 w-full">
           <div className="flex items-center justify-center gap-2 py-2">
             <Loader2 className="h-4 w-4 animate-spin" />
-            <span className="text-sm text-gray-500 truncate">Loading...</span>
+            <span className="text-sm text-gray-500 truncate">加载中...</span>
           </div>
         </div>
       );
@@ -464,7 +464,7 @@ export default function UsageIndicator({ accessToken, width = 220 }: UsageIndica
         <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4 group w-full">
           <div className="flex items-center justify-between gap-2">
             <div className="flex-1 min-w-0">
-              <span className="text-sm text-gray-500 truncate block">{error || "No data"}</span>
+              <span className="text-sm text-gray-500 truncate block">{error || "暂无数据"}</span>
             </div>
             <button
               onClick={() => setIsMinimized(true)}

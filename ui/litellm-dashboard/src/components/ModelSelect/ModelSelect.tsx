@@ -193,7 +193,7 @@ export const ModelSelect = (props: ModelSelectProps) => {
           : []),
         {
           label: <span>Models</span>,
-          title: "Models",
+          title: "模型",
           options: regular.map((model) => ({
             label: <span>{model}</span>,
             value: model,

@@ -643,7 +643,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
   };
 
   if (loading) {
-    return <div className="p-4">Loading...</div>;
+    return <div className="p-4">加载中...</div>;
   }
 
   if (!teamData?.team_info) {
@@ -912,7 +912,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                 </div>
 
                 {isEditing && isGuardrailsLoading ? (
-                  <div className="p-4">Loading...</div>
+                  <div className="p-4">加载中...</div>
                 ) : isEditing ? (
                   <Form
                     form={form}
@@ -998,7 +998,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     </Form.Item>
 
                     <Form.Item
-                      label="Models"
+                      label="模型"
                       name="models"
                       rules={[{ required: true, message: "Please select at least one model" }]}
                     >
@@ -1609,7 +1609,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     </div>
                     <div>
                       <Text className="font-medium">Status</Text>
-                      <Badge color={info.blocked ? "red" : "green"}>{info.blocked ? "Blocked" : "Active"}</Badge>
+                      <Badge color={info.blocked ? "red" : "green"}>{info.blocked ? "Blocked" : "活跃"}</Badge>
                     </div>
 
                     <ObjectPermissionsView
@@ -1741,13 +1741,13 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
       {/* Delete Member Confirmation Modal */}
       <DeleteResourceModal
         isOpen={isDeleteModalOpen}
-        title="Delete Team Member"
+        title="删除 Team Member"
         alertMessage="Removing team members will also delete any keys created by or created for this member."
         message="Are you sure you want to remove this member from the team? This action cannot be undone."
         resourceInformationTitle="Team Member Information"
         resourceInformation={[
           { label: "User ID", value: memberToDelete?.user_id, code: true },
-          { label: "Email", value: memberToDelete?.user_email },
+          { label: "邮箱", value: memberToDelete?.user_email },
           { label: "Role", value: memberToDelete?.role },
         ]}
         onCancel={handleDeleteCancel}

@@ -33,7 +33,7 @@ const PatternTable: React.FC<PatternTableProps> = ({
       width: 100,
       render: (type: string) => (
         <Tag color={type === "prebuilt" ? "blue" : "green"}>
-          {type === "prebuilt" ? "Prebuilt" : "Custom"}
+          {type === "prebuilt" ? "Prebuilt" : "自定义"}
         </Tag>
       ),
     },

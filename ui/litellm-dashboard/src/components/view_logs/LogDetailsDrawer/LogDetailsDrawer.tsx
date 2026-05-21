@@ -207,7 +207,7 @@ export function LogDetailsDrawer({
   const metadata = currentLog?.metadata || {};
 
   // Status display values
-  const statusLabel = metadata.status === "failure" ? "Failure" : "Success";
+  const statusLabel = metadata.status === "failure" ? "Failure" : "成功";
   const statusColor = metadata.status === "failure" ? ("error" as const) : ("success" as const);
   const environment = metadata?.user_api_key_team_alias || "default";
 

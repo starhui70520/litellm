@@ -929,7 +929,7 @@ const AiSuggestionModal: React.FC<AiSuggestionModalProps> = ({
 
           {/* Footer */}
           <div className="flex justify-end gap-3 pt-2">
-            <Button variant="secondary" onClick={handleCancel} disabled={isLoading}>Cancel</Button>
+            <Button variant="secondary" onClick={handleCancel} disabled={isLoading}>取消</Button>
             <Button onClick={handleSuggest} loading={isLoading} disabled={!hasInput || !selectedModel || isLoading}>
               {isLoading ? "Analyzing..." : "Suggest Policies"}
             </Button>
@@ -959,7 +959,7 @@ const AiSuggestionModal: React.FC<AiSuggestionModalProps> = ({
 
           {/* Footer */}
           <div className="flex justify-end gap-3 pt-6 border-t border-gray-100 mt-4">
-            <Button variant="secondary" onClick={handleBack}>Back</Button>
+            <Button variant="secondary" onClick={handleBack}>返回</Button>
             {suggestions && suggestions.length > 0 && selectedIds.size > 0 && !showTestPanel && (
               <Button variant="secondary" onClick={() => setShowTestPanel(true)}>
                 Test Suggestions

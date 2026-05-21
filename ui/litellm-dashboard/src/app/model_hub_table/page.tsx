@@ -23,7 +23,7 @@ function PublicModelHubTableContent() {
 
 export default function PublicModelHubTable() {
   return (
-    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">加载中...</div>}>
       <PublicModelHubTableContent />
     </Suspense>
   );

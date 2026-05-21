@@ -81,7 +81,7 @@ const AttachmentTable: React.FC<AttachmentTableProps> = ({
       },
     },
     {
-      header: "Teams",
+      header: "团队",
       accessorKey: "teams",
       cell: ({ row }) => {
         const attachment = row.original;
@@ -106,7 +106,7 @@ const AttachmentTable: React.FC<AttachmentTableProps> = ({
       },
     },
     {
-      header: "Keys",
+      header: "密钥",
       accessorKey: "keys",
       cell: ({ row }) => {
         const attachment = row.original;
@@ -131,7 +131,7 @@ const AttachmentTable: React.FC<AttachmentTableProps> = ({
       },
     },
     {
-      header: "Models",
+      header: "模型",
       accessorKey: "models",
       cell: ({ row }) => {
         const attachment = row.original;
@@ -194,14 +194,14 @@ const AttachmentTable: React.FC<AttachmentTableProps> = ({
     },
     {
       id: "actions",
-      header: "Actions",
+      header: "操作",
       cell: ({ row }) => {
         const attachment = row.original;
         return (
           <div className="flex space-x-2">
             <ImpactPopover attachment={attachment} accessToken={accessToken} />
             {isAdmin && (
-              <Tooltip title="Delete attachment">
+              <Tooltip title="删除 attachment">
                 <Icon
                   icon={TrashIcon}
                   size="sm"
@@ -270,7 +270,7 @@ const AttachmentTable: React.FC<AttachmentTableProps> = ({
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-8 text-center">
                   <div className="text-center text-gray-500">
-                    <p>Loading...</p>
+                    <p>加载中...</p>
                   </div>
                 </TableCell>
               </TableRow>

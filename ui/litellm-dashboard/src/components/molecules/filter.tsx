@@ -132,7 +132,7 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
   // Define the order of filters
   const orderedFilters = [
     "Team ID",
-    "Status",
+    "状态",
     "Organization ID",
     "Key Alias",
     "User ID",
@@ -187,7 +187,7 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
                     loading={searchLoadingMap[option.name]}
                     options={searchOptionsMap[option.name] || []}
                     allowClear
-                    notFoundContent={searchLoadingMap[option.name] ? "Loading..." : "No results found"}
+                    notFoundContent={searchLoadingMap[option.name] ? "加载中..." : "No results found"}
                   />
                 ) : option.options ? (
                   <Select

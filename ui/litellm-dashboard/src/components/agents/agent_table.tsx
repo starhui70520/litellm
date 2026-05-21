@@ -77,7 +77,7 @@ const AgentTable: React.FC<AgentTableProps> = ({
       },
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "agent_card_params.description",
       cell: ({ row }) => {
         const description = row.original.agent_card_params?.description || "No description";
@@ -103,7 +103,7 @@ const AgentTable: React.FC<AgentTableProps> = ({
     ...(isAdmin
       ? [
           {
-            header: "Actions",
+            header: "操作",
             id: "actions",
             enableSorting: false,
             cell: ({ row }: any) => {
@@ -111,7 +111,7 @@ const AgentTable: React.FC<AgentTableProps> = ({
               
               return (
                 <div className="flex items-center gap-1">
-                  <Tooltip title="Delete agent">
+                  <Tooltip title="删除 agent">
                     <Button
                       size="xs"
                       variant="light"
@@ -182,7 +182,7 @@ const AgentTable: React.FC<AgentTableProps> = ({
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-8 text-center">
                   <div className="text-center text-gray-500">
-                    <p>Loading...</p>
+                    <p>加载中...</p>
                   </div>
                 </TableCell>
               </TableRow>

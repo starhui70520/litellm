@@ -221,7 +221,7 @@ export default function MCPSemanticFilterSettings({ accessToken }: MCPSemanticFi
                       disabled={isUpdating || loadingModels}
                       loading={loadingModels}
                       notFoundContent={
-                        loadingModels ? "Loading..." : "No embedding models available"
+                        loadingModels ? "加载中..." : "No embedding models available"
                       }
                     />
                   </Form.Item>

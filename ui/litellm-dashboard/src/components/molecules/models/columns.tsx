@@ -412,7 +412,7 @@ export const columns = (
                 <Icon icon={TrashIcon} size="sm" className="opacity-50 cursor-not-allowed" />
               </Tooltip>
             ) : (
-              <Tooltip title="Delete model">
+              <Tooltip title="删除 model">
                 <Icon
                   icon={TrashIcon}
                   size="sm"

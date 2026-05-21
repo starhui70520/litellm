@@ -96,11 +96,11 @@ const EditUserModal: React.FC<EditUserModalProps> = ({ visible, possibleUIRoles,
           </Form.Item>
 
           <div style={{ textAlign: "right", marginTop: "10px" }}>
-            <Button2 htmlType="submit">Save</Button2>
+            <Button2 htmlType="submit">保存</Button2>
           </div>
 
           <div style={{ textAlign: "right", marginTop: "10px" }}>
-            <Button2 htmlType="submit">Save</Button2>
+            <Button2 htmlType="submit">保存</Button2>
           </div>
         </>
       </Form>

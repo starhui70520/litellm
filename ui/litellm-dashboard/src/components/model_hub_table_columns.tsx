@@ -226,7 +226,7 @@ export const modelHubColumns = (
       },
     },
     {
-      header: "Details",
+      header: "详情",
       id: "details",
       enableSorting: false,
       cell: ({ row }) => {

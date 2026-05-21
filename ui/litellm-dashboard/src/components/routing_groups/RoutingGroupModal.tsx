@@ -93,7 +93,7 @@ const RoutingGroupModal: React.FC<RoutingGroupModalProps> = ({
       onCancel={onClose}
       onOk={handleSubmit}
       okText={mode === "create" ? "Create Group" : "Save Changes"}
-      cancelText="Cancel"
+      cancelText="取消"
       confirmLoading={saving}
       destroyOnClose
       width={560}
@@ -131,7 +131,7 @@ const RoutingGroupModal: React.FC<RoutingGroupModalProps> = ({
         </Form.Item>
 
         <Form.Item
-          label="Models"
+          label="模型"
           name="models"
           rules={[{ required: true, message: "Select at least one model" }]}
           extra="Models from your model list that this group routes between."

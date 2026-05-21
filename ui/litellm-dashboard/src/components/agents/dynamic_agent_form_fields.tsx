@@ -30,7 +30,7 @@ const DynamicAgentFormFields: React.FC<DynamicAgentFormFieldsProps> = ({
       </Form.Item>
 
       <Form.Item
-        label="Description"
+        label="描述"
         name="description"
         tooltip="Brief description of what this agent does"
       >

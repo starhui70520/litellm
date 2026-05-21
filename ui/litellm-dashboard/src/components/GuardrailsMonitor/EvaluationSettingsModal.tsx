@@ -147,7 +147,7 @@ export function EvaluationSettingsModal({
       </div>
 
       <div className="flex items-center justify-end gap-2 mt-6 pt-4 border-t border-gray-100">
-        <Button onClick={onClose}>Cancel</Button>
+        <Button onClick={onClose}>取消</Button>
         <Button type="primary" icon={<PlayCircleOutlined />} onClick={handleRun} disabled={!model}>
           Run Evaluation
         </Button>

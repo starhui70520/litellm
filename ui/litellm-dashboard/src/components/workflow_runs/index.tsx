@@ -555,7 +555,7 @@ const WorkflowRuns: React.FC<WorkflowRunsProps> = ({ accessToken }) => {
       ),
     },
     {
-      title: "Status",
+      title: "状态",
       dataIndex: "status",
       key: "status",
       render: (status: RunStatus, run: WorkflowRun) => {
@@ -571,7 +571,7 @@ const WorkflowRuns: React.FC<WorkflowRunsProps> = ({ accessToken }) => {
       },
     },
     {
-      title: "Created",
+      title: "创建时间",
       dataIndex: "created_at",
       key: "created_at",
       render: (v: string) => (

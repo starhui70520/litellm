@@ -304,7 +304,7 @@ export const healthCheckColumns = (
     },
   },
   {
-    header: "Actions",
+    header: "操作",
     id: "actions",
     cell: ({ row }) => {
       const model = row.original;

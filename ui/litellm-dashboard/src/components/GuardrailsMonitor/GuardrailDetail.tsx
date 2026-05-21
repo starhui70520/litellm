@@ -199,7 +199,7 @@ export function GuardrailDetail({
                         : "text-green-600"
                     : "text-gray-500"
                 }
-                subtitle={data.avgLatency != null ? "Per request (avg)" : "No data"}
+                subtitle={data.avgLatency != null ? "Per request (avg)" : "暂无数据"}
               />
             </Col>
           </Row>

@@ -253,7 +253,7 @@ main();`;
           activeKey={selectedTab}
           onChange={setSelectedTab}
           items={[
-            { label: "Basic", key: "basic" },
+            { label: "基础", key: "basic" },
             { label: "With Messages", key: "messages" },
             { label: "With Version", key: "version" },
           ]}

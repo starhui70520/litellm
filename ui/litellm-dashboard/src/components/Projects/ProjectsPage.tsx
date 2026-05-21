@@ -86,7 +86,7 @@ export function ProjectsPage() {
       ),
     },
     {
-      title: "Name",
+      title: "名称",
       dataIndex: "project_alias",
       key: "project_alias",
       sorter: (a, b) => (a.project_alias ?? "").localeCompare(b.project_alias ?? ""),
@@ -109,7 +109,7 @@ export function ProjectsPage() {
       },
     },
     {
-      title: "Models",
+      title: "模型",
       key: "models",
       render: (_: unknown, record: ProjectResponse) => {
         const models = record.models ?? [];
@@ -126,17 +126,17 @@ export function ProjectsPage() {
       },
     },
     {
-      title: "Status",
+      title: "状态",
       dataIndex: "blocked",
       key: "status",
       render: (blocked: boolean) => (
         <Tag color={blocked ? "red" : "green"}>
-          {blocked ? "Blocked" : "Active"}
+          {blocked ? "Blocked" : "活跃"}
         </Tag>
       ),
     },
     {
-      title: "Created",
+      title: "创建时间",
       dataIndex: "created_at",
       key: "created_at",
       sorter: (a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime(),
@@ -144,7 +144,7 @@ export function ProjectsPage() {
       render: (date: string) => new Date(date).toLocaleDateString(),
     },
     {
-      title: "Updated",
+      title: "更新时间",
       dataIndex: "updated_at",
       key: "updated_at",
       responsive: ["xl"],

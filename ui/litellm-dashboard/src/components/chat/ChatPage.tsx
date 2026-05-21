@@ -945,7 +945,7 @@ const ChatPage: React.FC<ChatPageProps> = ({ accessToken, userRole, userId, user
 
           {/* Right: settings */}
           <div style={{ display: "flex", alignItems: "center", gap: 4, flexShrink: 0 }}>
-            <Tooltip title="Settings">
+            <Tooltip title="设置">
               <button style={{
                 background: "none", border: "none", cursor: "pointer",
                 padding: 7, borderRadius: 7, color: "#6b7280", fontSize: 16,

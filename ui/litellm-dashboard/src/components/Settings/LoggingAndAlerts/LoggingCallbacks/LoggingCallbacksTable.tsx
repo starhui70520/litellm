@@ -28,7 +28,7 @@ type CallbackRow = AlertingObject & {
 };
 
 const CALLBACK_MODES: { value: string; label: string }[] = [
-  { value: "success", label: "Success" },
+  { value: "success", label: "成功" },
   { value: "failure", label: "Failure" },
   { value: "success_and_failure", label: "Success & Failure" },
 ];
@@ -81,7 +81,7 @@ export const LoggingCallbacksTable: React.FC<LoggingCallbacksProps> = ({
         <div className="flex justify-end gap-2">
           <TableIconActionButton variant="Test" tooltipText="Test Callback" onClick={() => onTest(record)} />
           <TableIconActionButton variant="Edit" tooltipText="Edit Callback" onClick={() => onEdit(record)} />
-          <TableIconActionButton variant="Delete" tooltipText="Delete Callback" onClick={() => onDelete(record)} />
+          <TableIconActionButton variant="Delete" tooltipText="删除 Callback" onClick={() => onDelete(record)} />
         </div>
       ),
       width: 240,

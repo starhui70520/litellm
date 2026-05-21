@@ -102,7 +102,7 @@ export function CloudZeroIntegrationSettings({ settings, onSettingsUpdated }: Cl
             <div className="flex items-center gap-2">
               <span className="text-lg font-semibold">CloudZero Configuration</span>
               <Tag color="success" className="ml-2 capitalize">
-                {settings.status || "Active"}
+                {settings.status || "活跃"}
               </Tag>
             </div>
           }
@@ -168,7 +168,7 @@ export function CloudZeroIntegrationSettings({ settings, onSettingsUpdated }: Cl
               description="This will push the current accumulated cost data to CloudZero. Continue?"
               onConfirm={handleExport}
               okText="Export"
-              cancelText="Cancel"
+              cancelText="取消"
             >
               <Button
                 type="primary"
@@ -211,7 +211,7 @@ export function CloudZeroIntegrationSettings({ settings, onSettingsUpdated }: Cl
 
       <DeleteResourceModal
         isOpen={isDeleteModalOpen}
-        title="Delete CloudZero Integration?"
+        title="删除 CloudZero Integration?"
         message="Are you sure you want to delete this CloudZero integration? All associated settings and configurations will be permanently removed."
         resourceInformationTitle="Integration Details"
         resourceInformation={[

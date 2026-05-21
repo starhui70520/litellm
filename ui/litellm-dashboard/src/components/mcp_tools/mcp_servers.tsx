@@ -248,11 +248,11 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID })
     <div className="w-full h-full p-6">
       <Modal
         open={isDeleteModalOpen}
-        title="Delete MCP Server?"
+        title="删除 MCP Server?"
         onOk={confirmDelete}
         okText={isDeletingServer ? "Deleting..." : "Delete"}
         onCancel={cancelDelete}
-        cancelText="Cancel"
+        cancelText="取消"
         cancelButtonProps={{ disabled: isDeletingServer }}
         okButtonProps={{ danger: true }}
         confirmLoading={isDeletingServer}

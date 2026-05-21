@@ -270,7 +270,7 @@ export function DeletedKeysTable({
       <div className="border-b py-4 flex-1 overflow-hidden">
         <div className="flex items-center justify-between w-full mb-4">
           {isLoading || isFetching ? (
-            <span className="inline-flex text-sm text-gray-700">Loading...</span>
+            <span className="inline-flex text-sm text-gray-700">加载中...</span>
           ) : (
             <span className="inline-flex text-sm text-gray-700">
               Showing {rangeLabel} of {totalCount} results
@@ -279,7 +279,7 @@ export function DeletedKeysTable({
 
           <div className="inline-flex items-center gap-2">
             {isLoading || isFetching ? (
-              <span className="text-sm text-gray-700">Loading...</span>
+              <span className="text-sm text-gray-700">加载中...</span>
             ) : (
               <span className="text-sm text-gray-700">
                 Page {currentPageIndex + 1} of {table.getPageCount()}

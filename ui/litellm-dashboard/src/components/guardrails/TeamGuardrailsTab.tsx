@@ -116,7 +116,7 @@ const STATUS_CONFIG: Record<
   { label: string; bg: string; text: string; dot: string }
 > = {
   active: {
-    label: "Active",
+    label: "活跃",
     bg: "bg-green-50",
     text: "text-green-700",
     dot: "bg-green-500",
@@ -984,7 +984,7 @@ export function TeamGuardrailsTab({ accessToken }: TeamGuardrailsTabProps) {
             value={pendingCount}
             color="text-yellow-600"
           />
-          <StatCard label="Active" value={activeCount} color="text-green-600" />
+          <StatCard label="活跃" value={activeCount} color="text-green-600" />
           <StatCard label="Rejected" value={rejectedCount} color="text-red-600" />
         </div>
         <div className="flex items-center gap-3 mb-5">

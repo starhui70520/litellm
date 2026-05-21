@@ -123,7 +123,7 @@ const PromptInfoView: React.FC<PromptInfoProps> = ({ promptId, onClose, accessTo
   }, [selectedEnv]);
 
   if (loading && !promptData) {
-    return <div className="p-4">Loading...</div>;
+    return <div className="p-4">加载中...</div>;
   }
 
   if (!promptData) {
@@ -498,12 +498,12 @@ const PromptInfoView: React.FC<PromptInfoProps> = ({ promptId, onClose, accessTo
 
       {/* Delete Confirmation Modal */}
       <Modal
-        title="Delete Prompt"
+        title="删除 Prompt"
         open={showDeleteConfirm}
         onOk={handleDeleteConfirm}
         onCancel={handleDeleteCancel}
         confirmLoading={isDeleting}
-        okText="Delete"
+        okText="删除"
         okButtonProps={{ danger: true }}
       >
         <p>

@@ -136,7 +136,7 @@ export function GuardrailConfig({
                 { value: "PII", label: "PII Detection" },
                 { value: "Topic", label: "Topic Restriction" },
                 { value: "prompt_injection", label: "Prompt Injection" },
-                { value: "custom", label: "Custom" },
+                { value: "custom", label: "自定义" },
               ]}
             />
           </div>

@@ -105,7 +105,7 @@ const TagInfoView: React.FC<TagInfoViewProps> = ({ tagId, onClose, accessToken, 
   };
 
   if (!tagDetails) {
-    return <div>Loading...</div>;
+    return <div>加载中...</div>;
   }
 
   return (
@@ -144,7 +144,7 @@ const TagInfoView: React.FC<TagInfoViewProps> = ({ tagId, onClose, accessToken, 
               <Input className="rounded-md border-gray-300" />
             </Form.Item>
 
-            <Form.Item label="Description" name="description">
+            <Form.Item label="描述" name="description">
               <Input.TextArea rows={4} />
             </Form.Item>
 
@@ -219,7 +219,7 @@ const TagInfoView: React.FC<TagInfoViewProps> = ({ tagId, onClose, accessToken, 
             </Accordion>
 
             <div className="flex justify-end space-x-2">
-              <Button onClick={() => setIsEditing(false)}>Cancel</Button>
+              <Button onClick={() => setIsEditing(false)}>取消</Button>
               <Button type="submit">Save Changes</Button>
             </div>
           </Form>

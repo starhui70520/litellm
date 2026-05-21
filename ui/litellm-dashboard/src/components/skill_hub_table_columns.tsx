@@ -43,7 +43,7 @@ export const skillHubColumns = (
     },
   },
   {
-    header: "Description",
+    header: "描述",
     accessorKey: "description",
     enableSorting: false,
     cell: ({ row }) => (
@@ -102,7 +102,7 @@ export const skillHubColumns = (
     },
   },
   {
-    header: "Status",
+    header: "状态",
     accessorKey: "enabled",
     enableSorting: true,
     cell: ({ row }) => (

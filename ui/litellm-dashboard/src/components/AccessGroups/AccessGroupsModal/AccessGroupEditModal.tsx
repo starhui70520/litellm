@@ -75,8 +75,8 @@ export function AccessGroupEditModal({
       onOk={handleOk}
       onCancel={onCancel}
       width={700}
-      okText="Save Changes"
-      cancelText="Cancel"
+      okText="保存更改"
+      cancelText="取消"
       confirmLoading={editMutation.isPending}
       destroyOnHidden
     >

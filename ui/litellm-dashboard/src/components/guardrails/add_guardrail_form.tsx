@@ -962,7 +962,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
 
     return (
       <div className="flex justify-end space-x-2 mt-4">
-        {currentStep > 0 && <Button onClick={prevStep}>Previous</Button>}
+        {currentStep > 0 && <Button onClick={prevStep}>上一步</Button>}
         {isCategoriesStep ? (
           <>
             <Button onClick={nextStep}>Skip</Button>
@@ -988,7 +988,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
             )}
           </>
         )}
-        <Button onClick={handleClose}>Cancel</Button>
+        <Button onClick={handleClose}>取消</Button>
       </div>
     );
   };
@@ -1241,8 +1241,8 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
 
         {/* Bottom bar */}
         <div className="flex items-center justify-end space-x-3 px-6 py-3 border-t border-gray-200">
-          <Button onClick={handleClose}>Cancel</Button>
-          {currentStep > 0 && <Button onClick={prevStep}>Previous</Button>}
+          <Button onClick={handleClose}>取消</Button>
+          {currentStep > 0 && <Button onClick={prevStep}>上一步</Button>}
           {currentStep < stepConfigs.length - 1 ? (
             <Button type="primary" onClick={nextStep}>
               Next

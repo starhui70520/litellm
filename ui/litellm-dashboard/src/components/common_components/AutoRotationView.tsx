@@ -44,7 +44,7 @@ const AutoRotationView: React.FC<AutoRotationViewProps> = ({
           <RefreshIcon className="h-4 w-4 text-blue-600" />
           <Text className="font-semibold text-gray-900">Auto-Rotation</Text>
           <Badge color={autoRotate ? "green" : "gray"} size="xs">
-            {autoRotate ? "Enabled" : "Disabled"}
+            {autoRotate ? "启用" : "禁用"}
           </Badge>
           {autoRotate && rotationInterval && (
             <>

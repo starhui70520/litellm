@@ -660,7 +660,7 @@ const AddAgentForm: React.FC<AddAgentFormProps> = ({
               <Input placeholder="e.g. my-custom-agent" />
             </Form.Item>
             <Form.Item
-              label="Description"
+              label="描述"
               name="description"
             >
               <Input.TextArea placeholder="Describe what this agent does…" rows={3} />
@@ -799,7 +799,7 @@ const AddAgentForm: React.FC<AddAgentFormProps> = ({
                     <Select
                       showSearch
                       style={{ width: "100%" }}
-                      placeholder="Search by key name…"
+                      placeholder="搜索 key name…"
                       loading={loadingKeys}
                       value={selectedExistingKey}
                       onChange={(value) => setSelectedExistingKey(value)}

@@ -181,7 +181,7 @@ const ProviderMarginTable: React.FC<ProviderMarginTableProps> = ({
           width: "350px",
         },
         {
-          header: "Actions",
+          header: "操作",
           cell: (row) => {
             const displayName = row.provider === "global" ? "Global" : getProviderDisplayInfo(row.provider).displayName;
             return (

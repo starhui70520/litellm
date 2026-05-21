@@ -180,7 +180,7 @@ const OrganizationInfoView: React.FC<OrganizationInfoProps> = ({
   };
 
   if (loading) {
-    return <div className="p-4">Loading...</div>;
+    return <div className="p-4">加载中...</div>;
   }
 
   if (!orgData) {
@@ -361,7 +361,7 @@ const OrganizationInfoView: React.FC<OrganizationInfoProps> = ({
           },
           {
             key: "settings",
-            label: "Settings",
+            label: "设置",
             children: (
               <Card className="overflow-y-auto max-h-[65vh]">
                 <div className="flex justify-between items-center mb-4">
@@ -404,7 +404,7 @@ const OrganizationInfoView: React.FC<OrganizationInfoProps> = ({
                       <TextInput />
                     </Form.Item>
 
-                    <Form.Item label="Models" name="models">
+                    <Form.Item label="模型" name="models">
                       <ModelSelect
                         value={form.getFieldValue("models")}
                         onChange={(values) => form.setFieldValue("models", values)}

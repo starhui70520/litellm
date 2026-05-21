@@ -95,7 +95,7 @@ const Navbar: React.FC<NavbarProps> = ({
               <button
                 onClick={onToggleSidebar}
                 className="flex items-center justify-center w-10 h-10 mr-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded transition-colors"
-                title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+                title={sidebarCollapsed ? "展开侧边栏" : "收起侧边栏"}
               >
                 <span className="text-lg">{sidebarCollapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}</span>
               </button>
@@ -119,7 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     <span
                       className="absolute -top-1 -left-2 text-lg animate-bounce"
                       style={{ animationDuration: "2s" }}
-                      title="Thanks for using LiteLLM!"
+                      title="感谢使用 LiteLLM!"
                     >
                       🌑
                     </span>

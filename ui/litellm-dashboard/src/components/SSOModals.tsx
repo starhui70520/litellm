@@ -509,7 +509,7 @@ const SSOModals: React.FC<SSOModalsProps> = ({
                 Clear
               </Button2>
             )}
-            <Button2 htmlType="submit">Save</Button2>
+            <Button2 htmlType="submit">保存</Button2>
           </div>
         </Form>
       </Modal>
@@ -521,7 +521,7 @@ const SSOModals: React.FC<SSOModalsProps> = ({
         onOk={handleClearSSO}
         onCancel={() => setIsClearConfirmModalVisible(false)}
         okText="Yes, Clear"
-        cancelText="Cancel"
+        cancelText="取消"
         okButtonProps={{
           danger: true,
           style: {

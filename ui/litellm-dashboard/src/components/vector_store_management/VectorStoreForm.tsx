@@ -339,7 +339,7 @@ const VectorStoreForm: React.FC<VectorStoreFormProps> = ({
           <TextInput />
         </Form.Item>
 
-        <Form.Item label="Description" name="vector_store_description">
+        <Form.Item label="描述" name="vector_store_description">
           <Input.TextArea rows={4} />
         </Form.Item>
 

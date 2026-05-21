@@ -390,11 +390,11 @@ export default function UserInfoView({
 
       <DeleteResourceModal
         isOpen={isDeleteModalOpen}
-        title="Delete User?"
+        title="删除 User?"
         message="Are you sure you want to delete this user? This action cannot be undone."
         resourceInformationTitle="User Information"
         resourceInformation={[
-          { label: "Email", value: userData.user_email },
+          { label: "邮箱", value: userData.user_email },
           { label: "User ID", value: userData.user_id, code: true },
           {
             label: "Global Proxy Role",
@@ -656,7 +656,7 @@ export default function UserInfoView({
         resourceInformation={[
           { label: "Team", value: teamToRemove?.team_alias || teamToRemove?.team_id },
           { label: "User ID", value: userData?.user_id, code: true },
-          { label: "Email", value: userData?.user_email },
+          { label: "邮箱", value: userData?.user_email },
         ]}
         onCancel={handleRemoveTeamCancel}
         onOk={handleRemoveTeamConfirm}

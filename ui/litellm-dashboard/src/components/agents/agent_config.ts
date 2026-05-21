@@ -45,7 +45,7 @@ export const AGENT_FORM_CONFIG: {
       },
       {
         name: "description",
-        label: "Description",
+        label: "描述",
         type: "textarea",
         required: true,
         placeholder: "Describe what this agent does...",
@@ -205,7 +205,7 @@ export const SKILL_FIELD_CONFIG = {
   },
   description: {
     name: "description",
-    label: "Description",
+    label: "描述",
     required: true,
     placeholder: "What this skill does",
     rows: 2,

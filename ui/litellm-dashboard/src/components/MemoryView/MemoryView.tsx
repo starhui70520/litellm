@@ -260,7 +260,7 @@ export const MemoryView: React.FC<MemoryViewProps> = ({ accessToken }) => {
         renderIdPill(r.memory_id, () => setDetailRow(r)),
     },
     {
-      title: "Name",
+      title: "名称",
       dataIndex: "key",
       key: "key",
       width: 200,
@@ -295,7 +295,7 @@ export const MemoryView: React.FC<MemoryViewProps> = ({ accessToken }) => {
       render: (tid?: string | null) => renderIdPill(tid),
     },
     {
-      title: "Updated",
+      title: "更新时间",
       dataIndex: "updated_at",
       key: "updated_at",
       width: 180,
@@ -330,7 +330,7 @@ export const MemoryView: React.FC<MemoryViewProps> = ({ accessToken }) => {
             danger
             icon={<DeleteOutlined />}
             onClick={() => handleDelete(r)}
-            aria-label="Delete"
+            aria-label="删除"
           />
         </Space>
       ),
@@ -542,7 +542,7 @@ export const MemoryView: React.FC<MemoryViewProps> = ({ accessToken }) => {
       {/* Delete confirmation modal */}
       <DeleteResourceModal
         isOpen={!!deleteRow}
-        title="Delete memory"
+        title="删除 memory"
         message="This action cannot be undone."
         resourceInformationTitle="Memory"
         resourceInformation={

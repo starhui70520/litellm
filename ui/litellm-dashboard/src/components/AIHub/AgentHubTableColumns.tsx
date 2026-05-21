@@ -62,7 +62,7 @@ export const getAgentHubTableColumns = (
       },
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "description",
       enableSorting: true,
       sortingFn: "alphanumeric",
@@ -211,7 +211,7 @@ export const getAgentHubTableColumns = (
       },
     },
     {
-      header: "Details",
+      header: "详情",
       id: "details",
       enableSorting: false,
       cell: ({ row }) => {

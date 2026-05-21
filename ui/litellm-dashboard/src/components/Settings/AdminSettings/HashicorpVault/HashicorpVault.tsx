@@ -215,7 +215,7 @@ export default function HashicorpVault() {
 
       <DeleteResourceModal
         isOpen={isDeleteModalOpen}
-        title="Delete Hashicorp Vault Configuration?"
+        title="删除 Hashicorp Vault Configuration?"
         message="Models using Vault secrets will lose access to their API keys until a new configuration is saved."
         resourceInformationTitle="Vault Configuration"
         resourceInformation={[

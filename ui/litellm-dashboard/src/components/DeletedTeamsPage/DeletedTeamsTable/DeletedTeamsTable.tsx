@@ -80,7 +80,7 @@ export function DeletedTeamsTable({
     {
       id: "created_at",
       accessorKey: "created_at",
-      header: "Created",
+      header: "创建时间",
       size: 120,
       maxSize: 140,
       cell: (info) => {
@@ -125,7 +125,7 @@ export function DeletedTeamsTable({
     {
       id: "models",
       accessorKey: "models",
-      header: "Models",
+      header: "模型",
       size: 200,
       maxSize: 300,
       cell: (info) => {
@@ -236,7 +236,7 @@ export function DeletedTeamsTable({
       <div className="border-b py-4 flex-1 overflow-hidden">
         <div className="flex items-center justify-between w-full mb-4">
           {isLoading || isFetching ? (
-            <span className="inline-flex text-sm text-gray-700">Loading...</span>
+            <span className="inline-flex text-sm text-gray-700">加载中...</span>
           ) : (
             <span className="inline-flex text-sm text-gray-700">
               Showing {teams.length} {teams.length === 1 ? "team" : "teams"}

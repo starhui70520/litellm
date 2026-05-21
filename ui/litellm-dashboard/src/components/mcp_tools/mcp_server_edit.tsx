@@ -616,7 +616,7 @@ const MCPServerEdit: React.FC<MCPServerEditProps> = ({
                 className="rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500"
               />
             </Form.Item>
-            <Form.Item label="Description" name="description">
+            <Form.Item label="描述" name="description">
               <Input className="rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
             </Form.Item>
             <MCPLogoSelector value={logoUrl} onChange={setLogoUrl} />
@@ -1116,7 +1116,7 @@ const MCPServerEdit: React.FC<MCPServerEditProps> = ({
             </div>
 
             <div className="flex justify-end gap-2">
-              <AntdButton onClick={onCancel}>Cancel</AntdButton>
+              <AntdButton onClick={onCancel}>取消</AntdButton>
               <Button type="submit">Save Changes</Button>
             </div>
           </Form>
@@ -1127,7 +1127,7 @@ const MCPServerEdit: React.FC<MCPServerEditProps> = ({
             <MCPServerCostConfig value={costConfig} onChange={setCostConfig} tools={tools} disabled={isLoadingTools} />
 
             <div className="flex justify-end gap-2">
-              <AntdButton onClick={onCancel}>Cancel</AntdButton>
+              <AntdButton onClick={onCancel}>取消</AntdButton>
               <Button onClick={() => form.submit()}>Save Changes</Button>
             </div>
           </div>

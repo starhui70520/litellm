@@ -45,7 +45,7 @@ export const getMarketplaceTableColumns = (
       },
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "description",
       enableSorting: true,
       sortingFn: "alphanumeric",

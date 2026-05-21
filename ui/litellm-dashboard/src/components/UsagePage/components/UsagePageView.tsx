@@ -495,7 +495,7 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations }) => {
             <>
               {isAdmin && usageView === "global" && (
                 <div className="mb-4">
-                  <Text className="mb-2">Filter by user</Text>
+                  <Text className="mb-2">按用户筛选</Text>
                   <Select
                     showSearch
                     allowClear
@@ -526,11 +526,11 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations }) => {
               <TabGroup>
                 <div className="flex justify-between items-center">
                   <TabList variant="solid" className="mt-1">
-                    <Tab>Cost</Tab>
-                    <Tab>Model Activity</Tab>
-                    <Tab>Key Activity</Tab>
-                    <Tab>MCP Server Activity</Tab>
-                    <Tab>Endpoint Activity</Tab>
+                    <Tab>成本</Tab>
+                    <Tab>模型活动</Tab>
+                    <Tab>密钥活动</Tab>
+                    <Tab>MCP服务器活动</Tab>
+                    <Tab>端点活动</Tab>
                   </TabList>
                   <div className="flex items-center gap-2">
                     <Button
@@ -541,7 +541,7 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations }) => {
                         </svg>
                       }
                     >
-                      Ask AI
+                      询问AI
                     </Button>
                     <Button
                       onClick={() => setIsGlobalExportModalOpen(true)}
@@ -556,7 +556,7 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations }) => {
                         </svg>
                       }
                     >
-                      Export Data
+                      导出数据
                     </Button>
                   </div>
                 </div>
@@ -597,23 +597,23 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations }) => {
 
                       <Col numColSpan={2}>
                         <Card>
-                          <Title>Usage Metrics</Title>
+                          <Title>使用量指标</Title>
                           <Grid numItems={5} className="gap-4 mt-4">
                             <Card>
-                              <Title>Total Requests</Title>
+                              <Title>总请求数</Title>
                               <Text className="text-2xl font-bold mt-2">
                                 {userSpendData.metadata?.total_api_requests?.toLocaleString() || 0}
                               </Text>
                             </Card>
                             <Card>
-                              <Title>Successful Requests</Title>
+                              <Title>成功请求</Title>
                               <Text className="text-2xl font-bold mt-2 text-green-600">
                                 {userSpendData.metadata?.total_successful_requests?.toLocaleString() || 0}
                               </Text>
                             </Card>
                             <Card>
                               <div className="flex items-center gap-2">
-                                <Title>Failed Requests</Title>
+                                <Title>失败请求</Title>
                                 <Tooltip title="Includes requests that failed to route to a provider, tool usage failures, and other request errors where the provider cannot be determined.">
                                   <InfoCircleOutlined className="text-gray-400 hover:text-gray-600" />
                                 </Tooltip>
@@ -623,7 +623,7 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations }) => {
                               </Text>
                             </Card>
                             <Card>
-                              <Title>Average Cost per Request</Title>
+                              <Title>每次请求平均成本</Title>
                               <Text className="text-2xl font-bold mt-2">
                                 $
                                 {formatNumberWithCommas(
@@ -688,7 +688,7 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations }) => {
                       {/* Daily Spend Chart */}
                       <Col numColSpan={2}>
                         <Card>
-                          <Title>Daily Spend</Title>
+                          <Title>每日支出</Title>
                           {loading ? (
                             <ChartLoader isDateChanging={isDateChanging} />
                           ) : (
@@ -723,7 +723,7 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations }) => {
                       {/* Top API Keys */}
                       <Col numColSpan={1}>
                         <Card className="h-full">
-                          <Title>Top Virtual Keys</Title>
+                          <Title>热门虚拟密钥</Title>
                           <TopKeyView
                             topKeys={topKeys}
                             teams={null}
@@ -736,7 +736,7 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations }) => {
                       {/* Top Models */}
                       <Col numColSpan={1}>
                         <Card className="h-full">
-                          <Title>{modelViewType === "groups" ? "Top Public Model Names" : "Top Litellm Models"}</Title>
+                          <Title>{modelViewType === "groups" ? "热门公共模型名称" : "热门Litellm模型"}</Title>
                           <div className="flex justify-between items-center mb-4">
                             <Segmented
                               options={[
@@ -795,19 +795,19 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations }) => {
                                       return (
                                         <div className="bg-white p-4 shadow-lg rounded-lg border">
                                           <p className="font-bold">{data.key}</p>
-                                          <p className="text-cyan-500">
-                                            Spend: ${formatNumberWithCommas(data.spend, 2)}
-                                          </p>
-                                          <p className="text-gray-600">
-                                            Total Requests: {data.requests.toLocaleString()}
-                                          </p>
-                                          <p className="text-green-600">
-                                            Successful: {data.successful_requests.toLocaleString()}
-                                          </p>
-                                          <p className="text-red-600">
-                                            Failed: {data.failed_requests.toLocaleString()}
-                                          </p>
-                                          <p className="text-gray-600">Tokens: {data.tokens.toLocaleString()}</p>
+<p className="text-cyan-500">
+                                      支出: ${formatNumberWithCommas(data.spend, 2)}
+                                    </p>
+                                    <p className="text-gray-600">
+                                      总请求数: {data.requests.toLocaleString()}
+                                    </p>
+                                    <p className="text-green-600">
+                                      成功: {data.successful_requests.toLocaleString()}
+                                    </p>
+                                    <p className="text-red-600">
+                                      失败: {data.failed_requests.toLocaleString()}
+                                    </p>
+                                    <p className="text-gray-600">令牌数: {data.tokens.toLocaleString()}</p>
                                         </div>
                                       );
                                     }}

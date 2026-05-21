@@ -108,7 +108,7 @@ export const mcpServerColumns = (
   },
   {
     accessorKey: "server_name",
-    header: "Name",
+    header: "名称",
     enableSorting: true,
     cell: ({ row }) => {
       const logoUrl = row.original.mcp_info?.logo_url;
@@ -230,7 +230,7 @@ export const mcpServerColumns = (
     },
   },
   {
-    header: "Created",
+    header: "创建时间",
     accessorKey: "created_at",
     enableSorting: true,
     sortingFn: "datetime",
@@ -246,7 +246,7 @@ export const mcpServerColumns = (
     },
   },
   {
-    header: "Updated",
+    header: "更新时间",
     accessorKey: "updated_at",
     enableSorting: true,
     sortingFn: "datetime",
@@ -298,7 +298,7 @@ export const mcpServerColumns = (
   },
   {
     id: "actions",
-    header: "Actions",
+    header: "操作",
     cell: ({ row }) => (
       <div className="flex items-center gap-1">
         <Tooltip title="Edit">
@@ -309,7 +309,7 @@ export const mcpServerColumns = (
             <Icon icon={PencilAltIcon} size="sm" />
           </button>
         </Tooltip>
-        <Tooltip title="Delete">
+        <Tooltip title="删除">
           <button
             onClick={() => onDelete(row.original.server_id)}
             className="p-1.5 rounded-md text-gray-400 hover:text-red-600 hover:bg-red-50 transition-colors"

@@ -147,7 +147,7 @@ export function RegenerateKeyModal({ selectedToken, visible, onClose, onKeyUpdat
         regeneratedKey
           ? [
               <Space key="footer-actions">
-                <Button onClick={handleClose}>Close</Button>
+                <Button onClick={handleClose}>关闭</Button>
                 <CopyToClipboard text={regeneratedKey} onCopy={handleCopyKey}>
                   <Button type="primary" icon={copied ? <CheckOutlined /> : <CopyOutlined />}>
                     {copied ? "Copied" : "Copy Key"}
@@ -157,7 +157,7 @@ export function RegenerateKeyModal({ selectedToken, visible, onClose, onKeyUpdat
             ]
           : [
               <Space key="footer-actions">
-                <Button onClick={handleClose}>Cancel</Button>
+                <Button onClick={handleClose}>取消</Button>
                 <Button type="primary" icon={<SyncOutlined />} onClick={handleRegenerateKey} loading={isRegenerating}>
                   Regenerate
                 </Button>

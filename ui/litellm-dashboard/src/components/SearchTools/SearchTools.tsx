@@ -185,11 +185,11 @@ const SearchTools: React.FC<SearchToolsProps> = ({ accessToken, userRole, userID
         </Select>
       </Form.Item>
 
-      <Form.Item name="api_key" label="API Key" extra="API key for the search provider">
+      <Form.Item name="api_key" label="API 密钥" extra="API key for the search provider">
         <Input.Password placeholder="Enter API key" />
       </Form.Item>
 
-      <Form.Item name="description" label="Description">
+      <Form.Item name="description" label="描述">
         <Input.TextArea rows={3} placeholder="Description of this search tool" />
       </Form.Item>
     </Form>
@@ -244,19 +244,19 @@ const SearchTools: React.FC<SearchToolsProps> = ({ accessToken, userRole, userID
     <div className="w-full h-full p-6">
       <DeleteResourceModal
         isOpen={isDeleteModalOpen}
-        title="Delete Search Tool"
+        title="删除 Search Tool"
         message="Are you sure you want to delete this search tool? This action cannot be undone."
         resourceInformationTitle="Search Tool Information"
         resourceInformation={
           toolToDelete
             ? [
-              { label: "Name", value: toolToDelete.search_tool_name },
+              { label: "名称", value: toolToDelete.search_tool_name },
               { label: "ID", value: toolToDelete.search_tool_id, code: true },
               {
                 label: "Provider",
                 value: providerInfo?.ui_friendly_name || toolToDelete.litellm_params.search_provider,
               },
-              { label: "Description", value: toolToDelete.search_tool_info?.description || "-" },
+              { label: "描述", value: toolToDelete.search_tool_info?.description || "-" },
             ]
             : []
         }

@@ -43,7 +43,7 @@ const TagManagement: React.FC<TagProps> = ({ accessToken, userID, userRole }) =>
       setTags(Object.values(response));
     } catch (error) {
       console.error("Error fetching tags:", error);
-      NotificationsManager.fromBackend("Error fetching tags: " + error);
+      NotificationsManager.fromBackend("获取标签时出错: " + error);
     }
   };
 
@@ -66,12 +66,12 @@ const TagManagement: React.FC<TagProps> = ({ accessToken, userID, userRole }) =>
         rpm_limit: formValues.rpm_limit,
         budget_duration: formValues.budget_duration,
       });
-      NotificationsManager.success("Tag created successfully");
+      NotificationsManager.success("标签创建成功");
       setIsCreateModalVisible(false);
       fetchTags();
     } catch (error) {
       console.error("Error creating tag:", error);
-      NotificationsManager.fromBackend("Error creating tag: " + error);
+      NotificationsManager.fromBackend("创建标签时出错: " + error);
     }
   };
 
@@ -84,11 +84,11 @@ const TagManagement: React.FC<TagProps> = ({ accessToken, userID, userRole }) =>
     if (!accessToken || !tagToDelete) return;
     try {
       await tagDeleteCall(accessToken, tagToDelete);
-      NotificationsManager.success("Tag deleted successfully");
+      NotificationsManager.success("标签删除成功");
       fetchTags();
     } catch (error) {
       console.error("Error deleting tag:", error);
-      NotificationsManager.fromBackend("Error deleting tag: " + error);
+      NotificationsManager.fromBackend("删除标签时出错: " + error);
     }
     setIsDeleteModalOpen(false);
     setTagToDelete(null);
@@ -131,9 +131,9 @@ const TagManagement: React.FC<TagProps> = ({ accessToken, userID, userRole }) =>
       ) : (
         <div className="gap-2 p-8 h-[75vh] w-full mt-2">
           <div className="flex justify-between mt-2 w-full items-center mb-4">
-            <h1>Tag Management</h1>
+            <h1>标签管理</h1>
             <div className="flex items-center space-x-2">
-              {lastRefreshed && <Text>Last Refreshed: {lastRefreshed}</Text>}
+              {lastRefreshed && <Text>上次刷新: {lastRefreshed}</Text>}
               <Icon
                 icon={RefreshIcon}
                 variant="shadow"
@@ -145,9 +145,9 @@ const TagManagement: React.FC<TagProps> = ({ accessToken, userID, userRole }) =>
           </div>
 
           <Text className="mb-4">
-            Click on a tag name to view and edit its details.
+            点击标签名称查看和编辑详情。
             <p>
-              You can use tags to restrict the usage of certain LLMs based on tags passed in the request. Read more
+              您可以使用标签来根据请求中传递的标签限制某些 LLM 的使用。了解更多
               about tag routing{" "}
               <a href="https://docs.litellm.ai/docs/proxy/tag_routing" target="_blank" rel="noopener noreferrer">
                 here

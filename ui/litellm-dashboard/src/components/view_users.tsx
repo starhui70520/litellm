@@ -314,13 +314,13 @@ const ViewUserDashboard: React.FC<ViewUserDashboardProps> = ({ accessToken, toke
                   type={selectionMode ? "primary" : "default"}
                   className="flex items-center"
                 >
-                  {selectionMode ? "Cancel Selection" : "Select Users"}
+                  {selectionMode ? "取消选择" : "选择用户"}
                 </Button>
               )}
 
               {isProxyAdmin && selectionMode && (
                 <Button type="primary" onClick={handleBulkEdit} disabled={selectedUsers.length === 0} className="flex items-center">
-                  Bulk Edit ({selectedUsers.length} selected)
+                  批量编辑 ({selectedUsers.length} 已选择)
                 </Button>
               )}
             </>
@@ -331,8 +331,8 @@ const ViewUserDashboard: React.FC<ViewUserDashboardProps> = ({ accessToken, toke
       {isProxyAdmin ? (
         <TabGroup defaultIndex={0} onIndexChange={(index) => setActiveTab(index === 0 ? "users" : "settings")}>
           <TabList className="mb-4">
-            <Tab>Users</Tab>
-            <Tab>Default User Settings</Tab>
+            <Tab>用户</Tab>
+            <Tab>默认用户设置</Tab>
           </TabList>
 
           <TabPanels>
@@ -427,11 +427,11 @@ const ViewUserDashboard: React.FC<ViewUserDashboardProps> = ({ accessToken, toke
 
       <DeleteResourceModal
         isOpen={isDeleteModalOpen}
-        title="Delete User?"
+        title="删除 User?"
         message="Are you sure you want to delete this user? This action cannot be undone."
         resourceInformationTitle="User Information"
         resourceInformation={[
-          { label: "Email", value: userToDelete?.user_email },
+          { label: "邮箱", value: userToDelete?.user_email },
           { label: "User ID", value: userToDelete?.user_id, code: true },
           {
             label: "Global Proxy Role",

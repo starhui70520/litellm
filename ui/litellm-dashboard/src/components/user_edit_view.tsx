@@ -88,7 +88,7 @@ export function UserEditView({
       )}
 
       {!isBulkEdit && (
-        <Form.Item label="Email" name="user_email">
+        <Form.Item label="邮箱" name="user_email">
           <TextInput />
         </Form.Item>
       )}

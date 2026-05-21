@@ -195,7 +195,7 @@ const VectorStoreManagement: React.FC<VectorStoreProps> = ({ accessToken, userID
         {/* Delete Confirmation Modal */}
         <DeleteResourceModal
           isOpen={isDeleteModalOpen}
-          title="Delete Vector Store"
+          title="删除 Vector Store"
           message="Are you sure you want to delete this vector store? This action cannot be undone."
           resourceInformationTitle="Vector Store Information"
           resourceInformation={[{ label: "Vector Store ID", value: vectorStoreToDelete, code: true }]}

@@ -18,7 +18,7 @@ export const TEAM_INFO_TAB_LABELS: Record<string, string> = {
   [TEAM_INFO_TAB_KEYS.VIRTUAL_KEYS]: "Virtual Keys",
   [TEAM_INFO_TAB_KEYS.MEMBERS]: "Members",
   [TEAM_INFO_TAB_KEYS.MEMBER_PERMISSIONS]: "Member Permissions",
-  [TEAM_INFO_TAB_KEYS.SETTINGS]: "Settings",
+  [TEAM_INFO_TAB_KEYS.SETTINGS]: "设置",
 };
 
 /**

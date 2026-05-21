@@ -139,11 +139,11 @@ const UserSearchModal: React.FC<UserSearchModalProps> = ({
           role: defaultRole,
         }}
       >
-        <Form.Item label="Email" name="user_email" className="mb-4">
+        <Form.Item label="邮箱" name="user_email" className="mb-4">
           <Select
             showSearch
             className="w-full"
-            placeholder="Search by email"
+            placeholder="搜索 email"
             filterOption={false}
             onSearch={(value) => handleSearch(value, "user_email")}
             onSelect={(value, option) => handleSelect(value, option as UserOption)}
@@ -160,7 +160,7 @@ const UserSearchModal: React.FC<UserSearchModalProps> = ({
           <Select
             showSearch
             className="w-full"
-            placeholder="Search by user ID"
+            placeholder="搜索 user ID"
             filterOption={false}
             onSearch={(value) => handleSearch(value, "user_id")}
             onSelect={(value, option) => handleSelect(value, option as UserOption)}

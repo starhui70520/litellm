@@ -14,7 +14,7 @@ export default function Onboarding() {
   return (
     <Suspense
       fallback={
-        <div className="flex items-center justify-center min-h-screen">Loading...</div>
+        <div className="flex items-center justify-center min-h-screen">加载中...</div>
       }
     >
       <OnboardingContent />

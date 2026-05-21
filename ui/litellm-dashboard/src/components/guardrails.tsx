@@ -108,11 +108,11 @@ const GuardrailsPanel: React.FC<GuardrailsPanelProps> = ({ accessToken, userRole
     setIsDeleting(true);
     try {
       await deleteGuardrailCall(accessToken, guardrailToDelete.guardrail_id);
-      NotificationsManager.success(`Guardrail "${guardrailToDelete.guardrail_name}" deleted successfully`);
+      NotificationsManager.success(`守护栏"${guardrailToDelete.guardrail_name}"删除成功`);
       await fetchGuardrails();
     } catch (error) {
       console.error("Error deleting guardrail:", error);
-      NotificationsManager.fromBackend("Failed to delete guardrail");
+      NotificationsManager.fromBackend("删除守护栏失败");
     } finally {
       setIsDeleting(false);
       setIsDeleteModalOpen(false);
@@ -139,7 +139,7 @@ const GuardrailsPanel: React.FC<GuardrailsPanelProps> = ({ accessToken, userRole
             ? [
                 {
                   key: "garden",
-                  label: "Guardrail Garden",
+                  label: "守护栏广场",
                   children: (
                     <GuardrailGarden
                       accessToken={accessToken}
@@ -149,7 +149,7 @@ const GuardrailsPanel: React.FC<GuardrailsPanelProps> = ({ accessToken, userRole
                 },
                 {
                   key: "guardrails",
-                  label: "Guardrails",
+                  label: "守护栏",
                   children: (
                     <>
                       <div className="flex justify-between items-center mb-4">
@@ -159,13 +159,13 @@ const GuardrailsPanel: React.FC<GuardrailsPanelProps> = ({ accessToken, userRole
                               {
                                 key: "provider",
                                 icon: <PlusOutlined />,
-                                label: "Add Provider Guardrail",
+                                label: "添加提供商守护栏",
                                 onClick: handleAddGuardrail,
                               },
                               {
                                 key: "custom_code",
                                 icon: <CodeOutlined />,
-                                label: "Create Custom Code Guardrail",
+                                label: "创建自定义代码守护栏",
                                 onClick: handleAddCustomCodeGuardrail,
                               },
                             ],
@@ -174,7 +174,7 @@ const GuardrailsPanel: React.FC<GuardrailsPanelProps> = ({ accessToken, userRole
                           disabled={!accessToken}
                         >
                           <Button disabled={!accessToken}>
-                            + Add New Guardrail <DownOutlined className="ml-2" />
+                            + 添加新守护栏 <DownOutlined className="ml-2" />
                           </Button>
                         </Dropdown>
                       </div>
@@ -214,17 +214,17 @@ const GuardrailsPanel: React.FC<GuardrailsPanelProps> = ({ accessToken, userRole
 
                       <DeleteResourceModal
                         isOpen={isDeleteModalOpen}
-                        title="Delete Guardrail"
-                        message={`Are you sure you want to delete guardrail: ${guardrailToDelete?.guardrail_name}? This action cannot be undone.`}
-                        resourceInformationTitle="Guardrail Information"
+                        title="删除守护栏"
+                        message={`确定要删除守护栏：${guardrailToDelete?.guardrail_name} 吗？此操作无法撤销。`}
+                        resourceInformationTitle="守护栏信息"
                         resourceInformation={[
-                          { label: "Name", value: guardrailToDelete?.guardrail_name },
+                          { label: "名称", value: guardrailToDelete?.guardrail_name },
                           { label: "ID", value: guardrailToDelete?.guardrail_id, code: true },
-                          { label: "Provider", value: providerDisplayName },
-                          { label: "Mode", value: guardrailToDelete?.litellm_params.mode },
+                          { label: "提供商", value: providerDisplayName },
+                          { label: "模式", value: guardrailToDelete?.litellm_params.mode },
                           {
-                            label: "Default On",
-                            value: guardrailToDelete?.litellm_params.default_on ? "Yes" : "No",
+                            label: "默认开启",
+                            value: guardrailToDelete?.litellm_params.default_on ? "是" : "否",
                           },
                         ]}
                         onCancel={handleDeleteCancel}
@@ -236,7 +236,7 @@ const GuardrailsPanel: React.FC<GuardrailsPanelProps> = ({ accessToken, userRole
                 },
                 {
                   key: "playground",
-                  label: "Test Playground",
+                  label: "测试场",
                   disabled: !accessToken,
                   children: (
                     <GuardrailTestPlayground
@@ -251,7 +251,7 @@ const GuardrailsPanel: React.FC<GuardrailsPanelProps> = ({ accessToken, userRole
             : []),
           {
             key: "submitted",
-            label: "Submitted Guardrails",
+            label: "已提交的守护栏",
             children: <TeamGuardrailsTab accessToken={accessToken} />,
           },
         ]}

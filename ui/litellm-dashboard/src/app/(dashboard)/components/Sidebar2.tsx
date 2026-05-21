@@ -180,7 +180,7 @@ const menuItems: MenuItemCfg[] = [
     icon: <BarChartOutlined style={{ fontSize: 18 }} />,
     roles: [...all_admin_roles, ...internalUserRoles],
   },
-  { key: "6", page: "teams", label: "Teams", icon: <TeamOutlined style={{ fontSize: 18 }} /> },
+  { key: "6", page: "teams", label: "团队", icon: <TeamOutlined style={{ fontSize: 18 }} /> },
   {
     key: "17",
     page: "organizations",
@@ -287,7 +287,7 @@ const menuItems: MenuItemCfg[] = [
   {
     key: "settings",
     page: "settings",
-    label: "Settings",
+    label: "设置",
     icon: <SettingOutlined style={{ fontSize: 18 }} />,
     roles: all_admin_roles,
     children: [

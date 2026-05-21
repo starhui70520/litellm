@@ -65,7 +65,7 @@ export const mcpHubColumns = (
       },
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "description",
       enableSorting: true,
       sortingFn: "alphanumeric",
@@ -145,7 +145,7 @@ export const mcpHubColumns = (
       },
     },
     {
-      header: "Status",
+      header: "状态",
       accessorKey: "status",
       enableSorting: true,
       sortingFn: "alphanumeric",
@@ -246,7 +246,7 @@ export const mcpHubColumns = (
       },
     },
     {
-      header: "Details",
+      header: "详情",
       id: "details",
       enableSorting: false,
       cell: ({ row }) => {

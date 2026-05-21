@@ -277,7 +277,7 @@ const TeamSSOSettings: React.FC<TeamSSOSettingsProps> = ({ accessToken }) => {
           <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Access & Permissions</div>
           <div className="border-t border-gray-100">
             <SettingRow
-              label="Models"
+              label="模型"
               description="Default list of models that new teams can access."
               isEditing={isEditing}
               viewContent={renderTags(values.models, getModelDisplayName)}

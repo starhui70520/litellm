@@ -552,7 +552,7 @@ const AllModelsTab = ({
 
       <DeleteResourceModal
         isOpen={!!deleteModalModelId}
-        title="Delete Model"
+        title="删除 Model"
         alertMessage="This action cannot be undone."
         message="Are you sure you want to delete this model?"
         resourceInformationTitle="Model Information"

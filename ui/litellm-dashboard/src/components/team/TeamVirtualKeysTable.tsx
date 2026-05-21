@@ -437,7 +437,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
       {
         id: "expires",
         accessorKey: "expires",
-        header: "Expires",
+        header: "过期时间",
         size: 120,
         enableSorting: false,
         cell: (info) => {
@@ -479,7 +479,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
       {
         id: "models",
         accessorKey: "models",
-        header: "Models",
+        header: "模型",
         size: 200,
         enableSorting: false,
         cell: (info) => {

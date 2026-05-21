@@ -29,7 +29,7 @@ const STATUS_CONFIG: Record<
   { label: string; bg: string; text: string; dot: string }
 > = {
   active: {
-    label: "Active",
+    label: "活跃",
     bg: "bg-green-50",
     text: "text-green-700",
     dot: "bg-green-500",
@@ -577,7 +577,7 @@ export function MCPSubmissionsTab({ accessToken }: MCPSubmissionsTabProps) {
       <div className="grid grid-cols-4 gap-4 mb-6">
         <StatCard label="Total Submitted" value={summary.total} color="text-gray-900" />
         <StatCard label="Pending Review" value={summary.pending_review} color="text-yellow-600" />
-        <StatCard label="Active" value={summary.active} color="text-green-600" />
+        <StatCard label="活跃" value={summary.active} color="text-green-600" />
         <StatCard label="Rejected" value={summary.rejected} color="text-red-600" />
       </div>
 

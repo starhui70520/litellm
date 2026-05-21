@@ -295,7 +295,7 @@ const Fallbacks: React.FC<FallbacksProps> = ({ accessToken, userRole, userID, mo
                             className="cursor-pointer hover:text-blue-600"
                           />
                         </Tooltip>
-                        <Tooltip title="Delete fallback">
+                        <Tooltip title="删除 fallback">
                           <span
                             data-testid="delete-fallback-button"
                             role="button"
@@ -322,7 +322,7 @@ const Fallbacks: React.FC<FallbacksProps> = ({ accessToken, userRole, userID, mo
       )}
       <DeleteResourceModal
         isOpen={isDeleteModalOpen}
-        title="Delete Fallback?"
+        title="删除 Fallback?"
         message="Are you sure you want to delete this fallback? This action cannot be undone."
         resourceInformationTitle="Fallback Information"
         resourceInformation={[

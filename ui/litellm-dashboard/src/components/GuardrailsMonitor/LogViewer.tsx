@@ -126,7 +126,7 @@ export function LogViewer({
             </h3>
             <p className="text-xs text-gray-500 mt-0.5">
               {logsLoading
-                ? "Loading…"
+                ? "加载中..."
                 : logs.length > 0
                   ? `Showing ${displayLogs.length} of ${total} entries`
                   : "No logs for this period. Select a guardrail and date range."}

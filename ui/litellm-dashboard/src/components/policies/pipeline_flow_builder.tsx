@@ -275,7 +275,7 @@ const StepCard: React.FC<StepCardProps> = ({
               display: "flex",
               alignItems: "center",
             }}
-            title="Delete step"
+            title="删除 step"
           >
             <DotsVerticalIcon style={{ width: 16, height: 16, color: "#9ca3af" }} />
           </button>

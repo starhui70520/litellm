@@ -109,7 +109,7 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
   };
 
   if (!vectorStoreDetails) {
-    return <div>Loading...</div>;
+    return <div>加载中...</div>;
   }
 
   return (
@@ -153,7 +153,7 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
                       <Input />
                     </Form.Item>
 
-                    <Form.Item label="Description" name="vector_store_description">
+                    <Form.Item label="描述" name="vector_store_description">
                       <Input.TextArea rows={4} />
                     </Form.Item>
 
@@ -254,7 +254,7 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
                     </Form.Item>
 
                     <div className="flex justify-end space-x-2">
-                      <AntButton onClick={() => setIsEditing(false)}>Cancel</AntButton>
+                      <AntButton onClick={() => setIsEditing(false)}>取消</AntButton>
                       <AntButton type="primary" htmlType="submit">
                         Save Changes
                       </AntButton>

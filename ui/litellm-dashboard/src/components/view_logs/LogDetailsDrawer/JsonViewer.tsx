@@ -15,7 +15,7 @@ interface JsonViewerProps {
  * Uses an interactive tree component for easy navigation.
  */
 export function JsonViewer({ data }: JsonViewerProps) {
-  if (!data) return <Text type="secondary">No data</Text>;
+  if (!data) return <Text type="secondary">暂无数据</Text>;
 
   return (
     <div

@@ -439,7 +439,7 @@ export default function KeyInfoView({
       {/* Delete Confirmation Modal */}
       <DeleteResourceModal
         isOpen={isDeleteModalOpen}
-        title="Delete Key"
+        title="删除 Key"
         alertMessage="This action is irreversible and will immediately revoke access for any applications using this key."
         message="Are you sure you want to delete this Virtual Key?"
         resourceInformationTitle="Key Information"
@@ -478,7 +478,7 @@ export default function KeyInfoView({
         open={isResetSpendModalOpen}
         onOk={handleResetSpend}
         onCancel={() => setIsResetSpendModalOpen(false)}
-        okText="Reset"
+        okText="重置"
         okButtonProps={{ danger: true }}
         confirmLoading={resetSpendLoading}
       >

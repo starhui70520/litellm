@@ -78,7 +78,7 @@ const ToolRow: React.FC<ToolRowProps> = ({
                 isEnabled ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
               }`}
             >
-              {isEnabled ? "Enabled" : "Disabled"}
+              {isEnabled ? "启用" : "禁用"}
             </span>
             {toolNameToDisplayName[tool.name] && (
               <span className="px-2 py-0.5 text-xs rounded-full font-medium bg-purple-100 text-purple-800">

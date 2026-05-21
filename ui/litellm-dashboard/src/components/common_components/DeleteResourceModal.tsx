@@ -49,8 +49,8 @@ export default function DeleteResourceModal({
       onOk={onOk}
       onCancel={onCancel}
       confirmLoading={confirmLoading}
-      okText={confirmLoading ? "Deleting..." : "Delete"}
-      cancelText="Cancel"
+      okText={confirmLoading ? "删除中..." : "删除"}
+      cancelText="取消"
       okButtonProps={{
         danger: true,
         disabled: (!!requiredConfirmation && requiredConfirmationInput !== requiredConfirmation) || confirmLoading,

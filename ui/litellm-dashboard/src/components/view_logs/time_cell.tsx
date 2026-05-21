@@ -8,7 +8,7 @@ const getLocalTime = (utcTime: string): string => {
   try {
     const date = new Date(utcTime);
     return date
-      .toLocaleString("en-US", {
+      .toLocaleString("zh-CN", {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
@@ -19,7 +19,7 @@ const getLocalTime = (utcTime: string): string => {
       })
       .replace(",", "");
   } catch (e) {
-    return "Error converting time";
+    return "时间转换错误";
   }
 };
 

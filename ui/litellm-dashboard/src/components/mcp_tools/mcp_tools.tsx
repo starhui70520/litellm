@@ -109,7 +109,7 @@ const MCPToolsViewer = ({
         <div className="flex h-auto w-full gap-4">
           {/* Left Sidebar with Controls */}
           <div className="w-1/4 p-4 bg-gray-50 flex flex-col">
-            <Title className="text-xl font-semibold mb-6 mt-2">MCP Tools</Title>
+            <Title className="text-xl font-semibold mb-6 mt-2">MCP 工具</Title>
 
             <div className="flex flex-col flex-1">
               {/* Extra Headers Input Section */}

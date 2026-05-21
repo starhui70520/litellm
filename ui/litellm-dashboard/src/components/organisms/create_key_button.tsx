@@ -679,18 +679,18 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
     <div>
       {userRole && rolesWithWriteAccess.includes(userRole) && (
         <Button className="mx-auto" onClick={() => setIsModalVisible(true)} data-testid="create-key-button">
-          + Create New Key
+          + 创建新密钥
         </Button>
       )}
       <Modal open={isModalVisible} width={1000} footer={null} onOk={handleOk} onCancel={handleCancel}>
         <Form form={form} onFinish={handleCreate} labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} labelAlign="left">
           {/* Section 1: Key Ownership */}
           <div className="mb-8">
-            <Title className="mb-4">Key Ownership</Title>
+            <Title className="mb-4">密钥所有权</Title>
             <Form.Item
               label={
                 <span>
-                  Owned By{" "}
+                  所有者{" "}
                   <Tooltip title="Select who will own this Virtual Key">
                     <InfoCircleOutlined style={{ marginLeft: "4px" }} />
                   </Tooltip>

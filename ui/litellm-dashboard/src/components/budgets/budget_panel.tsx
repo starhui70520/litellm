@@ -75,11 +75,11 @@ const BudgetPanel: React.FC<BudgetSettingsPageProps> = ({ accessToken }) => {
     }
     try {
       await deleteBudget.mutateAsync(selectedBudget.budget_id);
-      NotificationsManager.success("Budget deleted.");
+      NotificationsManager.success("预算已删除。");
     } catch (error) {
       console.error("Error deleting budget:", error);
       if (typeof NotificationsManager.fromBackend === "function") {
-        NotificationsManager.fromBackend("Failed to delete budget");
+        NotificationsManager.fromBackend("删除预算失败");
       } else {
         NotificationsManager.info("Failed to delete budget");
       }
@@ -97,13 +97,13 @@ const BudgetPanel: React.FC<BudgetSettingsPageProps> = ({ accessToken }) => {
     <div className="w-full mx-auto flex-auto overflow-y-auto m-8 p-2">
       {canModify && (
         <Button size="sm" variant="primary" className="mb-2" onClick={() => setIsCreateModelVisible(true)}>
-          + Create Budget
+          + 创建预算
         </Button>
       )}
       <TabGroup>
         <TabList>
-          <Tab>Budgets</Tab>
-          <Tab>Examples</Tab>
+          <Tab>预算</Tab>
+          <Tab>示例</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -151,7 +151,7 @@ const BudgetPanel: React.FC<BudgetSettingsPageProps> = ({ accessToken }) => {
                               />
                               <TableIconActionButton
                                 variant="Delete"
-                                tooltipText="Delete budget"
+                                tooltipText="删除 budget"
                                 onClick={() => handleDeleteClick(value)}
                                 dataTestId="delete-budget-button"
                               />
@@ -164,7 +164,7 @@ const BudgetPanel: React.FC<BudgetSettingsPageProps> = ({ accessToken }) => {
               </Card>
               <DeleteResourceModal
                 isOpen={isDeleteModalVisible}
-                title="Delete Budget?"
+                title="删除 Budget?"
                 message="Are you sure you want to delete this budget? This action cannot be undone."
                 resourceInformationTitle="Budget Information"
                 resourceInformation={[

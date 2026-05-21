@@ -32,7 +32,7 @@ const OrganizationFilters = ({
       {/* Search and Filter Controls */}
       <div className="flex flex-wrap items-center gap-3">
         <FilterInput
-          placeholder="Search by Organization Name"
+          placeholder="搜索组织名称"
           value={filters.org_alias}
           onChange={(value) => onChange("org_alias", value)}
           icon={Search}
@@ -52,7 +52,7 @@ const OrganizationFilters = ({
       {showFilters && (
         <div className="flex flex-wrap items-center gap-3 mt-3">
           <FilterInput
-            placeholder="Search by Organization ID"
+            placeholder="搜索组织ID"
             value={filters.org_id}
             onChange={(value) => onChange("org_id", value)}
             icon={User}

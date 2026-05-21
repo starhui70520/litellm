@@ -428,7 +428,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
                                 <TableIconActionButton
                                   variant="Delete"
                                   onClick={() => deleteLink(link.id)}
-                                  tooltipText="Delete link"
+                                  tooltipText="删除 link"
                                   dataTestId={`delete-link-${link.id}`}
                                 />
                               </div>

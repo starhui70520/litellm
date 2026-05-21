@@ -297,7 +297,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
           {/* Model Management Header */}
           <div className="flex justify-between items-center mb-4">
             <div>
-              <h2 className="text-lg font-semibold">Model Management</h2>
+              <h2 className="text-lg font-semibold">模型管理</h2>
               {!all_admin_roles.includes(userRole) ? (
                 <p className="text-sm text-gray-600">Add models for teams you are an admin for.</p>
               ) : (
@@ -324,7 +324,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
                 <PlusCircleOutlined style={{ fontSize: "18px", color: "#6366f1" }} />
               </div>
               <div className="flex-1 min-w-0">
-                <h4 className="text-gray-900 font-semibold text-sm m-0">Missing a provider?</h4>
+                <h4 className="text-gray-900 font-semibold text-sm m-0">缺少供应商？</h4>
                 <p className="text-gray-500 text-xs m-0 mt-0.5">
                   The LiteLLM engineering team is constantly adding support for new LLM models, providers, endpoints. If
                   you don&apos;t see the one you need, let us know and we&apos;ll prioritize it.
@@ -399,7 +399,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
               const isAdmin = all_admin_roles.includes(userRole);
               const visibleTabs: Array<{ tab: React.ReactElement; panel: React.ReactElement }> = [
                 {
-                  tab: <Tab key="all-models">{isAdmin ? "All Models" : "Your Models"}</Tab>,
+                  tab: <Tab key="all-models">{isAdmin ? "所有模型" : "您的模型"}</Tab>,
                   panel: (
                     <AllModelsTab
                       key="all-models"
@@ -415,7 +415,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
               ];
               if (!shouldHideAddModelTab) {
                 visibleTabs.push({
-                  tab: <Tab key="add-model">Add Model</Tab>,
+                  tab: <Tab key="add-model">添加模型</Tab>,
                   panel: (
                     <TabPanel key="add-model" className="h-full">
                       <AddModelTab
@@ -441,7 +441,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
               if (isAdmin) {
                 visibleTabs.push(
                   {
-                    tab: <Tab key="llm-credentials">LLM Credentials</Tab>,
+                    tab: <Tab key="llm-credentials">LLM凭证</Tab>,
                     panel: (
                       <TabPanel key="llm-credentials">
                         <CredentialsPanel uploadProps={uploadProps} />
@@ -449,7 +449,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
                     ),
                   },
                   {
-                    tab: <Tab key="pass-through">Pass-Through Endpoints</Tab>,
+                    tab: <Tab key="pass-through">直通端点</Tab>,
                     panel: (
                       <TabPanel key="pass-through">
                         <PassThroughSettings
@@ -463,7 +463,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
                     ),
                   },
                   {
-                    tab: <Tab key="health-status">Health Status</Tab>,
+                    tab: <Tab key="health-status">健康状态</Tab>,
                     panel: (
                       <TabPanel key="health-status">
                         <HealthCheckComponent
@@ -483,7 +483,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
                     ),
                   },
                   {
-                    tab: <Tab key="model-retry-settings">Model Retry Settings</Tab>,
+                    tab: <Tab key="model-retry-settings">模型重试设置</Tab>,
                     panel: (
                       <ModelRetrySettingsTab
                         key="model-retry-settings"
@@ -500,7 +500,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
                     ),
                   },
                   {
-                    tab: <Tab key="model-group-alias">Model Group Alias</Tab>,
+                    tab: <Tab key="model-group-alias">模型组别名</Tab>,
                     panel: (
                       <TabPanel key="model-group-alias">
                         <ModelGroupAliasSettings
@@ -512,7 +512,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
                     ),
                   },
                   {
-                    tab: <Tab key="price-data-reload">Price Data Reload</Tab>,
+                    tab: <Tab key="price-data-reload">价格数据重载</Tab>,
                     panel: <PriceDataManagementTab key="price-data-reload" />,
                   },
                 );
@@ -523,7 +523,7 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
                     <div className="flex">{visibleTabs.map((t) => t.tab)}</div>
 
                     <div className="flex items-center space-x-2 self-center">
-                      {lastRefreshed && <span className="text-xs text-gray-500">Last Refreshed: {lastRefreshed}</span>}
+                      {lastRefreshed && <span className="text-xs text-gray-500">上次刷新: {lastRefreshed}</span>}
                       <Icon
                         icon={RefreshIcon}
                         variant="shadow"

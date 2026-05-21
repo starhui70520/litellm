@@ -239,7 +239,7 @@ const CacheDashboard: React.FC<CachePageProps> = ({ accessToken, token, userRole
 
   const runCachingHealthCheck = async () => {
     try {
-      NotificationsManager.info("Running cache health check...");
+      NotificationsManager.info("正在运行缓存健康检查...");
       setHealthCheckResponse("");
       const response = await cachingHealthCheckCall(accessToken !== null ? accessToken : "");
       console.log("CACHING HEALTH CHECK RESPONSE", response);
@@ -270,15 +270,15 @@ const CacheDashboard: React.FC<CachePageProps> = ({ accessToken, token, userRole
     <TabGroup className="gap-2 p-8 h-full w-full mt-2 mb-8">
       <TabList className="flex justify-between mt-2 w-full items-center">
         <div className="flex">
-          <Tab>Cache Analytics</Tab>
-          <Tab>Cache Health</Tab>
-          <Tab>Cache Settings</Tab>
+          <Tab>缓存分析</Tab>
+          <Tab>缓存健康</Tab>
+          <Tab>缓存设置</Tab>
         </div>
 
         <div className="flex items-center space-x-2">
-          {lastRefreshed && <Text>Last Refreshed: {lastRefreshed}</Text>}
+          {lastRefreshed && <Text>上次刷新: {lastRefreshed}</Text>}
           <Icon
-            icon={RefreshIcon} // Modify as necessary for correct icon name
+            icon={RefreshIcon}
             variant="shadow"
             size="xs"
             className="self-center"
@@ -292,7 +292,7 @@ const CacheDashboard: React.FC<CachePageProps> = ({ accessToken, token, userRole
             <Grid numItems={3} className="gap-4 mt-4">
               <Col>
                 <MultiSelect
-                  placeholder="Select Virtual Keys"
+                  placeholder="选择虚拟密钥"
                   value={selectedApiKeys}
                   onValueChange={setSelectedApiKeys}
                 >

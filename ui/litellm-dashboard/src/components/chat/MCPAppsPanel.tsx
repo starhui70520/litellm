@@ -353,7 +353,7 @@ const MCPAppsPanel: React.FC<Props> = ({ accessToken, selectedServers, onChange 
           {[
             ["Server ID", detailServer.server_id],
             ["Transport", handleTransport(detailServer.transport, detailServer.spec_path)],
-            ["Status", isConnected ? "Connected" : "Not connected"],
+            ["状态", isConnected ? "Connected" : "Not connected"],
           ].filter(([, v]) => v).map(([label, value], i, arr) => (
             <div key={label} style={{
               display: "flex",

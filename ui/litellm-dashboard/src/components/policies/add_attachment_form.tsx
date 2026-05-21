@@ -249,7 +249,7 @@ const AddAttachmentForm: React.FC<AddAttachmentFormProps> = ({
           <>
             <Form.Item
               name="teams"
-              label="Teams"
+              label="团队"
               tooltip="Select team aliases or enter custom patterns. Supports wildcards (e.g., healthcare-*)"
             >
               <Select
@@ -271,7 +271,7 @@ const AddAttachmentForm: React.FC<AddAttachmentFormProps> = ({
 
             <Form.Item
               name="keys"
-              label="Keys"
+              label="密钥"
               tooltip="Select key aliases or enter custom patterns. Supports wildcards (e.g., dev-*)"
             >
               <Select
@@ -293,7 +293,7 @@ const AddAttachmentForm: React.FC<AddAttachmentFormProps> = ({
 
             <Form.Item
               name="models"
-              label="Models"
+              label="模型"
               tooltip="Model names this attachment applies to. Supports wildcards (e.g., gpt-4*). Leave empty to apply to all models."
             >
               <Select

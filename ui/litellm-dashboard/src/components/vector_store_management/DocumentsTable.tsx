@@ -19,7 +19,7 @@ const DocumentsTable: React.FC<DocumentsTableProps> = ({ documents, onRemove }) 
     const statusConfig = {
       uploading: { color: "blue", text: "Uploading" },
       done: { color: "green", text: "Ready" },
-      error: { color: "red", text: "Error" },
+      error: { color: "red", text: "错误" },
       removed: { color: "default", text: "Removed" },
     };
 
@@ -36,7 +36,7 @@ const DocumentsTable: React.FC<DocumentsTableProps> = ({ documents, onRemove }) 
 
   const columns = [
     {
-      title: "Name",
+      title: "名称",
       dataIndex: "name",
       key: "name",
       render: (name: string, record: DocumentUpload) => (
@@ -47,14 +47,14 @@ const DocumentsTable: React.FC<DocumentsTableProps> = ({ documents, onRemove }) 
       ),
     },
     {
-      title: "Status",
+      title: "状态",
       dataIndex: "status",
       key: "status",
       width: 150,
       render: (status: DocumentUpload["status"]) => getStatusBadge(status),
     },
     {
-      title: "Actions",
+      title: "操作",
       key: "actions",
       width: 120,
       render: (_: any, record: DocumentUpload) => (

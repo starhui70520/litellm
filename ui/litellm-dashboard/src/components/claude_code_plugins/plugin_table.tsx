@@ -104,7 +104,7 @@ const PluginTable: React.FC<PluginTableProps> = ({
       },
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "description",
       cell: ({ row }) => {
         const description = row.original.description || "No description";
@@ -168,7 +168,7 @@ const PluginTable: React.FC<PluginTableProps> = ({
     ...(isAdmin
       ? [
         {
-          header: "Actions",
+          header: "操作",
           id: "actions",
           enableSorting: false,
           cell: ({ row }: any) => {
@@ -176,7 +176,7 @@ const PluginTable: React.FC<PluginTableProps> = ({
 
             return (
               <div className="flex items-center gap-1">
-                <Tooltip title="Delete skill">
+                <Tooltip title="删除 skill">
                   <Button
                     size="xs"
                     variant="light"
@@ -265,7 +265,7 @@ const PluginTable: React.FC<PluginTableProps> = ({
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-8 text-center">
                   <div className="text-center text-gray-500">
-                    <p>Loading...</p>
+                    <p>加载中...</p>
                   </div>
                 </TableCell>
               </TableRow>

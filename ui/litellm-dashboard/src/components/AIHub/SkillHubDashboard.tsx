@@ -41,7 +41,7 @@ const SkillHubDashboard: React.FC<SkillHubDashboardProps> = ({
   const filteredSkills = useMemo(() => {
     let result = skills;
     if (domainFilter) {
-      result = result.filter((s) => (s.domain || "General") === domainFilter);
+      result = result.filter((s) => (s.domain || "通用") === domainFilter);
     }
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -108,7 +108,7 @@ const SkillHubDashboard: React.FC<SkillHubDashboardProps> = ({
             />
             <Input
               prefix={<SearchOutlined className="text-gray-400" />}
-              placeholder="Search by name, namespace, or tag…"
+              placeholder="搜索 name, namespace, or tag…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ width: 280 }}

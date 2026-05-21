@@ -168,7 +168,7 @@ export function GuardrailsOverview({
       ),
     },
     {
-      title: "Status",
+      title: "状态",
       dataIndex: "status",
       key: "status",
       align: "center",

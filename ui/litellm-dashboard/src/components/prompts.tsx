@@ -101,11 +101,11 @@ const PromptsPanel: React.FC<PromptsProps> = ({ accessToken, userRole }) => {
     setIsDeleting(true);
     try {
       await deletePromptCall(accessToken, promptToDelete.id);
-      NotificationsManager.success(`Prompt "${promptToDelete.name}" deleted successfully`);
+      NotificationsManager.success(`提示词"${promptToDelete.name}"删除成功`);
       fetchPrompts(); // Refresh the list
     } catch (error) {
       console.error("Error deleting prompt:", error);
-      NotificationsManager.fromBackend("Failed to delete prompt");
+      NotificationsManager.fromBackend("删除提示词失败");
     } finally {
       setIsDeleting(false);
       setPromptToDelete(null);
@@ -141,10 +141,10 @@ const PromptsPanel: React.FC<PromptsProps> = ({ accessToken, userRole }) => {
               {canModify && (
                 <>
                   <Button onClick={handleAddPrompt} disabled={!accessToken}>
-                    + Add New Prompt
+                    + 添加新提示词
                   </Button>
                   <Button onClick={handleAddPromptFromFile} disabled={!accessToken} variant="secondary">
-                    Upload .prompt File
+                    上传 .prompt 文件
                   </Button>
                 </>
               )}
@@ -183,12 +183,12 @@ const PromptsPanel: React.FC<PromptsProps> = ({ accessToken, userRole }) => {
 
       {promptToDelete && (
         <Modal
-          title="Delete Prompt"
+          title="删除 Prompt"
           open={promptToDelete !== null}
           onOk={handleDeleteConfirm}
           onCancel={handleDeleteCancel}
           confirmLoading={isDeleting}
-          okText="Delete"
+          okText="删除"
           okButtonProps={{ danger: true }}
         >
           <p>Are you sure you want to delete prompt: {promptToDelete.name} ?</p>

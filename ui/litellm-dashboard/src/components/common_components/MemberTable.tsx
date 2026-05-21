@@ -76,7 +76,7 @@ export default function MemberTable({
     },
     ...extraColumns,
     {
-      title: "Actions",
+      title: "操作",
       key: "actions",
       fixed: "right" as const,
       width: 120,
@@ -92,7 +92,7 @@ export default function MemberTable({
             {(!showDeleteForMember || showDeleteForMember(record)) && (
               <TableIconActionButton
                 variant="Delete"
-                tooltipText="Delete member"
+                tooltipText="删除 member"
                 dataTestId="delete-member"
                 onClick={() => onDelete(record)}
               />

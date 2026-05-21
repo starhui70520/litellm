@@ -774,7 +774,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
       size: 150,
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "description",
       enableSorting: false,
       cell: ({ row }) => {
@@ -911,7 +911,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
       size: 150,
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "mcp_info.description",
       enableSorting: false,
       cell: ({ row }) => {

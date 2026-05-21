@@ -109,7 +109,7 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
               <Title level={2} style={{ margin: 0 }}>
                 {project.project_alias ?? project.project_id}
               </Title>
-              <Tag color={project.blocked ? "red" : "green"}>{project.blocked ? "Blocked" : "Active"}</Tag>
+              <Tag color={project.blocked ? "red" : "green"}>{project.blocked ? "Blocked" : "活跃"}</Tag>
             </Flex>
             <Text type="secondary">
               ID: <Text copyable>{project.project_id}</Text>
@@ -125,8 +125,8 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
       <Row style={{ marginBottom: 24 }}>
         <Card>
           <Descriptions title="Project Details" column={1}>
-            <Descriptions.Item label="Description">{project.description || "\u2014"}</Descriptions.Item>
-            <Descriptions.Item label="Created">
+            <Descriptions.Item label="描述">{project.description || "\u2014"}</Descriptions.Item>
+            <Descriptions.Item label="创建时间">
               {new Date(project.created_at).toLocaleString()}
               {project.created_by && (
                 <Text>

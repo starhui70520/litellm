@@ -138,7 +138,7 @@ const PluginInfoView: React.FC<PluginInfoViewProps> = ({
           </Badge>
         )}
         <Badge color={plugin.enabled ? "green" : "gray"} size="xs">
-          {plugin.enabled ? "Enabled" : "Disabled"}
+          {plugin.enabled ? "启用" : "禁用"}
         </Badge>
       </div>
 

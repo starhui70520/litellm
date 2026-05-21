@@ -193,7 +193,7 @@ export function KeyInfoHeader({
       <Flex align="stretch" gap={40} style={{ marginBottom: 40 }}>
         <Space direction="vertical" size={16}>
           <UserField userAlias={data.userAlias} userEmail={data.userEmail} userId={data.userId} />
-          <LabeledField label="Expires" value={data.expires} icon={<FieldTimeOutlined />} />
+          <LabeledField label="过期时间" value={data.expires} icon={<FieldTimeOutlined />} />
         </Space>
 
         <Divider type="vertical" style={{ height: "auto" }} />

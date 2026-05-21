@@ -57,7 +57,7 @@ export function AccessGroupBaseForm({
           </Form.Item>
           <Form.Item
             name="description"
-            label="Description"
+            label="描述"
           >
             <TextArea
               rows={4}

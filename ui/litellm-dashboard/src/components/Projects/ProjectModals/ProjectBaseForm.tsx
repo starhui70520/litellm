@@ -172,7 +172,7 @@ export function ProjectBaseForm({
 
       <Row>
         <Col span={24}>
-          <Form.Item name="description" label="Description">
+          <Form.Item name="description" label="描述">
             <Input.TextArea
               placeholder="Describe the purpose of this project"
               rows={3}

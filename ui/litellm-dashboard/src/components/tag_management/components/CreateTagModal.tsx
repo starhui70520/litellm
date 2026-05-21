@@ -42,7 +42,7 @@ const CreateTagModal: React.FC<CreateTagModalProps> = ({ visible, onCancel, onSu
           <TextInput />
         </Form.Item>
 
-        <Form.Item label="Description" name="description">
+        <Form.Item label="描述" name="description">
           <Input.TextArea rows={4} />
         </Form.Item>
 

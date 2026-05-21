@@ -193,7 +193,7 @@ const PassThroughSettings: React.FC<GeneralSettingsPageProps> = ({ accessToken, 
       cell: (info: any) => <PasswordField value={info.getValue() || {}} />,
     },
     {
-      header: "Actions",
+      header: "操作",
       id: "actions",
       cell: ({ row }) => (
         <div className="flex space-x-1">
@@ -207,7 +207,7 @@ const PassThroughSettings: React.FC<GeneralSettingsPageProps> = ({ accessToken, 
             icon={TrashIcon}
             size="sm"
             onClick={() => handleResetField(row.original.id!, row.index)}
-            title="Delete"
+            title="删除"
           />
         </div>
       ),
@@ -294,7 +294,7 @@ const PassThroughSettings: React.FC<GeneralSettingsPageProps> = ({ accessToken, 
                 <Button onClick={confirmDelete} color="red" className="ml-2">
                   Delete
                 </Button>
-                <Button onClick={cancelDelete}>Cancel</Button>
+                <Button onClick={cancelDelete}>取消</Button>
               </div>
             </div>
           </div>

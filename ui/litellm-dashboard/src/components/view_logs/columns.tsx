@@ -170,10 +170,10 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
     },
   },
   {
-    header: "Status",
+    header: "状态",
     accessorKey: "metadata.status",
     cell: (info: any) => {
-      const status = info.getValue() || "Success";
+      const status = info.getValue() || "成功";
       const isSuccess = status.toLowerCase() !== "failure";
 
       return (
@@ -182,7 +182,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
             isSuccess ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
           }`}
         >
-          {isSuccess ? "Success" : "Failure"}
+          {isSuccess ? "成功" : "Failure"}
         </span>
       );
     },
@@ -633,19 +633,19 @@ export const auditLogColumns: ColumnDef<AuditLogEntry>[] = [
       let displayValue = tableName;
       switch (tableName) {
         case "LiteLLM_VerificationToken":
-          displayValue = "Keys";
+          displayValue = "密钥";
           break;
         case "LiteLLM_TeamTable":
-          displayValue = "Teams";
+          displayValue = "团队";
           break;
         case "LiteLLM_OrganizationTable":
           displayValue = "Organizations";
           break;
         case "LiteLLM_UserTable":
-          displayValue = "Users";
+          displayValue = "用户";
           break;
         case "LiteLLM_ProxyModelTable":
-          displayValue = "Models";
+          displayValue = "模型";
           break;
         default:
           displayValue = tableName;

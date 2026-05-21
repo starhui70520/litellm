@@ -220,7 +220,7 @@ export function UserDataTable({
           <div className="flex flex-wrap items-center gap-3">
             {/* Email Search */}
             <FilterInput
-              placeholder="Search by email..."
+              placeholder="搜索 email..."
               value={filters.email}
               onChange={(value) => updateFilters({ email: value })}
               icon={Search}
