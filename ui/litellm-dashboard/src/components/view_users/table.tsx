@@ -245,15 +245,15 @@ export function UserDataTable({
           {showFilters && (
             <div className="flex flex-wrap items-center gap-3 mt-3">
               {/* User ID Search */}
-              <FilterInput
-                placeholder="Filter by User ID"
-                value={filters.user_id}
+<FilterInput
+              placeholder="按用户 ID 筛选"
+              value={filters.user_id}
                 onChange={(value) => updateFilters({ user_id: value })}
                 icon={User}
               />
 
               <FilterInput
-                placeholder="Filter by SSO ID"
+                placeholder="按 SSO ID 筛选"
                 value={filters.sso_user_id}
                 onChange={(value) => updateFilters({ sso_user_id: value })}
                 icon={CircleUserRound}
@@ -264,7 +264,7 @@ export function UserDataTable({
                 <Select
                   value={filters.user_role}
                   onValueChange={(value) => updateFilters({ user_role: value })}
-                  placeholder="Select Role"
+                  placeholder="选择角色"
                 >
                   {possibleUIRoles &&
                     Object.entries(possibleUIRoles).map(([key, value]) => (
@@ -280,7 +280,7 @@ export function UserDataTable({
                 <Select
                   value={filters.team}
                   onValueChange={(value) => updateFilters({ team: value })}
-                  placeholder="Select Team"
+                  placeholder="选择团队"
                 >
                   {teams?.map((team) => (
                     <SelectItem key={team.team_id} value={team.team_id}>
@@ -298,7 +298,7 @@ export function UserDataTable({
               <Skeleton.Input active style={{ width: 192, height: 20 }} />
             ) : (
               <span className="text-sm text-gray-700">
-                Showing{" "}
+                显示{" "}
                 {userListResponse && userListResponse.users && userListResponse.users.length > 0
                   ? (userListResponse.page - 1) * userListResponse.page_size + 1
                   : 0}{" "}
@@ -306,7 +306,7 @@ export function UserDataTable({
                 {userListResponse && userListResponse.users
                   ? Math.min(userListResponse.page * userListResponse.page_size, userListResponse.total)
                   : 0}{" "}
-                of {userListResponse ? userListResponse.total : 0} results
+                条结果，共 {userListResponse ? userListResponse.total : 0} 条
               </span>
             )}
 
@@ -326,7 +326,7 @@ export function UserDataTable({
                       currentPage === 1 ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "hover:bg-gray-50"
                     }`}
                   >
-                    Previous
+                    上一页
                   </button>
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
@@ -337,7 +337,7 @@ export function UserDataTable({
                         : "hover:bg-gray-50"
                     }`}
                   >
-                    Next
+                    下一页
                   </button>
                 </>
               )}

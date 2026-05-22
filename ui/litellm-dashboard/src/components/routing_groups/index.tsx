@@ -108,7 +108,7 @@ const RoutingGroups: React.FC = () => {
           <Input
             allowClear
             prefix={<SearchOutlined className="text-gray-400" />}
-            placeholder="Search groups..."
+            placeholder="搜索组..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="max-w-sm"

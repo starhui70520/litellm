@@ -364,7 +364,7 @@ const AllModelsTab = ({
                     <div className="relative w-64">
                       <input
                         type="text"
-                        placeholder="Search model names..."
+                        placeholder="搜索模型名称..."
                         data-testid="model-search-input"
                         className="w-full px-3 py-2 pl-8 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         value={modelNameSearch}

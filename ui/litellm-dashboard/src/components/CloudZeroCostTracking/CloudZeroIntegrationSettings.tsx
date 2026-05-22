@@ -150,7 +150,7 @@ export function CloudZeroIntegrationSettings({ settings, onSettingsUpdated }: Cl
           </Descriptions>
 
           <Divider orientation="left" className="text-gray-500">
-            Actions
+            操作
           </Divider>
 
           <div className="flex flex-wrap gap-4 mb-6">

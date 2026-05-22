@@ -248,9 +248,9 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID })
     <div className="w-full h-full p-6">
       <Modal
         open={isDeleteModalOpen}
-        title="删除 MCP Server?"
+        title="删除 MCP 服务器？"
         onOk={confirmDelete}
-        okText={isDeletingServer ? "Deleting..." : "Delete"}
+        okText={isDeletingServer ? "删除中..." : "删除"}
         onCancel={cancelDelete}
         cancelText="取消"
         cancelButtonProps={{ disabled: isDeletingServer }}
@@ -258,13 +258,13 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID })
         confirmLoading={isDeletingServer}
       >
         <div className="space-y-4">
-          <AntdText className="text-gray-600">This action is permanent and cannot be undone. All associated configurations will be removed.</AntdText>
+          <AntdText className="text-gray-600">此操作永久生效且无法撤销。所有相关配置都将被删除。</AntdText>
 
           {serverToDelete && (
             <div className="mt-3 p-4 bg-gray-50 rounded-lg border border-gray-200">
               <Descriptions column={1} size="small" colon={false}>
                 {serverToDelete.server_name && (
-                  <Descriptions.Item label={<span className="text-gray-500 text-sm">Name</span>}>
+                  <Descriptions.Item label={<span className="text-gray-500 text-sm">名称</span>}>
                     <AntdText strong className="text-sm">{serverToDelete.server_name}</AntdText>
                   </Descriptions.Item>
                 )}
@@ -274,7 +274,7 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID })
                   </AntdText>
                 </Descriptions.Item>
                 {serverToDelete.url && (
-                  <Descriptions.Item label={<span className="text-gray-500 text-sm">URL</span>}>
+                  <Descriptions.Item label={<span className="text-gray-500 text-sm">网址</span>}>
                     <AntdText code className="text-xs break-all">
                       {serverToDelete.url}
                     </AntdText>
@@ -302,19 +302,19 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID })
       <div className="flex items-center justify-between">
         <div>
           <div className="flex items-center gap-3">
-            <Title>MCP Servers</Title>
+            <Title>MCP 服务器</Title>
             {filteredServers.length > 0 && (
               <span className="inline-flex items-center text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200">
                 {filteredServers.length}
               </span>
             )}
           </div>
-          <Text className="text-tremor-content mt-1">Configure and manage your MCP servers</Text>
+          <Text className="text-tremor-content mt-1">配置和管理您的 MCP 服务器</Text>
         </div>
         <div className="flex items-center gap-2">
           {isAdminRole(userRole) && (
             <Button className="flex-shrink-0" onClick={() => setDiscoveryVisible(true)}>
-              + Add New MCP Server
+              + 添加新 MCP 服务器
             </Button>
           )}
           {!isAdminRole(userRole) && (
@@ -326,7 +326,7 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID })
               }}
               variant="secondary"
             >
-              + Submit MCP Server
+              + 提交 MCP 服务器
             </Button>
           )}
         </div>
@@ -349,11 +349,11 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID })
       <TabGroup className="w-full h-full">
         <TabList className="flex justify-between mt-2 w-full items-center">
           <div className="flex">
-            <Tab>All Servers</Tab>
-            <Tab>Toolsets</Tab>
-            <Tab>Connect</Tab>
-            <Tab>Semantic Filter</Tab>
-            <Tab>Network Settings</Tab>
+            <Tab>所有服务器</Tab>
+            <Tab>工具集</Tab>
+            <Tab>连接</Tab>
+            <Tab>语义过滤器</Tab>
+            <Tab>网络设置</Tab>
             {isAdminRole(userRole) && <Tab><span className="flex items-center gap-2">Submitted MCPs <NewBadge /></span></Tab>}
           </div>
         </TabList>
@@ -421,8 +421,8 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID })
                     renderSubComponent={() => <div></div>}
                     getRowCanExpand={() => false}
                     isLoading={isLoadingServers}
-                    noDataMessage="No MCP servers configured. Click '+ Add New MCP Server' to get started."
-                    loadingMessage="Loading MCP servers..."
+                    noDataMessage="未配置 MCP 服务器。点击'+ 添加新 MCP 服务器'开始。"
+                    loadingMessage="正在加载 MCP 服务器..."
                     enableSorting={true}
                   />
                 </div>

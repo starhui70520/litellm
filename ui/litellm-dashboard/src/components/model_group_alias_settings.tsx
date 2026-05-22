@@ -223,7 +223,7 @@ const ModelGroupAliasSettings: React.FC<ModelGroupAliasSettingsProps> = ({
                   <TableRow>
                     <TableHeaderCell className="py-1 h-8">Alias Name</TableHeaderCell>
                     <TableHeaderCell className="py-1 h-8">Target Model Group</TableHeaderCell>
-                    <TableHeaderCell className="py-1 h-8">Actions</TableHeaderCell>
+                    <TableHeaderCell className="py-1 h-8">操作</TableHeaderCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

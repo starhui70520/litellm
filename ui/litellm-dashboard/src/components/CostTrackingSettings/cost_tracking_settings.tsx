@@ -323,7 +323,7 @@ const CostTrackingSettings: React.FC<CostTrackingSettingsProps> = ({
       <Modal
         title={
           <div className="flex items-center space-x-3 pb-4 border-b border-gray-100">
-            <h2 className="text-xl font-semibold text-gray-900">Add Provider Discount</h2>
+            <h2 className="text-xl font-semibold text-gray-900">添加供应商折扣</h2>
           </div>
         }
         open={isModalVisible}
@@ -361,7 +361,7 @@ const CostTrackingSettings: React.FC<CostTrackingSettingsProps> = ({
       <Modal
         title={
           <div className="flex items-center space-x-3 pb-4 border-b border-gray-100">
-            <h2 className="text-xl font-semibold text-gray-900">Add Provider Margin</h2>
+            <h2 className="text-xl font-semibold text-gray-900">添加供应商利润</h2>
           </div>
         }
         open={isMarginModalVisible}

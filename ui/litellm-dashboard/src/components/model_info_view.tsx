@@ -348,7 +348,7 @@ export default function ModelInfoView({
     return (
       <div className="p-4">
         <TremorButton icon={ArrowLeftIcon} variant="light" onClick={onClose} className="mb-4">
-          Back to Models
+          返回模型列表
         </TremorButton>
         <Text>加载中...</Text>
       </div>
@@ -360,9 +360,9 @@ export default function ModelInfoView({
     return (
       <div className="p-4">
         <TremorButton icon={ArrowLeftIcon} variant="light" onClick={onClose} className="mb-4">
-          Back to Models
+          返回模型列表
         </TremorButton>
-        <Text>Model not found</Text>
+        <Text>未找到模型</Text>
       </div>
     );
   }
@@ -451,9 +451,9 @@ export default function ModelInfoView({
       <div className="flex justify-between items-center mb-6">
         <div>
           <TremorButton icon={ArrowLeftIcon} variant="light" onClick={onClose} className="mb-4">
-            Back to Models
+            返回模型列表
           </TremorButton>
-          <Title>Public Model Name: {getDisplayModelName(modelData)}</Title>
+          <Title>公共模型名称: {getDisplayModelName(modelData)}</Title>
           <div className="flex items-center cursor-pointer">
             <Text className="text-gray-500 font-mono">{modelData.model_info.id}</Text>
             <Button
@@ -476,7 +476,7 @@ export default function ModelInfoView({
             className="flex items-center gap-2"
             data-testid="test-connection-button"
           >
-            Test Connection
+            测试连接
           </TremorButton>
 
           <TremorButton
@@ -487,7 +487,7 @@ export default function ModelInfoView({
             disabled={!isAdmin}
             data-testid="reuse-credentials-button"
           >
-            Re-use Credentials
+            重复使用凭证
           </TremorButton>
           <TremorButton
             icon={TrashIcon}
@@ -497,15 +497,15 @@ export default function ModelInfoView({
             disabled={!canEditModel}
             data-testid="delete-model-button"
           >
-            Delete Model
+            删除模型
           </TremorButton>
         </div>
       </div>
 
       <TabGroup>
         <TabList className="mb-6">
-          <Tab>Overview</Tab>
-          <Tab>Raw JSON</Tab>
+          <Tab>概览</Tab>
+          <Tab>原始JSON</Tab>
         </TabList>
 
         <TabPanels>
@@ -513,7 +513,7 @@ export default function ModelInfoView({
             {/* Overview Grid */}
             <Grid numItems={1} numItemsSm={2} numItemsLg={3} className="gap-6 mb-6">
               <Card>
-                <Text>Provider</Text>
+                <Text>提供商</Text>
                 <div className="mt-2 flex items-center space-x-2">
                   {modelData.provider && (
                     <img
@@ -543,7 +543,7 @@ export default function ModelInfoView({
                 </div>
               </Card>
               <Card>
-                <Text>LiteLLM Model</Text>
+                <Text>LiteLLM 模型</Text>
                 <div className="mt-2 overflow-hidden">
                   <Tooltip title={modelData.litellm_model_name || "Not Set"}>
                     <div className="break-all text-sm font-medium leading-relaxed cursor-pointer">
@@ -553,10 +553,10 @@ export default function ModelInfoView({
                 </div>
               </Card>
               <Card>
-                <Text>Pricing</Text>
+                <Text>价格</Text>
                 <div className="mt-2">
-                  <Text>Input: ${modelData.input_cost}/1M tokens</Text>
-                  <Text>Output: ${modelData.output_cost}/1M tokens</Text>
+                  <Text>输入: ${modelData.input_cost}/1M tokens</Text>
+                  <Text>输出: ${modelData.output_cost}/1M tokens</Text>
                 </div>
               </Card>
             </Grid>
@@ -572,7 +572,7 @@ export default function ModelInfoView({
                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                Created At{" "}
+                创建时间{" "}
                 {modelData.model_info.created_at
                   ? new Date(modelData.model_info.created_at).toLocaleDateString("en-US", {
                     month: "short",
@@ -590,24 +590,24 @@ export default function ModelInfoView({
                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                   />
                 </svg>
-                Created By {modelData.model_info.created_by || "Not Set"}
+                创建者 {modelData.model_info.created_by || "未设置"}
               </div>
             </div>
 
             {/* Settings Card */}
             <Card>
               <div className="flex justify-between items-center mb-4">
-                <Title>Model Settings</Title>
+                <Title>模型设置</Title>
                 <div className="flex gap-2">
                   {isAutoRouter && canEditModel && !isEditing && (
                     <TremorButton onClick={() => setIsAutoRouterModalOpen(true)} className="flex items-center">
-                      Edit Auto Router
+                      编辑自动路由
                     </TremorButton>
                   )}
                   {canEditModel ? (
                     !isEditing && (
                       <TremorButton onClick={() => setIsEditing(true)} className="flex items-center">
-                        Edit Settings
+                        编辑设置
                       </TremorButton>
                     )
                   ) : (
@@ -670,7 +670,7 @@ export default function ModelInfoView({
                   <div className="space-y-4">
                     <div className="space-y-4">
                       <div>
-                        <Text className="font-medium">Model Name</Text>
+                        <Text className="font-medium">模型名称</Text>
                         {isEditing ? (
                           <Form.Item name="model_name" className="mb-0">
                             <TextInput placeholder="Enter model name" />
@@ -681,7 +681,7 @@ export default function ModelInfoView({
                       </div>
 
                       <div>
-                        <Text className="font-medium">LiteLLM Model Name</Text>
+                        <Text className="font-medium">LiteLLM 模型名称</Text>
                         {isEditing ? (
                           <Form.Item name="litellm_model_name" className="mb-0">
                             <TextInput placeholder="Enter LiteLLM model name" />
@@ -692,7 +692,7 @@ export default function ModelInfoView({
                       </div>
 
                       <div>
-                        <Text className="font-medium">Input Cost (per 1M tokens)</Text>
+                        <Text className="font-medium">输入成本 (每1M令牌)</Text>
                         {isEditing ? (
                           <Form.Item name="input_cost" className="mb-0">
                             <NumericalInput placeholder="Enter input cost" />
@@ -709,7 +709,7 @@ export default function ModelInfoView({
                       </div>
 
                       <div>
-                        <Text className="font-medium">Output Cost (per 1M tokens)</Text>
+                        <Text className="font-medium">输出成本 (每1M令牌)</Text>
                         {isEditing ? (
                           <Form.Item name="output_cost" className="mb-0">
                             <NumericalInput placeholder="Enter output cost" />
@@ -726,7 +726,7 @@ export default function ModelInfoView({
                       </div>
 
                       <div>
-                        <Text className="font-medium">API Base</Text>
+                        <Text className="font-medium">API 基础地址</Text>
                         {isEditing ? (
                           <Form.Item name="api_base" className="mb-0">
                             <TextInput placeholder="Enter API base" />
@@ -739,7 +739,7 @@ export default function ModelInfoView({
                       </div>
 
                       <div>
-                        <Text className="font-medium">Custom LLM Provider</Text>
+                        <Text className="font-medium">自定义 LLM 提供商</Text>
                         {isEditing ? (
                           <Form.Item name="custom_llm_provider" className="mb-0">
                             <TextInput placeholder="Enter custom LLM provider" />
@@ -752,7 +752,7 @@ export default function ModelInfoView({
                       </div>
 
                       <div>
-                        <Text className="font-medium">Organization</Text>
+                        <Text className="font-medium">组织</Text>
                         {isEditing ? (
                           <Form.Item name="organization" className="mb-0">
                             <TextInput placeholder="Enter organization" />
@@ -765,7 +765,7 @@ export default function ModelInfoView({
                       </div>
 
                       <div>
-                        <Text className="font-medium">TPM (Tokens per Minute)</Text>
+                        <Text className="font-medium">TPM (每分钟令牌数)</Text>
                         {isEditing ? (
                           <Form.Item name="tpm" className="mb-0">
                             <NumericalInput placeholder="Enter TPM" />
@@ -778,7 +778,7 @@ export default function ModelInfoView({
                       </div>
 
                       <div>
-                        <Text className="font-medium">RPM (Requests per Minute)</Text>
+                        <Text className="font-medium">RPM (每分钟请求数)</Text>
                         {isEditing ? (
                           <Form.Item name="rpm" className="mb-0">
                             <NumericalInput placeholder="Enter RPM" />

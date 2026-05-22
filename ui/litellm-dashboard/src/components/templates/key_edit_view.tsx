@@ -303,7 +303,7 @@ export function KeyEditView({
 
   return (
     <Form form={form} onFinish={handleSubmit} initialValues={initialValues} layout="vertical">
-      <Form.Item label="Key Alias" name="key_alias">
+      <Form.Item label="密钥别名" name="key_alias">
         <TextInput />
       </Form.Item>
 
@@ -331,7 +331,7 @@ export function KeyEditView({
               <>
                 <Select
                   mode="multiple"
-                  placeholder="Select models"
+                  placeholder="选择模型"
                   style={{ width: "100%" }}
                   disabled={isDisabled}
                   value={isDisabled ? [] : models}
@@ -427,34 +427,34 @@ export function KeyEditView({
       <Form.Item
         label={
           <span>
-            Allowed Routes{" "}
-            <Tooltip title="List of allowed routes for the key (comma-separated). Can be specific routes (e.g., '/chat/completions') or route patterns (e.g., 'llm_api_routes', 'management_routes', '/keys/*'). Leave empty to allow all routes.">
+            允许的路由{" "}
+            <Tooltip title="密钥允许的路由列表（逗号分隔）。可以是特定路由（例如'/chat/completions'）或路由模式（例如'lllm_api_routes'、'management_routes'、'/keys/*'）。留空以允许所有路由。">
               <InfoCircleOutlined style={{ marginLeft: "4px" }} />
             </Tooltip>
           </span>
         }
         name="allowed_routes"
       >
-        <Input placeholder="Enter allowed routes (comma-separated). Special values: llm_api_routes, management_routes. Examples: llm_api_routes, /chat/completions, /keys/*. Leave empty to allow all routes" />
+        <Input placeholder="输入允许的路由（逗号分隔）。特殊值：llm_api_routes、management_routes。示例：llm_api_routes、/chat/completions、/keys/*。留空以允许所有路由" />
       </Form.Item>
 
-      <Form.Item label="Max Budget (USD)" name="max_budget">
+      <Form.Item label="最大预算 (美元)" name="max_budget">
         <NumericalInput step={0.01} style={{ width: "100%" }} placeholder="Enter a numerical value" />
       </Form.Item>
 
-      <Form.Item label="Reset Budget" name="budget_duration">
-        <Select placeholder="n/a">
-          <Select.Option value="daily">Daily</Select.Option>
-          <Select.Option value="weekly">Weekly</Select.Option>
-          <Select.Option value="monthly">Monthly</Select.Option>
+      <Form.Item label="重置预算" name="budget_duration">
+        <Select placeholder="不适用">
+          <Select.Option value="daily">每日</Select.Option>
+          <Select.Option value="weekly">每周</Select.Option>
+          <Select.Option value="monthly">每月</Select.Option>
         </Select>
       </Form.Item>
 
       <Form.Item
         label={
           <span>
-            Budget Windows{" "}
-            <Tooltip title="Set multiple independent budget windows (e.g., hourly $10 AND monthly $200). Each window tracks spend separately and resets on its own schedule.">
+            预算窗口{" "}
+            <Tooltip title="设置多个独立的预算窗口（例如，每小时10美元 AND 每月200美元）。每个窗口独立跟踪支出并按自己的计划重置。">
               <InfoCircleOutlined style={{ marginLeft: "4px" }} />
             </Tooltip>
           </span>
@@ -463,27 +463,27 @@ export function KeyEditView({
         <BudgetWindowsEditor value={budgetLimits} onChange={setBudgetLimits} />
       </Form.Item>
 
-      <Form.Item label="TPM Limit" name="tpm_limit">
+      <Form.Item label="TPM 限制" name="tpm_limit">
         <NumericalInput min={0} />
       </Form.Item>
 
       <RateLimitTypeFormItem type="tpm" name="tpm_limit_type" showDetailedDescriptions={false} />
 
-      <Form.Item label="RPM Limit" name="rpm_limit">
+      <Form.Item label="RPM 限制" name="rpm_limit">
         <NumericalInput min={0} />
       </Form.Item>
 
       <RateLimitTypeFormItem type="rpm" name="rpm_limit_type" showDetailedDescriptions={false} />
 
-      <Form.Item label="Max Parallel Requests" name="max_parallel_requests">
+      <Form.Item label="最大并行请求数" name="max_parallel_requests">
         <NumericalInput min={0} />
       </Form.Item>
 
-      <Form.Item label="Model TPM Limit" name="model_tpm_limit">
+      <Form.Item label="模型 TPM 限制" name="model_tpm_limit">
         <Input.TextArea rows={4} placeholder='{"gpt-4": 100, "claude-v1": 200}' />
       </Form.Item>
 
-      <Form.Item label="Model RPM Limit" name="model_rpm_limit">
+      <Form.Item label="模型 RPM 限制" name="model_rpm_limit">
         <Input.TextArea rows={4} placeholder='{"gpt-4": 100, "claude-v1": 200}' />
       </Form.Item>
 
@@ -657,8 +657,8 @@ export function KeyEditView({
       <Form.Item
         label={
           <span>
-            Organization{" "}
-            <Tooltip title="The organization this key belongs to. Selecting an organization filters the available teams.">
+            组织{" "}
+            <Tooltip title="此密钥所属的组织。选择组织将过滤可用的团队。">
               <InfoCircleOutlined style={{ marginLeft: "4px" }} />
             </Tooltip>
           </span>
@@ -677,12 +677,12 @@ export function KeyEditView({
       </Form.Item>
 
       <Form.Item
-        label="Team ID"
+        label="团队 ID"
         name="team_id"
-        help={enableProjectsUI && hasProject ? "Team is locked because this key belongs to a project" : undefined}
+        help={enableProjectsUI && hasProject ? "团队已锁定，因为此密钥属于一个项目" : undefined}
       >
         <Select
-          placeholder="Select team"
+          placeholder="选择团队"
           showSearch
           disabled={enableProjectsUI && hasProject}
           style={{ width: "100%" }}
@@ -775,10 +775,10 @@ export function KeyEditView({
       <div className="sticky z-10 bg-white p-4 border-t border-gray-200 bottom-[-1.5rem] inset-x-[-1.5rem]">
         <div className="flex justify-end items-center gap-2">
           <TremorButton variant="secondary" onClick={onCancel} disabled={isKeySaving}>
-            Cancel
+            取消
           </TremorButton>
           <TremorButton type="submit" loading={isKeySaving}>
-            Save Changes
+            保存更改
           </TremorButton>
         </div>
       </div>

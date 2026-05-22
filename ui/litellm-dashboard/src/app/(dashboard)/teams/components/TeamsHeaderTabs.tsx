@@ -20,7 +20,7 @@ const TeamsHeaderTabs = ({ lastRefreshed, onRefresh, userRole, children }: Teams
           {isAdminRole(userRole || "") && <Tab>Default Team Settings</Tab>}
         </div>
         <div className="flex items-center space-x-2">
-          {lastRefreshed && <Text>Last Refreshed: {lastRefreshed}</Text>}
+          {lastRefreshed && <Text>上次刷新: {lastRefreshed}</Text>}
           <Icon
             icon={RefreshIcon} // Modify as necessary for correct icon name
             variant="shadow"

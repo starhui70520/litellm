@@ -117,12 +117,12 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
             onSortChange={sortProps.onSortChange}
           />
         )
-      : "Time",
+      : "时间",
     accessorKey: "startTime",
     cell: (info: any) => <TimeCell utcTime={info.getValue()} />,
   },
   {
-    header: "Type",
+    header: "类型",
     id: "type",
     cell: (info: any) => {
       const row = info.row.original;
@@ -188,7 +188,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
     },
   },
   {
-    header: "Session ID",
+    header: "会话ID",
     accessorKey: "session_id",
     cell: (info: any) => {
       const value = String(info.getValue() || "");
@@ -228,7 +228,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
             onSortChange={sortProps.onSortChange}
           />
         )
-      : "Cost",
+      : "费用",
     accessorKey: "spend",
     cell: (info: any) => {
       const row = info.row.original;
@@ -260,7 +260,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
             onSortChange={sortProps.onSortChange}
           />
         )
-      : "Duration (s)",
+      : "时长(秒)",
     accessorKey: "request_duration_ms",
     cell: (info: any) => {
       const ms = info.getValue();
@@ -284,7 +284,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
             onSortChange={sortProps.onSortChange}
           />
         )
-      : "TTFT (s)",
+      : "首Token时间(秒)",
     accessorKey: "completionStartTime",
     cell: (info: any) => {
       const row = info.row.original;
@@ -303,7 +303,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
     },
   },
   {
-    header: "Team Name",
+    header: "团队名称",
     accessorKey: "metadata.user_api_key_team_alias",
     cell: (info: any) => (
       <Tooltip title={String(info.getValue() || "-")}>
@@ -312,7 +312,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
     ),
   },
   {
-    header: "Key Hash",
+    header: "密钥哈希",
     accessorKey: "metadata.user_api_key",
     cell: (info: any) => {
       const value = String(info.getValue() || "-");
@@ -331,7 +331,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
     },
   },
   {
-    header: "Key Name",
+    header: "密钥名称",
     accessorKey: "metadata.user_api_key_alias",
     cell: (info: any) => (
       <Tooltip title={String(info.getValue() || "-")}>
@@ -350,7 +350,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
             onSortChange={sortProps.onSortChange}
           />
         )
-      : "Model",
+      : "模型",
     accessorKey: "model",
     cell: (info: any) => {
       const row = info.row.original;
@@ -387,7 +387,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
             onSortChange={sortProps.onSortChange}
           />
         )
-      : "Tokens",
+      : "令牌数",
     accessorKey: "total_tokens",
     cell: (info: any) => {
       const row = info.row.original;
@@ -402,7 +402,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
     },
   },
   {
-    header: "Internal User",
+    header: "内部用户",
     accessorKey: "user",
     cell: (info: any) => (
       <Tooltip title={String(info.getValue() || "-")}>
@@ -411,7 +411,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
     ),
   },
   {
-    header: "End User",
+    header: "终端用户",
     accessorKey: "end_user",
     cell: (info: any) => (
       <Tooltip title={String(info.getValue() || "-")}>
@@ -421,7 +421,7 @@ export const createColumns = (sortProps?: LogsSortProps): ColumnDef<LogEntry>[] 
   },
 
   {
-    header: "Tags",
+    header: "标签",
     accessorKey: "request_tags",
     cell: (info: any) => {
       const tags = info.getValue();
@@ -487,7 +487,7 @@ export const RequestResponsePanel = ({ request, response }: { request: any; resp
     <div className="grid grid-cols-2 gap-4 mt-4">
       <div className="rounded-lg border border-gray-200 bg-gray-50">
         <div className="flex justify-between items-center p-3 border-b border-gray-200">
-          <h3 className="text-sm font-medium">Request</h3>
+          <h3 className="text-sm font-medium">请求</h3>
           <button
             onClick={() => copyToClipboard(requestStr)}
             className="p-1 hover:bg-gray-200 rounded"
@@ -514,7 +514,7 @@ export const RequestResponsePanel = ({ request, response }: { request: any; resp
 
       <div className="rounded-lg border border-gray-200 bg-gray-50">
         <div className="flex justify-between items-center p-3 border-b border-gray-200">
-          <h3 className="text-sm font-medium">Response</h3>
+          <h3 className="text-sm font-medium">响应</h3>
           <button
             onClick={() => copyToClipboard(responseStr)}
             className="p-1 hover:bg-gray-200 rounded"

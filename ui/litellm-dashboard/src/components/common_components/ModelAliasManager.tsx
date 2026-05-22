@@ -141,7 +141,7 @@ const ModelAliasManager: React.FC<ModelAliasManagerProps> = ({
   return (
     <div className="mt-4">
       <div className="mb-6">
-        <Text className="text-sm font-medium text-gray-700 mb-2">Add New Alias</Text>
+        <Text className="text-sm font-medium text-gray-700 mb-2">添加新别名</Text>
         <div className="grid grid-cols-3 gap-4">
           <div>
             <label className="block text-xs text-gray-500 mb-1">Alias Name</label>
@@ -194,7 +194,7 @@ const ModelAliasManager: React.FC<ModelAliasManagerProps> = ({
               <TableRow>
                 <TableHeaderCell className="py-1 h-8">Alias Name</TableHeaderCell>
                 <TableHeaderCell className="py-1 h-8">Target Model</TableHeaderCell>
-                <TableHeaderCell className="py-1 h-8">Actions</TableHeaderCell>
+                <TableHeaderCell className="py-1 h-8">操作</TableHeaderCell>
               </TableRow>
             </TableHead>
             <TableBody>

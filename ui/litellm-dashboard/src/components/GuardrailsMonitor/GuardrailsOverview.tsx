@@ -294,7 +294,7 @@ export function GuardrailsOverview({
           pagination={false}
           loading={isLoading}
           onChange={handleTableChange}
-          locale={activeData.length === 0 && !isLoading ? { emptyText: "No data for this period" } : undefined}
+          locale={activeData.length === 0 && !isLoading ? { emptyText: "暂无该时段数据" } : undefined}
           onRow={(row) => ({
             onClick: () => onSelectGuardrail(row.id),
             style: { cursor: "pointer" },

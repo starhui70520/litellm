@@ -22,7 +22,7 @@ const HealthStatusBadge: React.FC<{
     return (
       <span className="inline-flex items-center gap-1.5 text-xs text-gray-400 px-2 py-0.5 rounded-full bg-gray-50 border border-gray-100">
         <span className="h-1.5 w-1.5 rounded-full bg-gray-300 animate-pulse"></span>
-        Checking
+        检查中
       </span>
     );
   }
@@ -76,8 +76,8 @@ const HealthStatusBadge: React.FC<{
       >
         <span>{isHovered && isClickable ? "↻" : getStatusIcon(status)}</span>
         {isHovered && isClickable
-          ? "Recheck"
-          : status.charAt(0).toUpperCase() + status.slice(1)}
+          ? "重新检查"
+          : status === "healthy" ? "健康" : status === "unhealthy" ? "不健康" : "未知"}
       </span>
     </Tooltip>
   );
@@ -95,7 +95,7 @@ export const mcpServerColumns = (
 ): ColumnDef<MCPServer>[] => [
   {
     accessorKey: "server_id",
-    header: "Server ID",
+    header: "服务器ID",
     enableSorting: true,
     cell: ({ row }) => (
       <button
@@ -130,7 +130,7 @@ export const mcpServerColumns = (
   },
   {
     accessorKey: "alias",
-    header: "Alias",
+    header: "别名",
     enableSorting: true,
   },
   {
@@ -147,7 +147,7 @@ export const mcpServerColumns = (
   },
   {
     accessorKey: "transport",
-    header: "Transport",
+    header: "传输",
     enableSorting: true,
     cell: ({ row }) => {
       const transport = row.original.transport || "http";
@@ -163,7 +163,7 @@ export const mcpServerColumns = (
   },
   {
     accessorKey: "auth_type",
-    header: "Auth Type",
+    header: "认证类型",
     enableSorting: true,
     cell: ({ getValue }) => {
       const authType = (getValue() as string) || "none";
@@ -176,7 +176,7 @@ export const mcpServerColumns = (
   },
   {
     id: "health_status",
-    header: "Health Status",
+    header: "健康状态",
     cell: ({ row }) => (
       <HealthStatusBadge
         server={row.original}
@@ -188,7 +188,7 @@ export const mcpServerColumns = (
   },
   {
     id: "mcp_access_groups",
-    header: "Access Groups",
+    header: "访问组",
     cell: ({ row }) => {
       const groups = row.original.mcp_access_groups;
       if (Array.isArray(groups) && groups.length > 0) {
@@ -213,18 +213,18 @@ export const mcpServerColumns = (
   },
   {
     id: "available_on_public_internet",
-    header: "Network Access",
+    header: "网络访问",
     cell: ({ row }) => {
       const isPublic = row.original.available_on_public_internet;
       return isPublic ? (
         <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-green-50 text-green-700 rounded-full border border-green-200 text-xs font-medium">
           <span className="h-1.5 w-1.5 rounded-full bg-green-500"></span>
-          Public
+公开
         </span>
       ) : (
         <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-orange-50 text-orange-700 rounded-full border border-orange-200 text-xs font-medium">
           <span className="h-1.5 w-1.5 rounded-full bg-orange-500"></span>
-          Internal
+          内部
         </span>
       );
     },
@@ -263,7 +263,7 @@ export const mcpServerColumns = (
   },
   {
     id: "byok_credential",
-    header: "Credential",
+    header: "凭证",
     cell: ({ row }) => {
       const server = row.original;
       if (!server.is_byok) {
@@ -273,14 +273,14 @@ export const mcpServerColumns = (
         return (
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full bg-green-50 text-green-700 border border-green-200">
-              <CheckOutlined style={{ fontSize: 10 }} /> Connected
+              <CheckOutlined style={{ fontSize: 10 }} /> 已连接
             </span>
             {onByokConnect && (
               <button
                 className="text-xs text-gray-400 hover:text-blue-600 transition-colors"
                 onClick={() => onByokConnect(server)}
               >
-                Update
+                更新
               </button>
             )}
           </div>
@@ -291,7 +291,7 @@ export const mcpServerColumns = (
           className="text-xs bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md font-medium transition-colors shadow-sm"
           onClick={() => onByokConnect(server)}
         >
-          Connect
+连接
         </button>
       ) : null;
     },

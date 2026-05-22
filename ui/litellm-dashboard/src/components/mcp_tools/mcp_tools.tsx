@@ -201,7 +201,7 @@ const MCPToolsViewer = ({
                 {toolsData.length > 0 && (
                   <div className="mb-3">
                     <Input
-                      placeholder="Search tools..."
+                      placeholder="搜索工具..."
                       prefix={<SearchOutlined className="text-gray-400" />}
                       value={toolSearchTerm}
                       onChange={(e) => setToolSearchTerm(e.target.value)}

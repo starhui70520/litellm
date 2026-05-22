@@ -657,19 +657,19 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
       <>
         <Form.Item
           name="guardrail_name"
-          label="Guardrail Name"
-          rules={[{ required: true, message: "Please enter a guardrail name" }]}
+          label="护栏名称"
+          rules={[{ required: true, message: "请输入护栏名称" }]}
         >
-          <Input placeholder="Enter a name for this guardrail" />
+          <Input placeholder="输入护栏名称" />
         </Form.Item>
 
         <Form.Item
           name="provider"
-          label="Guardrail Provider"
-          rules={[{ required: true, message: "Please select a provider" }]}
+          label="护栏提供商"
+          rules={[{ required: true, message: "请选择提供商" }]}
         >
           <Select
-            placeholder="Select a guardrail provider"
+            placeholder="选择护栏提供商"
             onChange={handleProviderChange}
             labelInValue={false}
             optionLabelProp="label"

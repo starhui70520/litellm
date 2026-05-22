@@ -116,7 +116,7 @@ const MCPDiscovery: React.FC<MCPDiscoveryProps> = ({
                 objectFit: "contain",
               }}
             />
-            <h2 className="text-xl font-semibold text-gray-900">Add MCP Server</h2>
+            <h2 className="text-xl font-semibold text-gray-900">添加MCP服务器</h2>
           </div>
           <button
             onClick={onCustomServer}
@@ -164,7 +164,7 @@ const MCPDiscovery: React.FC<MCPDiscoveryProps> = ({
 
       {/* Search */}
       <Search
-        placeholder="Search servers..."
+        placeholder="搜索服务器..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         style={{ marginBottom: 16 }}

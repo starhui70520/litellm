@@ -355,23 +355,23 @@ const EditGuardrailForm: React.FC<EditGuardrailFormProps> = ({
   };
 
   return (
-    <Modal title="Edit Guardrail" open={visible} onCancel={onClose} footer={null} width={700}>
+    <Modal title="编辑护栏" open={visible} onCancel={onClose} footer={null} width={700}>
       <Form form={form} layout="vertical" initialValues={initialValues}>
         <Form.Item
           name="guardrail_name"
-          label="Guardrail Name"
-          rules={[{ required: true, message: "Please enter a guardrail name" }]}
+          label="护栏名称"
+          rules={[{ required: true, message: "请输入护栏名称" }]}
         >
-          <TextInput placeholder="Enter a name for this guardrail" />
+          <TextInput placeholder="输入护栏名称" />
         </Form.Item>
 
         <Form.Item
           name="provider"
-          label="Guardrail Provider"
-          rules={[{ required: true, message: "Please select a provider" }]}
+          label="护栏提供商"
+          rules={[{ required: true, message: "请选择提供商" }]}
         >
           <Select
-            placeholder="Select a guardrail provider"
+            placeholder="选择护栏提供商"
             onChange={handleProviderChange}
             disabled={true} // Disable changing provider in edit mode
             optionLabelProp="label"
@@ -459,10 +459,10 @@ const EditGuardrailForm: React.FC<EditGuardrailFormProps> = ({
 
         <div className="flex justify-end space-x-2 mt-4">
           <Button variant="secondary" onClick={onClose}>
-            Cancel
+            取消
           </Button>
           <Button onClick={handleSubmit} loading={loading}>
-            Update Guardrail
+            更新护栏
           </Button>
         </div>
       </Form>

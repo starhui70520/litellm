@@ -35,7 +35,7 @@ const ImpactPopover: React.FC<{ attachment: PolicyAttachment; accessToken: strin
   };
 
   const content = loading ? (
-    <div className="p-2 text-center"><Spin size="small" /> Loading...</div>
+    <div className="p-2 text-center"><Spin size="small" /> 加载中...</div>
   ) : impact ? (
     <div className="text-xs" style={{ maxWidth: 280 }}>
       {impact.affected_keys_count === -1 ? (

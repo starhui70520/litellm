@@ -130,7 +130,7 @@ const VectorStoreManagement: React.FC<VectorStoreProps> = ({ accessToken, userID
         <div className="flex justify-between mt-2 w-full items-center mb-4">
           <h1>Vector Store Management</h1>
           <div className="flex items-center space-x-2">
-            {lastRefreshed && <Text>Last Refreshed: {lastRefreshed}</Text>}
+            {lastRefreshed && <Text>上次刷新: {lastRefreshed}</Text>}
             <Icon
               icon={RefreshIcon}
               variant="shadow"

@@ -69,11 +69,11 @@ const AvailableTeamsPanel: React.FC<AvailableTeamsProps> = ({ accessToken, userI
       <Table>
         <TableHead>
           <TableRow>
-            <TableHeaderCell>Team Name</TableHeaderCell>
-            <TableHeaderCell>Description</TableHeaderCell>
-            <TableHeaderCell>Members</TableHeaderCell>
-            <TableHeaderCell>Models</TableHeaderCell>
-            <TableHeaderCell>Actions</TableHeaderCell>
+            <TableHeaderCell>团队名称</TableHeaderCell>
+            <TableHeaderCell>描述</TableHeaderCell>
+            <TableHeaderCell>成员</TableHeaderCell>
+            <TableHeaderCell>模型</TableHeaderCell>
+            <TableHeaderCell>操作</TableHeaderCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -83,10 +83,10 @@ const AvailableTeamsPanel: React.FC<AvailableTeamsProps> = ({ accessToken, userI
                 <Text>{team.team_alias}</Text>
               </TableCell>
               <TableCell>
-                <Text>{team.description || "No description available"}</Text>
+                <Text>{team.description || "暂无描述"}</Text>
               </TableCell>
               <TableCell>
-                <Text>{team.members_with_roles.length} members</Text>
+                <Text>{team.members_with_roles.length} 名成员</Text>
               </TableCell>
               <TableCell>
                 <div className="flex flex-col">

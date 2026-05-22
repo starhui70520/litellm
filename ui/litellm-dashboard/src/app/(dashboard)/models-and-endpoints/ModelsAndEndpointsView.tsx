@@ -299,9 +299,9 @@ const ModelsAndEndpointsView: React.FC<ModelDashboardProps> = ({ premiumUser, te
             <div>
               <h2 className="text-lg font-semibold">模型管理</h2>
               {!all_admin_roles.includes(userRole) ? (
-                <p className="text-sm text-gray-600">Add models for teams you are an admin for.</p>
+                <p className="text-sm text-gray-600">添加您管理的团队的模型。</p>
               ) : (
-                <p className="text-sm text-gray-600">Add and manage models for the proxy</p>
+                <p className="text-sm text-gray-600">添加和管理代理的模型</p>
               )}
             </div>
             {!showMissingProviderBanner && (

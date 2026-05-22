@@ -336,7 +336,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
                   <TableRow>
                     <TableHeaderCell className="py-1 h-8">Display Name</TableHeaderCell>
                     <TableHeaderCell className="py-1 h-8">URL</TableHeaderCell>
-                    <TableHeaderCell className="py-1 h-8">Actions</TableHeaderCell>
+                    <TableHeaderCell className="py-1 h-8">操作</TableHeaderCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

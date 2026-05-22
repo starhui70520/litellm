@@ -699,66 +699,66 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
               className="mb-4"
             >
               <Radio.Group onChange={(e) => setKeyOwner(e.target.value)} value={keyOwner}>
-                <Radio value="you">You</Radio>
-                <Radio value="service_account">Service Account</Radio>
-                {userRole === "Admin" && <Radio value="another_user">Another User</Radio>}
+                <Radio value="you">你</Radio>
+                <Radio value="service_account">服务账户</Radio>
+                {userRole === "Admin" && <Radio value="another_user">其他用户</Radio>}
                 <Radio value="agent">
-                  Agent <Tag color="purple">New</Tag>
+                  智能体 <Tag color="purple">新</Tag>
                 </Radio>
               </Radio.Group>
             </Form.Item>
 
             {keyOwner === "another_user" && (
-              <Form.Item
-                label={
-                  <span>
-                    User ID{" "}
-                    <Tooltip title="The user who will own this key and be responsible for its usage">
-                      <InfoCircleOutlined style={{ marginLeft: "4px" }} />
-                    </Tooltip>
-                  </span>
-                }
-                name="user_id"
-                className="mt-4"
-                rules={[
-                  {
-                    required: keyOwner === "another_user",
-                    message: `Please input the user ID of the user you are assigning the key to`,
-                  },
-                ]}
-              >
-                <div>
-                  <div style={{ display: "flex", marginBottom: "8px" }}>
-                    <Select
-                      showSearch
-                      placeholder="Type email to search for users"
-                      filterOption={false}
-                      onSearch={handleUserSearch}
-                      onSelect={(value, option) => handleUserSelect(value, option as UserOption)}
-                      options={userOptions}
-                      loading={userSearchLoading}
-                      allowClear
-                      style={{ width: "100%" }}
-                      notFoundContent={userSearchLoading ? "Searching..." : "No users found"}
-                    />
-                    <Button2 onClick={() => setIsCreateUserModalVisible(true)} style={{ marginLeft: "8px" }}>
-                      Create User
-                    </Button2>
-                  </div>
-                  <div className="text-xs text-gray-500">Search by email to find users</div>
+<Form.Item
+              label={
+                <span>
+                  用户 ID{" "}
+                  <Tooltip title="将拥有此密钥并对其使用负责的用户">
+                    <InfoCircleOutlined style={{ marginLeft: "4px" }} />
+                  </Tooltip>
+                </span>
+              }
+              name="user_id"
+              className="mt-4"
+              rules={[
+                {
+                  required: keyOwner === "another_user",
+                  message: `请输入您要分配密钥的用户的用户ID`,
+                },
+              ]}
+            >
+              <div>
+                <div style={{ display: "flex", marginBottom: "8px" }}>
+                  <Select
+                    showSearch
+                    placeholder="输入邮箱以搜索用户"
+                    filterOption={false}
+                    onSearch={handleUserSearch}
+                    onSelect={(value, option) => handleUserSelect(value, option as UserOption)}
+                    options={userOptions}
+                    loading={userSearchLoading}
+                    allowClear
+                    style={{ width: "100%" }}
+                    notFoundContent={userSearchLoading ? "搜索中..." : "未找到用户"}
+                  />
+                  <Button2 onClick={() => setIsCreateUserModalVisible(true)} style={{ marginLeft: "8px" }}>
+                    创建用户
+                  </Button2>
                 </div>
-              </Form.Item>
+                <div className="text-xs text-gray-500">通过邮箱搜索用户</div>
+              </div>
+            </Form.Item>
             )}
             {keyOwner === "agent" && (
               <div className="mt-4 p-4 bg-purple-50 border border-purple-200 rounded-md">
                 <div className="mb-3">
                   <span className="text-sm font-medium text-gray-700">
-                    Select Agent <span className="text-red-500">*</span>
+                    选择智能体 <span className="text-red-500">*</span>
                   </span>
                 </div>
                 <Select
                   showSearch
-                  placeholder="Select an agent"
+                  placeholder="选择一个智能体"
                   style={{ width: "100%" }}
                   value={selectedAgentId}
                   onChange={(value) => setSelectedAgentId(value)}
@@ -771,15 +771,15 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                   }))}
                 />
                 <div className="text-xs text-gray-500 mt-2">
-                  This key will be used by the selected agent to make requests to LiteLLM
+                  此密钥将由选定的智能体用于向 LiteLLM 发出请求
                 </div>
               </div>
             )}
             <Form.Item
               label={
                 <span>
-                  Organization{" "}
-                  <Tooltip title="The organization this key belongs to. Selecting an organization filters the available teams.">
+                  组织{" "}
+                  <Tooltip title="此密钥所属的组织。选择组织将过滤可用的团队。">
                     <InfoCircleOutlined style={{ marginLeft: "4px" }} />
                   </Tooltip>
                 </span>
@@ -804,8 +804,8 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
             <Form.Item
               label={
                 <span>
-                  Team{" "}
-                  <Tooltip title="The team this key belongs to, which determines available models and budget limits">
+                  团队{" "}
+                  <Tooltip title="此密钥所属的团队，决定可用的模型和预算限额">
                     <InfoCircleOutlined style={{ marginLeft: "4px" }} />
                   </Tooltip>
                 </span>
@@ -816,10 +816,10 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
               rules={[
                 {
                   required: keyOwner === "service_account",
-                  message: "Please select a team for the service account",
+                  message: "请为服务账户选择一个团队",
                 },
               ]}
-              help={keyOwner === "service_account" ? "required" : ""}
+              help={keyOwner === "service_account" ? "必填" : ""}
             >
               <TeamDropdown
                 disabled={selectedProjectId !== null}
@@ -840,18 +840,18 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
               />
             </Form.Item>
             {enableProjectsUI && (
-              <Form.Item
-                label={
-                  <span>
-                    Project{" "}
-                    <Tooltip title="Assign this key to a project. Selecting a project will lock the team to the project's team.">
-                      <InfoCircleOutlined style={{ marginLeft: "4px" }} />
-                    </Tooltip>
-                  </span>
-                }
-                name="project_id"
-                className="mt-4"
-              >
+<Form.Item
+              label={
+                <span>
+                  项目{" "}
+                  <Tooltip title="将此密钥分配给项目。选择项目将把团队锁定到项目的团队。">
+                    <InfoCircleOutlined style={{ marginLeft: "4px" }} />
+                  </Tooltip>
+                </span>
+              }
+              name="project_id"
+              className="mt-4"
+            >
                 <ProjectDropdown
                   projects={projects}
                   teamId={selectedCreateKeyTeam?.team_id}
@@ -874,8 +874,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
           {isFormDisabled && (
             <div className="mb-8 p-4 bg-blue-50 border border-blue-200 rounded-md">
               <Text className="text-blue-800 text-sm">
-                Please select a team to continue configuring your Virtual Key. If you do not see any teams, please
-                contact your Proxy Admin to either provide you with access to models or to add you to a team.
+                请选择一个团队以继续配置您的虚拟密钥。如果您看不到任何团队，请联系您的代理管理员为您提供模型访问权限或将您添加到团队中。
               </Text>
             </div>
           )}
@@ -883,16 +882,16 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
           {/* Section 2: Key Details */}
           {!isFormDisabled && (
             <div className="mb-8">
-              <Title className="mb-4">Key Details</Title>
+              <Title className="mb-4">密钥详情</Title>
               <Form.Item
                 label={
                   <span>
-                    {keyOwner === "you" || keyOwner === "another_user" ? "Key Name" : "Service Account ID"}{" "}
+                    {keyOwner === "you" || keyOwner === "another_user" ? "密钥名称" : "服务账户 ID"}{" "}
                     <Tooltip
                       title={
                         keyOwner === "you" || keyOwner === "another_user"
-                          ? "A descriptive name to identify this key"
-                          : "Unique identifier for this service account"
+                          ? "用于识别此密钥的描述性名称"
+                          : "此服务账户的唯一标识符"
                       }
                     >
                       <InfoCircleOutlined style={{ marginLeft: "4px" }} />
@@ -903,10 +902,10 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                 rules={[
                   {
                     required: true,
-                    message: `Please input a ${keyOwner === "you" ? "key name" : "service account ID"}`,
+                    message: `请输入${keyOwner === "you" ? "密钥名称" : "服务账户 ID"}`,
                   },
                 ]}
-                help="required"
+                help="必填"
               >
                 <TextInput placeholder="" />
               </Form.Item>
@@ -914,8 +913,8 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
               <Form.Item
                 label={
                   <span>
-                    Models{" "}
-                    <Tooltip title="Select which models this key can access. Choose 'All Team Models' to grant access to all models available to the team. Leave empty to allow access to all models.">
+                    模型{" "}
+                    <Tooltip title="选择此密钥可以访问的模型。选择'所有团队模型'以授予对团队所有可用模型的访问权限。留空以允许访问所有模型。">
                       <InfoCircleOutlined style={{ marginLeft: "4px" }} />
                     </Tooltip>
                   </span>
@@ -924,14 +923,14 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                 rules={[]}
                 help={
                   keyType === "management" || keyType === "read_only"
-                    ? "Models field is disabled for this key type"
-                    : "optional - leave empty to allow access to all models"
+                    ? "此密钥类型禁用了模型字段"
+                    : "可选 - 留空以允许访问所有模型"
                 }
                 className="mt-4"
               >
                 <Select
                   mode="multiple"
-                  placeholder="Select models"
+                  placeholder="选择模型"
                   style={{ width: "100%" }}
                   disabled={keyType === "management" || keyType === "read_only"}
                   onChange={(values) => {
@@ -942,7 +941,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                 >
                   {!selectedProjectId && (
                     <Option key="all-team-models" value="all-team-models">
-                      All Team Models
+                      所有团队模型
                     </Option>
                   )}
                   {modelsToPick.map((model: string) => (
@@ -956,8 +955,8 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
               <Form.Item
                 label={
                   <span>
-                    Key Type{" "}
-                    <Tooltip title="Select the type of key to determine what routes and operations this key can access">
+                    密钥类型{" "}
+                    <Tooltip title="选择密钥类型以确定此密钥可以访问的路由和操作">
                       <InfoCircleOutlined style={{ marginLeft: "4px" }} />
                     </Tooltip>
                   </span>
@@ -968,7 +967,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
               >
                 <Select
                   defaultValue="llm_api"
-                  placeholder="Select key type"
+                  placeholder="选择密钥类型"
                   style={{ width: "100%" }}
                   optionLabelProp="label"
                   onChange={(value) => {
@@ -979,27 +978,27 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                     }
                   }}
                 >
-                  <Option value="llm_api" label="AI APIs">
+                  <Option value="llm_api" label="AI API">
                     <div style={{ padding: "4px 0" }}>
-                      <Typography.Text strong>AI APIs</Typography.Text>
+                      <Typography.Text strong>AI API</Typography.Text>
                       <Typography.Paragraph type="secondary" style={{ fontSize: 11, margin: "2px 0 0" }}>
-                        Can call only AI API routes (chat/completions, embeddings, etc.)
+                        只能调用AI API路由（chat/completions、embeddings等）
                       </Typography.Paragraph>
                     </div>
                   </Option>
-                  <Option value="management" label="Management">
+                  <Option value="management" label="管理">
                     <div style={{ padding: "4px 0" }}>
-                      <Typography.Text strong>Management</Typography.Text>
+                      <Typography.Text strong>管理</Typography.Text>
                       <Typography.Paragraph type="secondary" style={{ fontSize: 11, margin: "2px 0 0" }}>
-                        Can call only management routes (user/team/key management)
+                        只能调用管理路由（用户/团队/密钥管理）
                       </Typography.Paragraph>
                     </div>
                   </Option>
-                  <Option value="default" label="Full Access">
+                  <Option value="default" label="完全访问">
                     <div style={{ padding: "4px 0" }}>
-                      <Typography.Text strong>Full Access</Typography.Text>
+                      <Typography.Text strong>完全访问</Typography.Text>
                       <Typography.Paragraph type="secondary" style={{ fontSize: 11, margin: "2px 0 0" }}>
-                        Can call all routes (AI APIs, Management, and read-only)
+                        可以调用所有路由（AI API、管理和只读）
                       </Typography.Paragraph>
                     </div>
                   </Option>
@@ -1013,21 +1012,21 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
             <div className="mb-8">
               <Accordion className="mt-4 mb-4">
                 <AccordionHeader>
-                  <Title className="m-0">Optional Settings</Title>
+                  <Title className="m-0">可选设置</Title>
                 </AccordionHeader>
                 <AccordionBody>
                   <Form.Item
                     className="mt-4"
                     label={
                       <span>
-                        Max Budget (USD){" "}
-                        <Tooltip title="Maximum amount in USD this key can spend. When reached, the key will be blocked from making further requests">
+                        最大预算 (美元){" "}
+                        <Tooltip title="此密钥可以花费的最大美元金额。达到限额后，密钥将被阻止发出进一步请求">
                           <InfoCircleOutlined style={{ marginLeft: "4px" }} />
                         </Tooltip>
                       </span>
                     }
                     name="max_budget"
-                    help={`Budget cannot exceed team max budget: $${team?.max_budget !== null && team?.max_budget !== undefined ? team?.max_budget : "unlimited"}`}
+                    help={`预算不能超过团队最大预算: $${team?.max_budget !== null && team?.max_budget !== undefined ? team?.max_budget : "无限制"}`}
                     rules={[
                       {
                         validator: async (_, value) => {
@@ -1046,14 +1045,14 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                     className="mt-4"
                     label={
                       <span>
-                        Reset Budget{" "}
-                        <Tooltip title="How often the budget should reset. For example, setting 'daily' will reset the budget every 24 hours">
+                        重置预算{" "}
+                        <Tooltip title="预算重置的频率。例如，设置'每日'将每24小时重置预算">
                           <InfoCircleOutlined style={{ marginLeft: "4px" }} />
                         </Tooltip>
                       </span>
                     }
                     name="budget_duration"
-                    help={`Team Reset Budget: ${team?.budget_duration !== null && team?.budget_duration !== undefined ? team?.budget_duration : "None"}`}
+                    help={`团队重置预算: ${team?.budget_duration !== null && team?.budget_duration !== undefined ? team?.budget_duration : "无"}`}
                   >
                     <BudgetDurationDropdown onChange={(value) => form.setFieldValue("budget_duration", value)} />
                   </Form.Item>
@@ -1061,8 +1060,8 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                     className="mt-4"
                     label={
                       <span>
-                        Budget Windows{" "}
-                        <Tooltip title="Set multiple independent budget windows (e.g., hourly $10 AND monthly $200). Each window tracks spend separately and resets on its own schedule.">
+                        预算窗口{" "}
+                        <Tooltip title="设置多个独立的预算窗口（例如，每小时10美元 AND 每月200美元）。每个窗口独立跟踪支出并按自己的计划重置。">
                           <InfoCircleOutlined style={{ marginLeft: "4px" }} />
                         </Tooltip>
                       </span>
@@ -1077,14 +1076,14 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                     className="mt-4"
                     label={
                       <span>
-                        Tokens per minute Limit (TPM){" "}
-                        <Tooltip title="Maximum number of tokens this key can process per minute. Helps control usage and costs">
+                        每分钟令牌数限制 (TPM){" "}
+                        <Tooltip title="此密钥每分钟可以处理的最大令牌数。有助于控制使用量和成本">
                           <InfoCircleOutlined style={{ marginLeft: "4px" }} />
                         </Tooltip>
                       </span>
                     }
                     name="tpm_limit"
-                    help={`TPM cannot exceed team TPM limit: ${team?.tpm_limit !== null && team?.tpm_limit !== undefined ? team?.tpm_limit : "unlimited"}`}
+                    help={`TPM不能超过团队TPM限制: ${team?.tpm_limit !== null && team?.tpm_limit !== undefined ? team?.tpm_limit : "无限制"}`}
                     rules={[
                       {
                         validator: async (_, value) => {
@@ -1109,14 +1108,14 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                     className="mt-4"
                     label={
                       <span>
-                        Requests per minute Limit (RPM){" "}
-                        <Tooltip title="Maximum number of API requests this key can make per minute. Helps prevent abuse and manage load">
+                        每分钟请求数限制 (RPM){" "}
+                        <Tooltip title="此密钥每分钟可以发出的最大API请求数。有助于防止滥用和管理负载">
                           <InfoCircleOutlined style={{ marginLeft: "4px" }} />
                         </Tooltip>
                       </span>
                     }
                     name="rpm_limit"
-                    help={`RPM cannot exceed team RPM limit: ${team?.rpm_limit !== null && team?.rpm_limit !== undefined ? team?.rpm_limit : "unlimited"}`}
+                    help={`RPM不能超过团队RPM限制: ${team?.rpm_limit !== null && team?.rpm_limit !== undefined ? team?.rpm_limit : "无限制"}`}
                     rules={[
                       {
                         validator: async (_, value) => {
@@ -1624,7 +1623,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
 
           <div style={{ textAlign: "right", marginTop: "10px" }}>
             <Button2 htmlType="submit" disabled={isFormDisabled} style={{ opacity: isFormDisabled ? 0.5 : 1 }}>
-              Create Key
+              创建密钥
             </Button2>
           </div>
         </Form>
@@ -1633,7 +1632,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
       {/* Add the Create User Modal */}
       {isCreateUserModalVisible && (
         <Modal
-          title="Create New User"
+          title="创建新用户"
           open={isCreateUserModalVisible}
           onCancel={() => setIsCreateUserModalVisible(false)}
           footer={null}
@@ -1653,7 +1652,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
       {apiKey && (
         <Modal open={isModalVisible} onOk={handleOk} onCancel={handleCancel} footer={null}>
           <Grid numItems={1} className="gap-2 w-full">
-            <Title>Save your Key</Title>
+            <Title>保存您的密钥</Title>
             <Col numColSpan={1}>
               {apiKey != null ? (
                 <CreatedKeyDisplay apiKey={apiKey} />

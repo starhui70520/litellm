@@ -125,7 +125,7 @@ const GuardrailTestPlayground: React.FC<GuardrailTestPlaygroundProps> = ({
                 <h3 className="text-lg font-semibold mb-3">Guardrails</h3>
                 <Input
                   prefix={<SearchOutlined />}
-                  placeholder="Search guardrails..."
+                  placeholder="搜索护栏..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />

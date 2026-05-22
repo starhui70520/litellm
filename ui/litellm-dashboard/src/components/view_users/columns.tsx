@@ -102,9 +102,9 @@ export const columns = (
       header: "预算 (美元)",
       accessorKey: "max_budget",
       enableSorting: false,
-      cell: ({ row }) => (
-        <span className="text-xs">{row.original.max_budget !== null ? row.original.max_budget : "Unlimited"}</span>
-      ),
+cell: ({ row }) => (
+          <span className="text-xs">{row.original.max_budget !== null ? row.original.max_budget : "无限制"}</span>
+        ),
     },
     {
       header: () => (
