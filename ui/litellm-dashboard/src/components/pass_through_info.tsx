@@ -387,7 +387,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
                     <div>
                       <Text className="font-medium">Include Subpath</Text>
                       <Badge color={endpointData.include_subpath ? "green" : "gray"}>
-                        {endpointData.include_subpath ? "Yes" : "No"}
+                        {endpointData.include_subpath ? "是" : "否"}
                       </Badge>
                     </div>
                     {endpointData.cost_per_request !== undefined && (
@@ -399,7 +399,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
                     <div>
                       <Text className="font-medium">Authentication Required</Text>
                       <Badge color={endpointData.auth ? "green" : "gray"}>
-                        {endpointData.auth ? "Yes" : "No"}
+                        {endpointData.auth ? "是" : "否"}
                       </Badge>
                     </div>
                     <div>

@@ -611,8 +611,8 @@ const CreateTeamModal = ({
                 help="Bypass global guardrails for this team"
               >
                 <Switch
-                  checkedChildren="Yes"
-                  unCheckedChildren="No"
+                  checkedChildren="是"
+                  unCheckedChildren="否"
                 />
               </Form.Item>
               <Form.Item

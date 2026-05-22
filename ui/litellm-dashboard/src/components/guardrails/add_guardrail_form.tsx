@@ -794,32 +794,32 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
           tooltip="If enabled, this guardrail will be applied to all requests by default."
         >
           <Select>
-            <Select.Option value={true}>Yes</Select.Option>
-            <Select.Option value={false}>No</Select.Option>
+            <Select.Option value={true}>是</Select.Option>
+            <Select.Option value={false}>否</Select.Option>
           </Select>
         </Form.Item>
 
         <Form.Item
           name="skip_system_message_choice"
-          label="Skip system messages in guardrail"
-          tooltip="Unified guardrails only: omit role: system from guardrail evaluation input (OpenAI chat + Anthropic messages). The model still receives full messages. Use global default follows litellm_settings.skip_system_message_in_guardrail."
+          label="跳过 guardrail 中的系统消息"
+          tooltip="仅统一 guardrail：从 guardrail 评估输入中省略 role: system（OpenAI chat + Anthropic 消息）。模型仍会收到完整消息。使用全局默认请遵循 litellm_settings.skip_system_message_in_guardrail。"
         >
           <Select>
-            <Select.Option value="inherit">Use global default</Select.Option>
-            <Select.Option value="yes">Yes — exclude from guardrail scan</Select.Option>
-            <Select.Option value="no">No — always include in scan</Select.Option>
+            <Select.Option value="inherit">使用全局默认</Select.Option>
+            <Select.Option value="yes">是 — 排除在 guardrail 扫描之外</Select.Option>
+            <Select.Option value="no">否 — 始终包含在扫描中</Select.Option>
           </Select>
         </Form.Item>
 
         <Form.Item
           name="skip_tool_message_choice"
-          label="Skip tool messages in guardrail"
-          tooltip="Unified guardrails only: omit role: tool from guardrail evaluation input (OpenAI chat + Anthropic messages). The model still receives full messages. Use global default follows litellm_settings.skip_tool_message_in_guardrail."
+          label="跳过 guardrail 中的工具消息"
+          tooltip="仅统一 guardrail：从 guardrail 评估输入中省略 role: tool（OpenAI chat + Anthropic 消息）。模型仍会收到完整消息。使用全局默认请遵循 litellm_settings.skip_tool_message_in_guardrail。"
         >
           <Select>
-            <Select.Option value="inherit">Use global default</Select.Option>
-            <Select.Option value="yes">Yes — exclude from guardrail scan</Select.Option>
-            <Select.Option value="no">No — always include in scan</Select.Option>
+            <Select.Option value="inherit">使用全局默认</Select.Option>
+            <Select.Option value="yes">是 — 排除在 guardrail 扫描之外</Select.Option>
+            <Select.Option value="no">否 — 始终包含在扫描中</Select.Option>
           </Select>
         </Form.Item>
 

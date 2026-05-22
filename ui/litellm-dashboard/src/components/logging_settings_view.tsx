@@ -100,7 +100,7 @@ export function LoggingSettingsView({
         ) : (
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-50 border border-gray-200">
             <CogIcon className="h-4 w-4 text-gray-400" />
-            <span className="text-gray-500 text-sm">No logging integrations configured</span>
+            <span className="text-gray-500 text-sm">未配置日志集成</span>
           </div>
         )}
       </div>
@@ -148,7 +148,7 @@ export function LoggingSettingsView({
         ) : (
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-50 border border-gray-200">
             <BanIcon className="h-4 w-4 text-gray-400" />
-            <span className="text-gray-500 text-sm">No callbacks disabled</span>
+            <span className="text-gray-500 text-sm">未禁用任何回调</span>
           </div>
         )}
       </div>

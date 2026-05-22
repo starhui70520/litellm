@@ -301,7 +301,7 @@ const ModelGroupAliasSettings: React.FC<ModelGroupAliasSettingsProps> = ({
                   {aliases.length === 0 && (
                     <TableRow>
                       <TableCell colSpan={3} className="py-0.5 text-sm text-gray-500 text-center">
-                        No aliases added yet. Add a new alias above.
+                        尚未添加别名。请在上方添加新别名。
                       </TableCell>
                     </TableRow>
                   )}
@@ -324,7 +324,7 @@ const ModelGroupAliasSettings: React.FC<ModelGroupAliasSettingsProps> = ({
                 {Object.keys(aliasObject).length === 0 ? (
                   <span className="text-gray-500">
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;# No aliases configured yet
+                    &nbsp;&nbsp;&nbsp;&nbsp;# 尚未配置别名
                   </span>
                 ) : (
                   Object.entries(aliasObject).map(([key, value]) => (

@@ -441,7 +441,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
                   {links.length === 0 && (
                     <TableRow>
                       <TableCell colSpan={3} className="py-0.5 text-sm text-gray-500 text-center">
-                        No links added yet. Add a new link above.
+                        尚未添加链接。请在上方添加新链接。
                       </TableCell>
                     </TableRow>
                   )}

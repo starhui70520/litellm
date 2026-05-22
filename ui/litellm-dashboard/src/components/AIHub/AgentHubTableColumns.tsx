@@ -198,11 +198,11 @@ export const getAgentHubTableColumns = (
 
         return agent.is_public === true ? (
           <Badge color="green" size="xs">
-            Yes
+            是
           </Badge>
         ) : (
           <Badge color="gray" size="xs">
-            No
+            否
           </Badge>
         );
       },

@@ -475,8 +475,8 @@ const AllModelsTab = ({
                   ) : (
                     <span data-testid="models-results-count" className="text-sm text-gray-700">
                       {paginationMeta.total_count > 0
-                        ? `Showing ${((currentPage - 1) * pageSize) + 1} - ${Math.min(currentPage * pageSize, paginationMeta.total_count)} of ${paginationMeta.total_count} results`
-                        : "Showing 0 results"}
+                        ? `显示第 ${((currentPage - 1) * pageSize) + 1} - ${Math.min(currentPage * pageSize, paginationMeta.total_count)} 条，共 ${paginationMeta.total_count} 条结果`
+                        : "显示 0 条结果"}
                     </span>
                   )}
 
@@ -496,7 +496,7 @@ const AllModelsTab = ({
                           : "hover:bg-gray-50"
                           }`}
                       >
-                        Previous
+                        上一页
                       </button>
                     )}
 
@@ -515,7 +515,7 @@ const AllModelsTab = ({
                           : "hover:bg-gray-50"
                           }`}
                       >
-                        Next
+                        下一页
                       </button>
                     )}
                   </div>

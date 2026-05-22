@@ -511,7 +511,7 @@ export function KeyEditView({
         name="disable_global_guardrails"
         valuePropName="checked"
       >
-        <Switch disabled={!canEditGuardrails} checkedChildren="Yes" unCheckedChildren="No" />
+        <Switch disabled={!canEditGuardrails} checkedChildren="是" unCheckedChildren="否" />
       </Form.Item>
 
       <Form.Item

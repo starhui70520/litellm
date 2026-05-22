@@ -427,7 +427,7 @@ export function UserDataTable({
                   <TableRow>
                     <TableCell colSpan={columns.length} className="h-8 text-center">
                       <div className="text-center text-gray-500">
-                        <p>No users found</p>
+                        <p>未找到用户</p>
                       </div>
                     </TableCell>
                   </TableRow>

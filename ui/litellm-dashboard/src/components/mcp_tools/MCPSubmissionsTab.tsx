@@ -384,11 +384,11 @@ function MCPServerCard({ server, onApprove, onReject, requiredFields }: MCPServe
             <div className="flex-1 min-w-0">
               <div className={`text-sm font-semibold leading-tight ${allPassed ? "text-green-800" : "text-red-800"}`}>
                 {allPassed
-                  ? "All checks passed"
-                  : `${failCount} check${failCount !== 1 ? "s" : ""} failed`}
+                  ? "所有检查通过"
+                  : `${failCount} 项检查失败`}
               </div>
               <div className="text-xs text-gray-500 mt-0.5">
-                {passCount} passing, {failCount} failing
+                {passCount} 通过, {failCount} 失败
               </div>
             </div>
             {/* Approve / Reject in header */}
@@ -597,7 +597,7 @@ export function MCPSubmissionsTab({ accessToken }: MCPSubmissionsTabProps) {
           onChange={(e) => setStatusFilter(e.target.value as typeof statusFilter)}
           className="border border-gray-200 rounded-md px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-white"
         >
-          <option value="all">All Status</option>
+          <option value="all">所有状态</option>
           <option value="pending_review">Pending Review</option>
           <option value="active">Active</option>
           <option value="rejected">Rejected</option>

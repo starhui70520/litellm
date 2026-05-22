@@ -117,7 +117,7 @@ export function DeletedTeamsTable({
         const maxBudget = info.getValue() as number | null;
         return (
           <span className="block max-w-[150px]">
-            {maxBudget === null || maxBudget === undefined ? "No limit" : `$${formatNumberWithCommas(maxBudget)}`}
+            {maxBudget === null || maxBudget === undefined ? "无限制" : `$${formatNumberWithCommas(maxBudget)}`}
           </span>
         );
       },
@@ -346,7 +346,7 @@ export function DeletedTeamsTable({
                     <TableRow>
                       <TableCell colSpan={columns.length} className="h-8 text-center">
                         <div className="text-center text-gray-500">
-                          <p>No deleted teams found</p>
+                          <p>未找到已删除的团队</p>
                         </div>
                       </TableCell>
                     </TableRow>

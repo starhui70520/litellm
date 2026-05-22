@@ -221,10 +221,10 @@ const CostTrackingSettings: React.FC<CostTrackingSettingsProps> = ({
                             />
                           </svg>
                           <Text className="text-gray-700 font-medium mb-2">
-                            No provider discounts configured
+                            尚未配置提供商折扣
                           </Text>
                           <Text className="text-gray-500 text-sm">
-                            Click &quot;Add Provider Discount&quot; to get started
+                            点击"添加提供商折扣"开始使用
                           </Text>
                         </div>
                       )}
@@ -287,10 +287,10 @@ const CostTrackingSettings: React.FC<CostTrackingSettingsProps> = ({
                       />
                     </svg>
                     <Text className="text-gray-700 font-medium mb-2">
-                      No provider margins configured
+                      尚未配置提供商利润率
                     </Text>
                     <Text className="text-gray-500 text-sm">
-                      Click &quot;Add Provider Margin&quot; to get started
+                      点击"添加提供商利润率"开始使用
                     </Text>
                   </div>
                 )}

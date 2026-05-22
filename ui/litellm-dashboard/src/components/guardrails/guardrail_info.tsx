@@ -721,34 +721,34 @@ const GuardrailInfoView: React.FC<GuardrailInfoProps> = ({ guardrailId, onClose,
                       <Input placeholder="Enter guardrail name" />
                     </Form.Item>
 
-                    <Form.Item label="Default On" name="default_on">
+                    <Form.Item label="默认启用" name="default_on">
                       <Select>
-                        <Select.Option value={true}>Yes</Select.Option>
-                        <Select.Option value={false}>No</Select.Option>
+                        <Select.Option value={true}>是</Select.Option>
+                        <Select.Option value={false}>否</Select.Option>
                       </Select>
                     </Form.Item>
 
                     <Form.Item
-                      label="Skip system messages in guardrail"
+                      label="跳过 guardrail 中的系统消息"
                       name="skip_system_message_choice"
-                      tooltip="Unified guardrails: omit role: system from guardrail input (LLM still gets full messages). Use global default follows litellm_settings.skip_system_message_in_guardrail."
+                      tooltip="统一 guardrail：从 guardrail 输入中省略 role: system（LLM 仍会收到完整消息）。使用全局默认请遵循 litellm_settings.skip_system_message_in_guardrail。"
                     >
                       <Select>
-                        <Select.Option value="inherit">Use global default</Select.Option>
-                        <Select.Option value="yes">Yes — exclude from guardrail scan</Select.Option>
-                        <Select.Option value="no">No — always include in scan</Select.Option>
+                        <Select.Option value="inherit">使用全局默认</Select.Option>
+                        <Select.Option value="yes">是 — 排除在 guardrail 扫描之外</Select.Option>
+                        <Select.Option value="no">否 — 始终包含在扫描中</Select.Option>
                       </Select>
                     </Form.Item>
 
                     <Form.Item
-                      label="Skip tool messages in guardrail"
+                      label="跳过 guardrail 中的工具消息"
                       name="skip_tool_message_choice"
-                      tooltip="Unified guardrails: omit role: tool from guardrail input (LLM still gets full messages). Use global default follows litellm_settings.skip_tool_message_in_guardrail."
+                      tooltip="统一 guardrail：从 guardrail 输入中省略 role: tool（LLM 仍会收到完整消息）。使用全局默认请遵循 litellm_settings.skip_tool_message_in_guardrail。"
                     >
                       <Select>
-                        <Select.Option value="inherit">Use global default</Select.Option>
-                        <Select.Option value="yes">Yes — exclude from guardrail scan</Select.Option>
-                        <Select.Option value="no">No — always include in scan</Select.Option>
+                        <Select.Option value="inherit">使用全局默认</Select.Option>
+                        <Select.Option value="yes">是 — 排除在 guardrail 扫描之外</Select.Option>
+                        <Select.Option value="no">否 — 始终包含在扫描中</Select.Option>
                       </Select>
                     </Form.Item>
 
@@ -862,9 +862,9 @@ const GuardrailInfoView: React.FC<GuardrailInfoProps> = ({ guardrailId, onClose,
                       <div>{guardrailData.litellm_params?.mode || "-"}</div>
                     </div>
                     <div>
-                      <Text className="font-medium">Default On</Text>
+                      <Text className="font-medium">默认启用</Text>
                       <Badge color={guardrailData.litellm_params?.default_on ? "green" : "gray"}>
-                        {guardrailData.litellm_params?.default_on ? "Yes" : "No"}
+                        {guardrailData.litellm_params?.default_on ? "是" : "否"}
                       </Badge>
                     </div>
 

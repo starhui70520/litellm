@@ -1286,7 +1286,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                       name="disable_global_guardrails"
                       valuePropName="checked"
                     >
-                      <Switch checkedChildren="Yes" unCheckedChildren="No" />
+                      <Switch checkedChildren="是" unCheckedChildren="否" />
                     </Form.Item>
 
                     <Form.Item

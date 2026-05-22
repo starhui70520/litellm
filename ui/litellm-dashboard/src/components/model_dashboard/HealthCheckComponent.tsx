@@ -566,8 +566,8 @@ const HealthCheckComponent: React.FC<HealthCheckComponentProps> = ({
               className="px-3 py-1 text-sm"
             >
               {selectedModelsForHealth.length > 0 && selectedModelsForHealth.length < all_models_on_proxy.length
-                ? "Run Selected Checks"
-                : "Run All Checks"}
+                ? "运行选中检查"
+                : "运行所有检查"}
             </Button>
           </div>
         </div>
@@ -578,8 +578,8 @@ const HealthCheckComponent: React.FC<HealthCheckComponentProps> = ({
           <div className="flex justify-between items-center mb-3">
             <span data-testid="health-results-count" className="text-sm text-gray-700">
               {totalCount > 0
-                ? `Showing ${resultsStart} - ${resultsEnd} of ${totalCount} results`
-                : "Showing 0 results"}
+                ? `显示第 ${resultsStart} - ${resultsEnd} 条，共 ${totalCount} 条结果`
+                : "显示 0 条结果"}
             </span>
 
             <div className="flex items-center space-x-2">
@@ -590,7 +590,7 @@ const HealthCheckComponent: React.FC<HealthCheckComponentProps> = ({
                   isLoading || currentPage === 1 ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "hover:bg-gray-50"
                 }`}
               >
-                Previous
+                上一页
               </button>
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
@@ -601,7 +601,7 @@ const HealthCheckComponent: React.FC<HealthCheckComponentProps> = ({
                     : "hover:bg-gray-50"
                 }`}
               >
-                Next
+                下一页
               </button>
             </div>
           </div>

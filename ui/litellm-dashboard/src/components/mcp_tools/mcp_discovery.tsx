@@ -196,12 +196,12 @@ const MCPDiscovery: React.FC<MCPDiscoveryProps> = ({
       {!loading && !error && filteredServers.length === 0 && (
         <div style={{ textAlign: "center", padding: "32px 0", color: "#9ca3af" }}>
           <Text>
-            No servers found.{" "}
+            未找到服务器。{" "}
             <a
               onClick={onCustomServer}
               style={{ color: "#2563eb", cursor: "pointer" }}
             >
-              Add a custom server
+              添加自定义服务器
             </a>
           </Text>
         </div>

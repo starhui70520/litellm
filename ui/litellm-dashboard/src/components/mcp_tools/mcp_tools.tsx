@@ -243,8 +243,8 @@ const MCPToolsViewer = ({
                         />
                       </svg>
                     </div>
-                    <p className="text-xs font-medium text-gray-700 mb-1">No tools available</p>
-                    <p className="text-xs text-gray-500">No tools found for this server</p>
+                    <p className="text-xs font-medium text-gray-700 mb-1">暂无可用工具</p>
+                    <p className="text-xs text-gray-500">未找到此服务器的工具</p>
                   </div>
                 )}
 
@@ -254,8 +254,8 @@ const MCPToolsViewer = ({
                     {filteredTools.length === 0 ? (
                       <div className="p-4 text-center bg-white border border-gray-200 rounded-lg">
                         <SearchOutlined className="text-2xl text-gray-400 mb-2" />
-                        <p className="text-xs font-medium text-gray-700 mb-1">No tools found</p>
-                        <p className="text-xs text-gray-500">No tools match &quot;{toolSearchTerm}&quot;</p>
+                        <p className="text-xs font-medium text-gray-700 mb-1">未找到工具</p>
+                        <p className="text-xs text-gray-500">没有匹配 "{toolSearchTerm}" 的工具</p>
                       </div>
                     ) : (
                       <div

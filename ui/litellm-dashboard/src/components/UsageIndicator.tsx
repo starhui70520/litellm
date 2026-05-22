@@ -516,7 +516,7 @@ export default function UsageIndicator({ accessToken, width = 220 }: UsageIndica
                     !isLicenseExpired && !isLicenseExpiringSoon && "bg-gray-50 text-gray-600 border-gray-200",
                   )}
                 >
-                  {isLicenseExpired ? "Expired" : isLicenseExpiringSoon ? "Expiring soon" : "OK"}
+                  {isLicenseExpired ? "已过期" : isLicenseExpiringSoon ? "即将过期" : "正常"}
                 </span>
               </div>
               <div className="flex justify-between items-center">
@@ -560,7 +560,7 @@ export default function UsageIndicator({ accessToken, width = 220 }: UsageIndica
                     !userMetrics.isOverLimit && !userMetrics.isNearLimit && "bg-gray-50 text-gray-600 border-gray-200",
                   )}
                 >
-                  {userMetrics.isOverLimit ? "Over limit" : userMetrics.isNearLimit ? "Near limit" : "OK"}
+                  {userMetrics.isOverLimit ? "超出限额" : userMetrics.isNearLimit ? "接近限额" : "正常"}
                 </span>
               </div>
               <div className="flex justify-between items-center">
@@ -621,7 +621,7 @@ export default function UsageIndicator({ accessToken, width = 220 }: UsageIndica
                     !teamMetrics.isOverLimit && !teamMetrics.isNearLimit && "bg-gray-50 text-gray-600 border-gray-200",
                   )}
                 >
-                  {teamMetrics.isOverLimit ? "Over limit" : teamMetrics.isNearLimit ? "Near limit" : "OK"}
+                  {teamMetrics.isOverLimit ? "超出限额" : teamMetrics.isNearLimit ? "接近限额" : "正常"}
                 </span>
               </div>
               <div className="flex justify-between items-center">

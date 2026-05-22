@@ -864,7 +864,7 @@ export default function ModelInfoView({
                                     ))}
                                   </div>
                                 ) : (
-                                  "No groups assigned"
+                                  "未分配组"
                                 )
                               ) : (
                                 localModelData.model_info.access_groups
@@ -925,7 +925,7 @@ export default function ModelInfoView({
                                     )}
                                   </div>
                                 ) : (
-                                  "No guardrails assigned"
+                                  "未分配 guardrail"
                                 )
                               ) : (
                                 localModelData.litellm_params.guardrails
@@ -977,7 +977,7 @@ export default function ModelInfoView({
                                     )}
                                   </div>
                                 ) : (
-                                  "No knowledge bases attached"
+                                  "未附加知识库"
                                 )
                               ) : (
                                 String(localModelData.litellm_params.vector_store_ids)
@@ -1025,7 +1025,7 @@ export default function ModelInfoView({
                                     ))}
                                   </div>
                                 ) : (
-                                  "No tags assigned"
+                                  "未分配标签"
                                 )
                               ) : (
                                 localModelData.litellm_params.tags

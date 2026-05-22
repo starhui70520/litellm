@@ -125,7 +125,7 @@ export const PaginatedModelSelect = ({
       searchValue={searchInput}
       onPopupScroll={handlePopupScroll}
       loading={isLoading}
-      notFoundContent={isLoading ? <LoadingOutlined spin /> : "No models found"}
+      notFoundContent={isLoading ? <LoadingOutlined spin /> : "未找到模型"}
       options={options}
       optionRender={optionRender}
       popupRender={(menu) => (

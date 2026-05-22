@@ -113,7 +113,7 @@ const AvailableTeamsPanel: React.FC<AvailableTeamsProps> = ({ accessToken, userI
           {availableTeams.length === 0 && (
             <TableRow>
               <TableCell colSpan={5} className="text-center">
-                <Text>No available teams to join. See how to set available teams{" "}
+                <Text>没有可加入的团队。了解如何设置可用团队{" "}
                   <a
                     href="https://docs.litellm.ai/docs/proxy/self_serve#all-settings-for-self-serve--sso-flow"
                     target="_blank"

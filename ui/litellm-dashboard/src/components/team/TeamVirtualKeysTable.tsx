@@ -652,10 +652,10 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
               ) : (
                 <button
                   onClick={() => table.previousPage()}
-                  disabled={isLoading || isFetching || !table.getCanPreviousPage()}
+disabled={isLoading || isFetching || !table.getCanPreviousPage()}
                   className="px-3 py-1 text-sm border rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Previous
+                  上一页
                 </button>
               )}
 
@@ -667,7 +667,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
                   disabled={isLoading || isFetching || !table.getCanNextPage()}
                   className="px-3 py-1 text-sm border rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Next
+                  下一页
                 </button>
               )}
             </div>
@@ -794,7 +794,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
                       <TableRow>
                         <TableCell colSpan={columns.length} className="h-8 text-center">
                           <div className="text-center text-gray-500">
-                            <p>No keys found</p>
+                            <p>未找到密钥</p>
                           </div>
                         </TableCell>
                       </TableRow>

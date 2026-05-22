@@ -133,7 +133,7 @@ cell: ({ row }) => (
             </Badge>
           ) : (
             <Badge size="xs" color="gray">
-              No Keys
+              无密钥
             </Badge>
           )}
         </Grid>

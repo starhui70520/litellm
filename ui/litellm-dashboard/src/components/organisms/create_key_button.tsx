@@ -1197,7 +1197,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                         : "Premium feature - Upgrade to disable global guardrails by key"
                     }
                   >
-                    <Switch disabled={!canEditGuardrails} checkedChildren="Yes" unCheckedChildren="No" />
+                    <Switch disabled={!canEditGuardrails} checkedChildren="是" unCheckedChildren="否" />
                   </Form.Item>
                   <Form.Item
                     label={

@@ -148,7 +148,7 @@ const PluginTable: React.FC<PluginTableProps> = ({
             className="text-xs font-normal"
             size="xs"
           >
-            {plugin.enabled ? "Yes" : "No"}
+            {plugin.enabled ? "是" : "否"}
           </Badge>
         );
       },
@@ -296,7 +296,7 @@ const PluginTable: React.FC<PluginTableProps> = ({
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-8 text-center">
                   <div className="text-center text-gray-500">
-                    <p>No skills found. Add one to get started.</p>
+                    <p>未找到技能。添加一个以开始使用。</p>
                   </div>
                 </TableCell>
               </TableRow>

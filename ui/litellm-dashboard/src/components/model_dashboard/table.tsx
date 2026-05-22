@@ -194,7 +194,7 @@ export function ModelDataTable<TData, TValue>({
                 <TableRow>
                   <TableCell colSpan={columns.length} className="h-8 text-center">
                     <div className="text-center text-gray-500">
-                      <p>No models found</p>
+                      <p>未找到模型</p>
                     </div>
                   </TableCell>
                 </TableRow>

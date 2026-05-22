@@ -93,7 +93,7 @@ export const PaginatedKeyAliasSelect = ({
       searchValue={searchInput}
       onPopupScroll={handlePopupScroll}
       loading={isLoading}
-      notFoundContent={isLoading ? <LoadingOutlined spin /> : "No key aliases found"}
+      notFoundContent={isLoading ? <LoadingOutlined spin /> : "未找到密钥别名"}
       options={options}
       popupRender={(menu) => (
         <>

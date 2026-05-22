@@ -86,7 +86,7 @@ const TeamMultiSelect: React.FC<TeamMultiSelectProps> = ({
       searchValue={searchInput}
       onPopupScroll={handlePopupScroll}
       loading={isLoading}
-      notFoundContent={isLoading ? <LoadingOutlined spin /> : "No teams found"}
+      notFoundContent={isLoading ? <LoadingOutlined spin /> : "未找到团队"}
       style={{ width: "100%" }}
       popupRender={(menu) => (
         <>

@@ -63,13 +63,13 @@ const ImpactPopover: React.FC<{ attachment: PolicyAttachment; accessToken: strin
             </div>
           )}
           {impact.affected_keys_count === 0 && impact.affected_teams_count === 0 && (
-            <p className="text-gray-400">No keys or teams currently affected</p>
+            <p className="text-gray-400">当前没有受影响的密钥或团队</p>
           )}
         </>
       )}
     </div>
   ) : (
-    <p className="text-xs text-gray-400">Click to load</p>
+    <p className="text-xs text-gray-400">点击加载</p>
   );
 
   return (

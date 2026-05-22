@@ -53,16 +53,16 @@ const HealthStatusBadge: React.FC<{
 
   const tooltipContent = (
     <div className="max-w-xs">
-      <div className="font-semibold mb-1">Health Status: {status}</div>
-      {lastCheck && <div className="text-xs mb-1">Last Check: {new Date(lastCheck).toLocaleString()}</div>}
+      <div className="font-semibold mb-1">健康状态: {status}</div>
+      {lastCheck && <div className="text-xs mb-1">上次检查: {new Date(lastCheck).toLocaleString()}</div>}
       {error && (
         <div className="text-xs">
-          <div className="font-medium text-red-400 mb-1">Error:</div>
+          <div className="font-medium text-red-400 mb-1">错误:</div>
           <div className="break-words">{error}</div>
         </div>
       )}
-      {!lastCheck && !error && <div className="text-xs text-gray-400">No health check data available</div>}
-      {isClickable && <div className="text-xs text-gray-400 mt-1">Click to recheck</div>}
+      {!lastCheck && !error && <div className="text-xs text-gray-400">无可用的健康检查数据</div>}
+      {isClickable && <div className="text-xs text-gray-400 mt-1">点击重新检查</div>}
     </div>
   );
 

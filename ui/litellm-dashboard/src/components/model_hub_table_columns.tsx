@@ -213,11 +213,11 @@ export const modelHubColumns = (
 
         return model.is_public_model_group === true ? (
           <Badge color="green" size="xs">
-            Yes
+            是
           </Badge>
         ) : (
           <Badge color="gray" size="xs">
-            No
+            否
           </Badge>
         );
       },

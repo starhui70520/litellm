@@ -218,7 +218,7 @@ const VectorStoreTable: React.FC<VectorStoreTableProps> = ({ data, onView, onEdi
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-8 text-center">
                   <div className="text-center text-gray-500">
-                    <p>No vector stores found</p>
+                    <p>未找到向量存储</p>
                   </div>
                 </TableCell>
               </TableRow>
